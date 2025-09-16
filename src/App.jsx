@@ -3,11 +3,13 @@ import { React } from 'react';
 
 import './App.css';
 
+import Nav from './components/Nav/Nav';
+
 function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Nav />
     </>
   )
 }
