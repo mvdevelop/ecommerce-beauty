@@ -1,0 +1,19 @@
+
+[
+    {
+    "id": 1,
+    "image": "public/images/product-1-1.webp",
+    "secondImage": "public/images/product-1-2.webp",
+    "ProductName": "Shield Conditioner",
+    "price": "$27.00",
+    "tag": "New"
+    }, {
+    "id": 2,
+    "image": "public/images/product-2-1.webp",
+    "secondImage": "public/images/product-2-2.webp",
+    "ProductName": "Perfecting Facial Oil",
+    "price": "$15.00",
+    "oldPrice": "$20.00",
+    "tag": "New"
+    }
+]

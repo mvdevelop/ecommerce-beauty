@@ -120,15 +120,15 @@ export default function Nav() {
               <form>
                 <div className='mb-3'>
                   <label className='form-label'>Name</label>
-                  <input type="text" name='form-control' placeholder='Enter your name' required />
+                  <input type="text" className='form-control' placeholder='Enter your name' required />
                 </div>
                 <div className='mb-3'>
                   <label className='form-label'>Email Address</label>
-                  <input type="email" name='form-control' placeholder='Enter email address' required />
+                  <input type="email" className='form-control' placeholder='Enter email address' required />
                 </div>
                 <div className='mb-3'>
                   <label className='form-label'>Password</label>
-                  <input type="password" name='form-control' placeholder='Enter password' required />
+                  <input type="password" className='form-control' placeholder='Enter password' required />
                 </div>
                 <p className='text-muted'>
                   By signing up, you agree to our <a href="#" className='text-success text-decoration-none'>Terms & Conditions</a> and <a href="#" className='text-success text-decoration-none'>Privacy Policy</a>.
