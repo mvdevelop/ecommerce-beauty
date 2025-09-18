@@ -199,3 +199,10 @@ html, body {
         font-size: 2.8rem;
     }
 }
+
+/* Product Section */
+.section-title p {
+    font-size: 1.2rem;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+}

@@ -4,9 +4,12 @@ import React from 'react';
 import '../../index.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+
+// Data
+import Products from '../../Product.json';
 
 export default function Index() {
   return (
@@ -49,6 +52,41 @@ export default function Index() {
             </div>
           </SwiperSlide>
         </Swiper>
+      </div>
+
+      {/* Products */}
+      <div className='product-container py-5 my-5'>
+        <div className="container position-relative">
+          <div className="row">
+            <div className="section-title mb-5 product-title text-center">
+              <h2 className="fw-semibold fs-1">Our Featured Products</h2>
+              <p className='text-muted'>Get the skin you want to feel</p>
+            </div>
+          </div>
+          <Swiper 
+            slidesPerView={4} spaceBetween={20} 
+            modules={[Navigation]} navigation={{ nextEl: '.product-swiper-next', prevEl: '.product-swiper-prev' }} breakpoints={{1399:{slidesPerView:4}, 1199:{slidesPerView:3}, 991:{slidesPerView:2}, 767:{slidesPerView:1.5}, 0:{slidesPerView:1}}} className='mt-4 swiper position-relative'>
+              {Products.filter(product => product.id >= 5 && product.id <= 10).map(product => (
+                <SwiperSlide key={product.id}>
+                  <div className="product-item text-center position-relative">
+                    <div className="product-image w-100 position-relative overflow-hidden">
+                      <img src={product.image} className='img-fluid' alt="" />
+                      <img src={product.secondImage} className='img-fluid' alt="" />
+                      <div className='product-icons gap-3'>
+                        <div className='product-icon' title='Add to Wishlist'>
+                          <i className="bi bi-heart fs-5"></i>
+                        </div>
+                        <div className='product-icon' title='Add to Cart'>
+                          <i className="bi bi-cart3 fs-5"></i>
+                        </div>
+                      </div>
+                      <span className=''></span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
       </div>
     </>
   )
