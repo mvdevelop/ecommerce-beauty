@@ -30,7 +30,7 @@
     }, {
     "id": 5,
     "image": "public/images/product-5-1.webp",
-    "secondImage": "public/images/product-5-2.webp",
+    "secondImage": "public/images/product-5-2.jpg",
     "ProductName": "Hydrating Face Mist",
     "price": "$22.00",
     "tag": "New"

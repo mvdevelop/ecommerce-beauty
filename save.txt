@@ -1,11 +1,13 @@
 
+// index save
 import React from 'react';
 
 import '../../index.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 
 // Data
@@ -17,12 +19,10 @@ export default function Index() {
       {/* Hero */}
       <div className='hero'>
         <Swiper 
-          slidesPerView={1} 
-          spaceBetween={0} 
-          modules={[Autoplay]} 
-          loop={true} 
-          autoplay={{ delay: 3000 }}
-        >
+          slidesPerView={1} spaceBetween={0} 
+          modules={[Autoplay, EffectFade]} effect='fade'
+          loop={true} autoplay={{delay: 3000}}>
+          
           <SwiperSlide>
             <div className='hero-wrap hero-wrap1'>
               <div className='hero-content'>
@@ -66,19 +66,8 @@ export default function Index() {
             </div>
           </div>
           <Swiper 
-            slidesPerView={4} 
-            spaceBetween={20} 
-            modules={[Navigation]} 
-            navigation
-            breakpoints={{
-              1399:{slidesPerView:4}, 
-              1199:{slidesPerView:3}, 
-              991:{slidesPerView:2}, 
-              767:{slidesPerView:1.5}, 
-              0:{slidesPerView:1}
-            }} 
-            className='mt-4 swiper position-relative'
-          >
+            slidesPerView={4} spaceBetween={20}  
+            modules={[Navigation]} navigation={{ nextEl: '.product-swiper-next', prevEl: '.product-swiper-prev' }} breakpoints={{1399:{slidesPerView:4}, 1199:{slidesPerView:3}, 991:{slidesPerView:2}, 767:{slidesPerView:1.5}, 0:{slidesPerView:1}}} className='mt-4 swiper position-relative'>
               {Products.filter(product => product.id >= 5 && product.id <= 10).map(product => (
                 <SwiperSlide key={product.id}>
                   <div className="product-item text-center position-relative">
