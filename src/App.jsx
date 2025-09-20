@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Index from './components/Pages/Index';
+import ProductDetails from './components/Pages/ProductDetails';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Index />
+        <Route path='/' element={<Index />} />
+        <Route path='/product/:id' element={<ProductDetails />} />
       </Routes>
     </>
   )
