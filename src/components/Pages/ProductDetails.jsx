@@ -86,6 +86,39 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
+
+      <div className="container my-5">
+        <ul className="nav nav-tabs border-0 justify-content-center mb-4" id='productTab' role='tablist'>
+          <li className="nav-item" role='presentation'>
+            <button className='nav-link tab active border-0 fw-bold fs-4 text-capitalize' id='description-tab' data-bs-toggle="tab" data-bs-target="#description" type="button">
+              Description
+            </button>
+          </li>
+          <li className="nav-item" role='presentation'>
+            <button className='nav-link tab border-0 text-muted fs-4 text-capitalize' id='shipping-tab' data-bs-toggle="tab" data-bs-target="#shipping" type="button">
+              Shipping and Return
+            </button>
+          </li>
+        </ul>
+
+        <div className="tab-content" id="productTabContent">
+          <div className="tab-pane fade show active" id='description' role='tabpanel'>
+            <p><strong>For Normal, oily, Comnination skin types</strong></p>
+            <p>Complexion-perfecting natural foundation enriched with antioxidant-packed superfruits, natural vitamin.</p>
+            <h5 className='mt-4'>Benefits</h5>
+            <ul className="Benefits-list p-0">
+              <li className="position-relative">Buildable medium-to-full coverage.</li>
+              <li className="position-relative">Weightless, airy feel-no caking!</li>
+              <li className="position-relative">Long-wearing.</li>
+              <li className="position-relative">Evens skin tone.</li>
+              <li className="position-relative">Available in 07 shades (all exclusive to Makeaholic!)</li>
+            </ul>
+          </div>
+          <div className="tab-pane fade" id='shipping' role='tabpanel'>
+            <p> We typically process and ship orders within 1 week, with shipping costs calculated at checked. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis facilis nam unde hic perspiciatis tempora saepe, laboriosam fugit exercitationem totam aliquam molestiae aut. Molestiae ut sunt eius, at animi impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eius accusamus quasi, quae autem ullam ipsam, unde magnam quisquam fuga id? Commodi deleniti exercitationem velit! Illo cumque minus ex possimus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime iusto cupiditate autem dolores similique aperiam laborum. Debitis ab laboriosam officia et magnam. Voluptatum deleniti cupiditate sequi doloremque incidunt accusantium?</p>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -363,3 +363,8 @@ html, body {
     border: 1px solid transparent;
     color: var(--white-color);
 }
+
+.btn-count {
+    background-color: transparent;
+    
+}
