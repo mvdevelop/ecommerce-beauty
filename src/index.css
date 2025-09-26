@@ -366,5 +366,57 @@ html, body {
 
 .btn-count {
     background-color: transparent;
-    
+    border: none;
+    font-size: 1.5rem;
+}
+
+.nav-tabs .tab {
+    color: #6c757d;
+}
+
+.tab:after {
+    display: none !important;
+}
+
+.tab:before {
+    display: none !important;
+}
+
+.Benefits-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.Benefits-list li:before {
+    content: '';
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    width: 60px;
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+}
+
+/* Product Details MQ Section */
+@media (max-width: 767px) {
+    .thumbnail-images {
+        flex-direction: row !important;
+    }
+    .img-thumbnail {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        min-height: 150px;
+        min-width: 150px;
+        width: 150px;
+        height: 150px;
+    }
 }

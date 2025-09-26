@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../../index.css';
 
@@ -10,9 +10,44 @@ import 'swiper/css/navigation';
 
 // Data
 import Products from '../../Product.json';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Index() {
+
+  const [ filterSortOption, setFilterSortOption ] = useState('all');
+
+  const navigate = useNavigate();
+
+  const addToWishlist = (product) => {
+    const existing = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if(!existing.some(p => p.id === product.id)) {
+      const updated = [...existing, product];
+      localStorage.setItem('wishlist', JSON.stringify(updated));
+      window.dispatchEvent(new Event('wishlistUpdated'));
+      toast.success(`${product.ProductName} added to your wishlist.`);
+    } else {
+     toast.info(`${product.ProductName} is already in your wishlist.`); 
+    }
+  }
+
+  const addToCart = (product) => {
+    const existing = JSON.parse(localStorage.getItem('cart')) || [];
+    const alreadyInCart = existing.find(p => p.id === product.id);
+
+    if(!alreadyInCart) {
+      const updatedProduct = {...product, quantity: 1};
+      const updatedCart = [...existing, updatedProduct];
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      window.dispatchEvent(new Event('cartUpdated'));
+      toast.success(`${product.ProductName} added to your Cart!`);
+    } else {
+     toast.info(`${product.ProductName} is already in your Cart!`); 
+    }
+  }
+
   return (
     <>
       {/* Hero */}
@@ -87,10 +122,10 @@ export default function Index() {
                       <img src={product.image} className='img-fluid' alt="" />
                       <img src={product.secondImage} className='img-fluid' alt="" />
                       <div className='product-icons gap-3'>
-                        <div className='product-icon' title='Add to Wishlist'>
+                        <div className='product-icon' title='Add to Wishlist' onClick={() => addToWishlist(product)}>
                           <i className="bi bi-heart fs-5"></i>
                         </div>
-                        <div className='product-icon' title='Add to Cart'>
+                        <div className='product-icon' title='Add to Cart' onClick={() => addToCart(product)}>
                           <i className="bi bi-cart3 fs-5"></i>
                         </div>
                       </div>

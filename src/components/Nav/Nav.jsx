@@ -1,12 +1,31 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Nav() {
+
+  const [ cartCount, setCartCount ] = useState();
+  const [ wishlistCount, setWishlistCount ] = useState();
+
+  const updateCounts = () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    const totalCartItems = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
+    setCartCount(totalCartItems);
+    setWishlistCount(wishlist.length);
+  };
+  
+  useEffect(() => {
+    updateCounts();
+
+    //const handle
+  })
+
   return (
     <>
       {/* Navbar */}
-      <div className='Nav w-100 fixed-top bg-white shadow-sm'>
+      <div className='nav w-100 fixed-top bg-white shadow-sm'>
         <nav className="navbar navbar-expand-lg py-3 justify-content-between align-items-center w-100 nav-wrapper">
           {/* Toggle Button */}
           <button 
