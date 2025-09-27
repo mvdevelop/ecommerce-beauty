@@ -19,8 +19,25 @@ export default function Nav() {
   useEffect(() => {
     updateCounts();
 
-    //const handle
-  })
+    const handleCartUpdate = () => updateCounts();
+    const handleWishlistUpdate = () => updateCounts();
+    
+    window.addEventListener('cartUpdated', handleCartUpdate);
+    window.addEventListener('wishlistUpdated', handleWishlistUpdate);
+
+    const onStorageChange = (e) => {
+      if (e.key === 'cart' || e.key === 'wishlist') {
+        updateCounts();
+      }
+    };
+    window.addEventListener('storage', onStorageChange);
+
+    return () => {
+      window.removeEventListener('cartUpdated', handleCartUpdate);
+      window.removeEventListener('wishlistUpdated', handleWishlistUpdate);
+      window.removeEventListener('storage', onStorageChange);
+    };
+  }, []);
 
   return (
     <>
