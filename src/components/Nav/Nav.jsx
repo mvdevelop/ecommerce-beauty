@@ -129,13 +129,13 @@ export default function Nav() {
                 </a>
               </li>
               <li className='nav-item position-relative'>
-                <a href="#">
+                <a href="/wishlist">
                   <i className='bi bi-heart fs-5 text-dark'></i>
                   <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
                 </a>
               </li>
               <li className='nav-item position-relative'>
-                <a href="#">
+                <a href="/cart">
                   <i className='bi bi-bag fs-5 text-dark'></i>
                   <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
                 </a>
