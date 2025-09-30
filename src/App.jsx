@@ -8,6 +8,7 @@ import Nav from './components/Nav/Nav';
 import Index from './components/Pages/Index';
 import ProductDetails from './components/Pages/ProductDetails';
 import Wishlist from './components/Pages/Wishlist';
+import Cart from './components/Pages/Cart';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Index />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/wishlist' element={<Wishlist />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
     </>
   )

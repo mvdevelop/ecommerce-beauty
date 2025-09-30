@@ -80,6 +80,23 @@ export default function Wishlist() {
                 <div className="card h-100 shadow-sm border-0">
                   <div className="position-relative overflow-hidden" style={{ height: '200px', backgroundColor: '#f8f9fa' }}>
                     <img src={product.image} className='card-img-top h-100 object-fit-cover' alt="" />
+                    {product.tag && (
+                      <span className={`badge position-absolute top-0 end-0 m-2 ${product.tag === 'New' ? 'bg-danger' : 'bg-success'}`}>
+                        {product.tag}
+                      </span>
+                    )}
+                  </div>
+                  <div className="card-body d-flex flex-column text-center">
+                    <p className="card-text fs-5 fw-semibold text-dark">{product.price}</p>
+                    <h5 className="card-title">{product.ProductName}</h5>
+                    <div className="mt-auto d-flex justify-content-between gap-2">
+                      <button className='btn w-100' onClick={() => addToCart(product)}>
+                        <i className="ri-shopping-cart-2-line me-1"> Add To Cart</i>
+                      </button>
+                      <button className='btn w-100' onClick={() => removeFromWishlist(product.id)}>
+                        <i className="ri-shopping-cart-2-line me-1"> Remove</i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,6 +104,8 @@ export default function Wishlist() {
           </div>
         )}
       </div>
+
+      <ToastContainer />
     </>
   )
 }
