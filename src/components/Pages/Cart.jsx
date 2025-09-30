@@ -38,9 +38,31 @@ export default function Cart() {
     toast.error('Item removed from cart!');
   };
 
-  const totalPrice = cartItems.
+  const totalPrice = cartItems.reduce((acc, item) => {
+    const price = parseFloat(item.price.replace('$', ''));
+    return acc + (price * item.quantity);
+  }, 0);
 
   return (
-    <div>Cart</div>
+    <>
+      <ol className="section-banner py-3 position-relative">
+        <li className='position-relative'>
+          <Link to='/'>Home</Link>
+        </li>
+        <li className='position-relative active'>
+          <a href="#" className='ps-5'>Cart</a>
+        </li>
+      </ol>
+
+      <div className="container my-5">
+        <div className="text-center mb-4 fw-bold">🛒 Your Cart</div>
+        {cartItems.length === 0 ? (
+          <div className="text-center">
+            <p className='lead'>Your cart is empty!</p>
+            <Link to='/shop' className='btn mt-3'>back to Shop</Link>
+          </div>
+        )}
+      </div>
+    </>
   )
 }
