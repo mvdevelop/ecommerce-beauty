@@ -80,13 +80,16 @@ export default function Cart() {
                         <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'decrease')}>-</button>
                         <span>{item.quantity}</span>
                         <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'increase')}>+</button>
-                        <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'increase')}>Remove</button>
+                        <button className='btn btn-sm' onClick={() => removeItem(item.id)}>Remove</button>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+            <div className="col-lg-4">
+              <div className="card border-0 shadow-sm"></div>
+            </div> 
           </div>
         )}
       </div>
