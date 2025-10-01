@@ -61,6 +61,33 @@ export default function Cart() {
             <p className='lead'>Your cart is empty!</p>
             <Link to='/shop' className='btn mt-3'>back to Shop</Link>
           </div>
+        ) : (
+          <div className="row g-4">
+            <div className="col-lg-8">
+              {cartItems.map(item => (
+                <div key={item.id} className="card shadow-sm border-0 rounded-4 mb-3 p-3">
+                  <div className="row align-items-center">
+                    <div className="col-3">
+                      <img src={item.image} className='img-fluid rounded-3' alt="" />
+                    </div>
+                    <div className="col-9 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                      <div className="text-start w-100">
+                        <h5 className="mb-2">{item.ProductName}</h5>
+                        <p className='text-muted mb-1'>Price {item.price}</p>
+                        <p className='text-muted mb-0'>Total ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</p>
+                      </div>
+                      <div className="d-flex align-items-center gap-3 mt-3 mt-md-0">
+                        <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'decrease')}>-</button>
+                        <span>{item.quantity}</span>
+                        <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'increase')}>+</button>
+                        <button className='btn btn-sm' onClick={() => updateQuantity(item.id, 'increase')}>Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </>
