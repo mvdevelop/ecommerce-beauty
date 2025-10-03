@@ -17,6 +17,7 @@ export default function Cart() {
 
   const updateQuantity = (id, type) => {
     const updated = cartItems.map(item => {
+      // eslint-disable-next-line no-undef
       if (NavItem.id === id) {
         if (type === 'increase') {
           return { ...item, quantity: item.quantity + 1 };
@@ -88,10 +89,34 @@ export default function Cart() {
               ))}
             </div>
             <div className="col-lg-4">
-              <div className="card border-0 shadow-sm"></div>
+              <div className="card border-0 shadow-sm rounded-4 p-4">
+                <h4 className='fw-bold'>Cart Summary</h4>
+                <hr />
+                <div className="d-flex justify-content-between mb-2">
+                  <span>Total Items</span>
+                  <span>{cartItems.length}</span>
+                </div>
+                <div className="d-flex justify-content-between mb-2">
+                  <span>Total Price</span>
+                  <span className='fw-bold'>${totalPrice.toFixed(2)}</span>
+                </div>
+                <Link to='/checkout' className='btn w-100'>Proceed to CheckOut</Link>
+              </div>
             </div> 
           </div>
         )}
+        <ToastContainer 
+          position='top-right'
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       </div>
     </>
   )
