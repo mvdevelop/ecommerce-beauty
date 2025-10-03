@@ -17,8 +17,7 @@ export default function Cart() {
 
   const updateQuantity = (id, type) => {
     const updated = cartItems.map(item => {
-      // eslint-disable-next-line no-undef
-      if (NavItem.id === id) {
+      if (item.id === id) {
         if (type === 'increase') {
           return { ...item, quantity: item.quantity + 1 };
         } else if (type === 'decrease' && item.quantity > 1) {
