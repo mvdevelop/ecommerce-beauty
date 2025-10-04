@@ -86,7 +86,20 @@ export default function Checkout() {
                 </div>
               )}
 
-              
+              {deliveryOption === 'pickup' && (
+                <div className='container my-4'>
+                  <div className="d-flex justify-content-between align-items-center mb-2">
+                    <h6 className='fw-semibold mb-0'>Store Location</h6>
+                    <a href="#" className='text-decoration-none small'>
+                      Change Location
+                    </a>
+                  </div>
+
+                  <div className='alert alert-danger d-flex flex-column rounded-3' role='alert' 
+                    style={{ backgroundColor: '#fef6f6', color: '#7b1c1c', border: '1px solid rgba(145, 137, 137, 0.9' }}
+                  ></div>
+                </div>
+              )}
             </div>
           </div>
         </div>
