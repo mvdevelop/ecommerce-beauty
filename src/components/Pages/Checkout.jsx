@@ -124,6 +124,29 @@ export default function Checkout() {
                 <input type="text" className='form-control' placeholder='Postal Code (optional)' />
               </div>
             </div>
+            <div className="form-check mb-4">
+              <input type="checkbox" className='form-control-input' id='saveInfo' />
+              <label htmlFor="saveInfo" className='form-check-label'>Save this information for next time</label>
+            </div>
+
+            <h6>Shipping method</h6>
+
+            <div className='rounded p-3 d-flex justify-content-between align-items-center' style={{ border: '1px solid rgba(145, 137, 137, 0.59)' }}>
+              <span>Standard</span>
+              <span className='text-success'>FREE</span>
+            </div>
+
+            <div className='container my-5'>
+              <h4 className='fw-semibold'>Payment</h4>
+              <p className='text-muted mb-3'>All transactions are secure and encrypted.</p>
+
+              <div className='border rounded'>
+                <div className='bg-light border-bottom d-flex justify-content-between align-items-center p-3'>
+                  <span className=''>Credit Card</span>
+                  <div className=''></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
