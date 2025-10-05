@@ -96,10 +96,33 @@ export default function Checkout() {
                   </div>
 
                   <div className='alert alert-danger d-flex flex-column rounded-3' role='alert' 
-                    style={{ backgroundColor: '#fef6f6', color: '#7b1c1c', border: '1px solid rgba(145, 137, 137, 0.9' }}
-                  ></div>
+                    style={{ backgroundColor: '#fef6f6', color: '#7b1c1c', border: '1px solid rgba(145, 137, 137, 0.59)' }}>
+                    <div className='d-flex align-items-center mb-1'>
+                      <i className='bi bi-exclamation-circle-fill me-2'></i>
+                      <strong>No Stores available with your items!</strong>
+                    </div>
+                    <div>
+                      <a href="#" className='text-decoration-underline' 
+                      style={{ color: '#7b1c1c' }}>Ship to address</a> {' '}
+                    </div>
+                  </div>
                 </div>
               )}
+            </div>
+
+            <div className='mb-3'>
+              <input type="text" className='form-control' placeholder='Address' />
+            </div>
+            <div className='mb-3'>
+              <input type="text" className='form-control' placeholder='Apartment, suite, etc, (optional)' />
+            </div>
+            <div className='row mb-3'>
+              <div className='col'>
+                <input type="text" className='form-control' placeholder='City' />
+              </div>
+              <div className='col'>
+                <input type="text" className='form-control' placeholder='Postal Code (optional)' />
+              </div>
             </div>
           </div>
         </div>
