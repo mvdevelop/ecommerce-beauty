@@ -190,11 +190,41 @@ export default function Checkout() {
                 ) : (
                   cartItems.map(item => (
                     <div key={item.id} className='d-flex align-items-center mb-3 border-bottom pb-2'>
-                      <img src={item.image} className='rounded' width='60' height='60' alt="" />
+                      <img src={item.image} className='rounded' width='60' height='60' style={{ objectFit: 'cover', marginRight: '10px' }} alt="" />
+                      <div className='flex-grow-1'>
+                        <h6 className='mb-1'>{item.ProductName}</h6>
+                        <small className='text-muted'>Qty : {item.quantity}</small>
+                      </div>
+                      <div className="fw-semibold">${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</div>
                     </div>
                   ))
                 )}
               </div>
+              <hr />
+              <div className='d-flex justify-content-between small mb-1'>
+                <span>Subtotal</span>
+                {/* <span>${totalPrice.toFixed(2)}</span> */}
+                <span>${totalPrice}</span>
+              </div>
+              <div className='d-flex justify-content-between small mb-1'>
+                <span>Shipping</span>
+                <span>Enter Address</span>
+              </div>
+              <div className='d-flex justify-content-between small mb-1'>
+                <span>Estimated Tax</span>
+                <span>${estimatedTax}</span>
+              </div>
+              <div className='d-flex justify-content-between small mb-1'>
+                <span>Total</span>
+                <span>${(totalPrice + parseFloat(estimatedTax)).toFixed(2)}</span>
+              </div>
+              <button className='btn w-100 mt-3' onClick={handlePlaceOrder}>
+                <i className='ri-secure-payment-line me-2'></i> Place Order
+              </button>
+
+              <Link to='/cart' className='btn mt-2 text-decoration-none'>
+                <i className='ri-arrow-left-line me-1'></i> Back To Cart
+              </Link>  
           </div>
         </div>
       </div>
