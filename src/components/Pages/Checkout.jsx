@@ -131,7 +131,7 @@ export default function Checkout() {
 
             <h6>Shipping method</h6>
 
-            <div className='rounded p-3 d-flex justify-content-between align-items-center' style={{ border: '1px solid rgba(145, 137, 137, 0.59)' }}>
+            <div className='rounded p-3 d-flex justify-content-between align-items-center' style={{ border: '1px solid darkblue', backgroundColor: '#f0f5ff' }}>
               <span>Standard</span>
               <span className='text-success'>FREE</span>
             </div>
@@ -142,11 +142,59 @@ export default function Checkout() {
 
               <div className='border rounded'>
                 <div className='bg-light border-bottom d-flex justify-content-between align-items-center p-3'>
-                  <span className=''>Credit Card</span>
-                  <div className=''></div>
+                  <span className='fw-semibold'>Credit Card</span>
+                  <div className='bg-warning text-white rounded px-2 py-1 fw-bold' style={{ fontSize: '0.9rem' }}>B</div>
                 </div>
+                
+                <div className='p-3 bg-light'>
+                  <div className='mb-3'>
+                    <input type="text" className='form-control' placeholder='Card Number' />
+                  </div>
+
+                  <div className='row'>
+                    <div className='col-md-6 mb-3'>
+                      <input type="text" className='form-control' placeholder='Expiration date (MM/YY)' />
+                    </div>
+                    <div className='col-md-6 mb-3'>
+                      <input type="text" className='form-control' placeholder='Security Code' />
+                    </div>
+                  </div>
+
+                  <div className='mb-3'>
+                    <input type="text" className='form-control' placeholder='Name on Card' />
+                  </div>
+
+                  <div className='form-check mb-3'>
+                    <input className='form-check-input' type="checkbox" id='billingCheck' checked />
+                    <label className='form-check-label' for='billingCheck'>
+                      Use shipping address as billing address.
+                    </label>
+                  </div>
+                </div> 
+              </div>
+
+              <button className='btn w-100 mt-4 py-2 fw-semibold'>Pay now</button>
+
+              <div className='mt-5 border-top pt-3'>
+                <a href="#" className='text-decoration-none small text-decoration-underline'>Privacy Policy</a>
               </div>
             </div>
+          </div>
+          <div className='col-lg-5'>
+              <div className='card border-0 shadow-sm rounded-4 p-4'>
+                <h5 className='fw-bold mb-3'>
+                  <i className='ri-shopping-cart-2-line me-2 text-info'></i> Order Summary
+                </h5>
+                {cartItems.length === 0 ? (
+                  <p className="text-muted">Your cart is Empty!</p>
+                ) : (
+                  cartItems.map(item => (
+                    <div key={item.id} className='d-flex align-items-center mb-3 border-bottom pb-2'>
+                      <img src={item.image} className='rounded' width='60' height='60' alt="" />
+                    </div>
+                  ))
+                )}
+              </div>
           </div>
         </div>
       </div>
