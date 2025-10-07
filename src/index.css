@@ -420,3 +420,16 @@ html, body {
         height: 150px;
     }
 }
+
+/* Checkout */
+
+.btn-form label {
+    height: 100%;
+    border: 2px solid #6c757d !important;
+    background-color: transparent !important;
+}
+
+.pickup-btn, .ship-btn {
+    color: var(--white-color);
+}
+

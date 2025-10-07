@@ -12,6 +12,9 @@ import 'swiper/css/navigation';
 import Products from '../../Product.json';
 import { Link, useNavigate } from 'react-router-dom';
 
+import subBanner01 from '../../assets/banner-1.webp';
+import subBanner02 from '../../assets/banner-2.webp';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -143,6 +146,17 @@ export default function Index() {
                 </SwiperSlide>
               ))}
           </Swiper>
+        </div>
+      </div>
+
+      {/* Banner */}
+      <div className='banners py-5'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-6 banner-card overflow-hidden position-relative'>
+              <img src={subBanner01} alt="" className='img-fluid rounded banner-img' />
+            </div>
+          </div>
         </div>
       </div>
 

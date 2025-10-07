@@ -29,12 +29,12 @@ export default function Checkout() {
 
   return (
     <>
-      <div className='container my-5'>
-        <div className='row g-4'>
+      <div className='container my-5 pt-1'>
+        <div className='row g-4 mt-5'>
           <div className="col-lg-7">
             <h5>Contact</h5>
             <div className="mb-3">
-              <input type="text" className='form-control' placeholder='Email or mobile phone number' />
+              <input type="email" className='form-control' placeholder='Email or mobile phone number' />
             </div>
             <div className="form-check mb-4">
               <input type="checkbox" className='form-check-input' id='newsCheck' />
@@ -223,11 +223,13 @@ export default function Checkout() {
               </button>
 
               <Link to='/cart' className='btn mt-2 text-decoration-none'>
-                <i className='ri-arrow-left-line me-1'></i> Back To Cart
+                <i className='ri-arrow-left-line me-1'></i> Back To Cart!
               </Link>  
           </div>
         </div>
       </div>
+
+      <ToastContainer />
     </>
   )
 }
