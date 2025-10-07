@@ -433,3 +433,18 @@ html, body {
     color: var(--white-color);
 }
 
+/* Banner Section */
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: var(--transition-slow);
+}
+
+.banner-content {
+    width: 90%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -155,6 +155,21 @@ export default function Index() {
           <div className='row'>
             <div className='col-lg-6 banner-card overflow-hidden position-relative'>
               <img src={subBanner01} alt="" className='img-fluid rounded banner-img' />
+              <div className='banner-content position-absolute'>
+                <h3>NEW COLLECTION</h3>
+                <h1>Intensive Glow C+ <br /> Serum
+                <br /></h1>
+                <button className='btn banner-btn mt-2'>EXPLORE MORE</button>
+              </div>
+            </div>
+
+            <div className='col-lg-6 banner-card overflow-hidden position-relative banner-mt'>
+              <img src={subBanner02} alt="" className='img-fluid rounded banner-img' />
+              <div className='banner-content banner-content2 position-absolute'>
+                <h1>25% off Everything</h1>
+                <p>Makeup with extended range in <br /> colors for every human.</p>
+                <button className='btn banner-btn mt-2'>SHOP NOW</button>
+              </div>
             </div>
           </div>
         </div>
