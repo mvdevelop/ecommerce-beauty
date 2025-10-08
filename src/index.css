@@ -448,3 +448,30 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.banner-content h3 {
+    color: var(--black-color);
+    font-size: 1.3rem;
+}
+
+.banner-content h1 {
+    color: var(--black-color);
+    font-size: 2.2rem;
+}
+
+.banner-btn {
+    border-radius: 2px;
+    width: 200px;
+    height: 50px;
+}
+
+.banner-content2 p {
+    font-size: 1.2rem !important;
+    font-weight: 500;
+}
+
+@media (max-width: 991px) {
+    .banner-mt {
+        margin-top: 30px;
+    }
+}

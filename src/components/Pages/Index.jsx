@@ -15,6 +15,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import subBanner01 from '../../assets/banner-1.webp';
 import subBanner02 from '../../assets/banner-2.webp';
 
+import serviceImg01 from '../../assets/service-icon-1.svg';
+import serviceImg02 from '../../assets/service-icon-2.svg';
+import serviceImg03 from '../../assets/service-icon-3.svg';
+import serviceImg04 from '../../assets/service-icon-4.svg';
+
+import brand01 from '../../assets/brand-1.png';
+import brand02 from '../../assets/brand-2.png';
+import brand03 from '../../assets/brand-3.png';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -174,6 +183,35 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      {/* Services */}
+      <div className='container py-5 my-5'>
+        <div className='row text-center'>
+          <div className='col-lg-3 col-sm-6 mb-4'>
+            <img src={serviceImg01} alt="" className='img-fluid' />
+            <h4 className='mt-3 mb-1'>Free Shipping</h4>
+            <p className='text-muted fs-6 fw-semibold'>Free Shipping for orders over $130.</p>
+          </div>
+          <div className='col-lg-3 col-sm-6 mb-4'>
+            <img src={serviceImg02} alt="" className='img-fluid' />
+            <h4 className='mt-3 mb-1'>Returns</h4>
+            <p className='text-muted fs-6 fw-semibold'>Within 30 days for an exchange.</p>
+          </div>
+          <div className='col-lg-3 col-sm-6 mb-4'>
+            <img src={serviceImg03} alt="" className='img-fluid' />
+            <h4 className='mt-3 mb-1'>Online Support</h4>
+            <p className='text-muted fs-6 fw-semibold'>24 hours a day, 7 days a week.</p>
+          </div>
+          <div className='col-lg-3 col-sm-6 mb-4'>
+            <img src={serviceImg04} alt="" className='img-fluid' />
+            <h4 className='mt-3 mb-1'>Flexible Payment</h4>
+            <p className='text-muted fs-6 fw-semibold'>Pay with Multiple Credit Cards.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Seen in */}
+
 
       <ToastContainer 
         position="top-right"
