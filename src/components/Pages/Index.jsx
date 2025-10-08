@@ -24,6 +24,9 @@ import brand01 from '../../assets/brand-1.png';
 import brand02 from '../../assets/brand-2.png';
 import brand03 from '../../assets/brand-3.png';
 
+import femalebanner01 from '../../assets/banner-female.webp';
+import femalebanner02 from '../../assets/banner-female-2.webp';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -235,9 +238,57 @@ export default function Index() {
       <div className='favourite-beauty py-5 my-5'>
         <div className='container'>
           <div className='row'>
-            <div className='section-title mb-5 favorite-beauty-title text-center'>
+            <div className='section-title mb-5 favourite-beauty-title text-center'>
               <h2 className='fw-semibold fs-1'>Customer favorite beauty essentials</h2>
               <p>Made using clean, non-toxic ingredients, our products are designed for everyone.</p>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-lg-5'>
+              <div className='favourite-beauty-banner mb-lg-0 mb-5 position-relative'>
+                <img src={femalebanner01} className='img-fluid' alt="" />
+                <div className='favourite-beauty-banner-title'>
+                  <h3 className='fs-2'>Empower Yourself</h3>
+                  <p className='fs-6'>Get the skin you want to feel.</p>
+                  <button className='btn btn-default'>Explore More</button>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-7'>
+              <div className='row'>
+                {Products
+                  .filter(product => product.id >= 10 && product.id <= 15)
+                  .map(product => (
+                    <div className='col-md-4 mb-0'>
+                      <div key={product.id}>
+                        <div className="product-item mb-5 text-center position-relative">
+                          <div className="product-image w-100 position-relative overflow-hidden">
+                            <img src={product.image} className='img-fluid' alt="product" />
+                            <img src={product.secondImage} className='img-fluid' alt="product" />
+                            <div className='product-icons gap-3'>
+                              <div className='product-icon' title='Add to Wishlist' onClick={() => addToWishlist(product)}>
+                                <i className="bi bi-heart fs-5"></i>
+                              </div>
+                              <div className='product-icon' title='Add to Cart' onClick={() => addToCart(product)}>
+                                <i className="bi bi-cart3 fs-5"></i>
+                              </div>
+                            </div>
+                            <span className={`tag badge text-white ${product.tag === 'New' ? 'bg-black' : 'bg-success'}`}>
+                              {product.tag}
+                            </span>
+                          </div>
+                          <Link to={`/product/${product.id}`} className='text-decoration-none text-black'>
+                            <div className="product-content pt-3">
+                              <span className='price'>{product.price}</span>
+                              <h3 className="title pt-1">{product.ProductName}</h3>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

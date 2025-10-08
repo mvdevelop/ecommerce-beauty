@@ -494,3 +494,25 @@ html, body {
         font-size: 1.5rem !important;
     }
 }
+
+.section-title p {
+    font-size: 1.2rem;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+}
+
+/* Favourite Beauty Banner */
+
+.favourite-beauty-banner {
+    overflow: hidden;
+    position: relative;
+    gap: 810px;
+}
+
+.favourite-beauty-banner img {
+    transition: var(--transition-slow);
+}
+
+.favourite-beauty-banner:hover img {
+    transform: scale(1.1);
+}
