@@ -475,3 +475,22 @@ html, body {
         margin-top: 30px;
     }
 }
+
+/* Seen in */
+
+.seen-in {
+    background-color: var(--section-color);
+    padding: 6% 0;
+}
+
+@media (max-width: 991px) {
+    .seen-card p {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .seen-card p {
+        font-size: 1.5rem !important;
+    }
+}

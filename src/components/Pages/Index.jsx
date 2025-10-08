@@ -211,7 +211,37 @@ export default function Index() {
       </div>
 
       {/* Seen in */}
+      <div className='text-center my-5 seen-in'>
+        <div className='container'>
+          <h1 className='mb-5 fw-semibold'>As seen in</h1>
+          <div className="row pt-3 justify-content-center">
+            <div className='col-md-4 mb-4 seen-card'>
+              <img src={brand01} alt="" className='img-fluid' />
+              <p className='text-dark fs-5 mt-2 fw-semibold'>"Also the customer service is phenomenal. I would purchase again."</p>
+            </div>
+            <div className='col-md-4 mb-4 seen-card'>
+              <img src={brand02} alt="" className='img-fluid' />
+              <p className='text-dark fs-5 mt-2 fw-semibold'>"Great product line. Very attentive staff to deal with."</p>
+            </div>
+            <div className='col-md-4 mb-4 seen-card'>
+              <img src={brand03} alt="" className='img-fluid' />
+              <p className='text-dark fs-5 mt-2 fw-semibold'>"Are you looking to your beauty at an affordable price? Look no further."</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/* Favourite Beauty */}
+      <div className='favourite-beauty py-5 my-5'>
+        <div className='container'>
+          <div className='row'>
+            <div className='section-title mb-5 favorite-beauty-title text-center'>
+              <h2 className='fw-semibold fs-1'>Customer favorite beauty essentials</h2>
+              <p>Made using clean, non-toxic ingredients, our products are designed for everyone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <ToastContainer 
         position="top-right"
