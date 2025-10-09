@@ -25,7 +25,9 @@ import brand02 from '../../assets/brand-2.png';
 import brand03 from '../../assets/brand-3.png';
 
 import femalebanner01 from '../../assets/banner-female.webp';
-import femalebanner02 from '../../assets/banner-female-2.webp';
+
+import discover01 from '../../assets/discover-1.webp';
+import discover02 from '../../assets/discover-2.webp'; 
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -292,6 +294,11 @@ export default function Index() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Discover */}
+      <div className=''>
+
       </div>
 
       <ToastContainer 
