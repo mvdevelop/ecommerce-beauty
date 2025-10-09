@@ -297,8 +297,22 @@ export default function Index() {
       </div>
 
       {/* Discover */}
-      <div className=''>
-
+      <div className='discover container py-5'>
+        <div className='section-title mb-5 favorite-beauty-title text-center'>
+          <h2 className='fw-semibold fs-1'>More to Discover</h2>
+          <p className='text-center'>Our bundles were designed to conveniently package <br /> your tanning essentials while saving you money.</p>
+        </div>
+        <div className='row g-5'>
+          <div className='col-md-6 discover-card text-center'>
+            <div className='discover-img section-image rounded'>
+              <img src={discover01} alt="Summer Collection" className='img-fluid rounded' />
+            </div>
+            <div className='discover-info mt-3'>
+              <div>Summer Collection</div>
+              <button className='btn mt-2'>Shop Now <i className="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <ToastContainer 
