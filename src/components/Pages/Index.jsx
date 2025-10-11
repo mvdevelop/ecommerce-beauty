@@ -309,7 +309,16 @@ export default function Index() {
             </div>
             <div className='discover-info mt-3'>
               <div>Summer Collection</div>
-              <button className='btn mt-2'>Shop Now <i className="bi bi-arrow-right"></i></button>
+              <button className='btn mt-2'>Shop Now <i className="bi bi-arrow-right ms-2"></i></button>
+            </div>
+          </div>
+          <div className='col-md-6 discover-card text-center'>
+            <div className='discover-img section-image rounded'>
+              <img src={discover02} alt="From Our Blog" className='img-fluid rounded' />
+            </div>
+            <div className='discover-info mt-3'>
+              <div>From Our Blog</div>
+              <button className='btn mt-2'>Read More <i className="bi bi-arrow-right ms-2"></i></button>
             </div>
           </div>
         </div>
