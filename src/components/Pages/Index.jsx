@@ -27,7 +27,14 @@ import brand03 from '../../assets/brand-3.png';
 import femalebanner01 from '../../assets/banner-female.webp';
 
 import discover01 from '../../assets/discover-1.webp';
-import discover02 from '../../assets/discover-2.webp'; 
+import discover02 from '../../assets/discover-2.webp';
+
+import socialImage01 from '../../assets/social-image-1.jpg';
+import socialImage02 from '../../assets/social-image-2.jpg';
+import socialImage03 from '../../assets/social-image-3.jpg';
+import socialImage04 from '../../assets/social-image-4.jpg';
+import socialImage05 from '../../assets/social-image-5.jpg';
+//import socialImage06 from '../../assets/social-image-6.jpg'; 
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -319,6 +326,18 @@ export default function Index() {
             <div className='discover-info mt-3'>
               <div>From Our Blog</div>
               <button className='btn mt-2'>Read More <i className="bi bi-arrow-right ms-2"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Social Image */}
+      <div className="social-image-container py-5 px-5 mx-auto">
+        <div className='row g-4'>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage01} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
             </div>
           </div>
         </div>

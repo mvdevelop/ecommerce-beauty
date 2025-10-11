@@ -564,8 +564,16 @@ html, body {
     pointer-events: none;
 }
 
+.discover-card:hover .section-image::after {
+    animation: shine 0.8s ease forwards;
+}
+
 @keyframes shine {
     from {
         left: -100%;
+    }
+
+    to {
+        left: 100%;
     }
 }
