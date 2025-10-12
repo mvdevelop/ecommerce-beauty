@@ -33,8 +33,7 @@ import socialImage01 from '../../assets/social-image-1.jpg';
 import socialImage02 from '../../assets/social-image-2.jpg';
 import socialImage03 from '../../assets/social-image-3.jpg';
 import socialImage04 from '../../assets/social-image-4.jpg';
-import socialImage05 from '../../assets/social-image-5.jpg';
-//import socialImage06 from '../../assets/social-image-6.jpg'; 
+import socialImage05 from '../../assets/social-image-5.jpg'; 
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -334,6 +333,36 @@ export default function Index() {
       {/* Social Image */}
       <div className="social-image-container py-5 px-5 mx-auto">
         <div className='row g-4'>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage01} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
+            </div>
+          </div>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage02} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
+            </div>
+          </div>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage03} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
+            </div>
+          </div>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage04} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
+            </div>
+          </div>
+          <div className='col-lg-2 col-md-4'>
+            <div className='social-wrapper position-relative overflow-hidden'>
+              <img src={socialImage05} alt="social" className='img-fluid' />
+              <i className="bi bi-instagram"></i>  
+            </div>
+          </div>
           <div className='col-lg-2 col-md-4'>
             <div className='social-wrapper position-relative overflow-hidden'>
               <img src={socialImage01} alt="social" className='img-fluid' />

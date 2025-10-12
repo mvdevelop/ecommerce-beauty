@@ -577,3 +577,45 @@ html, body {
         left: 100%;
     }
 }
+
+/* Social Image */
+
+.social-wrapper {
+    position: relative;
+    cursor: pointer;   
+}
+
+.social-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.social-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: var(--white-color);
+    z-index: 1;
+    opacity: 0;
+    transition: var(--transition-regular);
+}
+
+.social-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    opacity: 0;
+    transition: var(--transition-regular);
+}
+
+.social-wrapper:hover i, .social-wrapper:hover::after {
+    opacity: 1;
+}
