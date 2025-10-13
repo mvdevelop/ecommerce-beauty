@@ -13,7 +13,64 @@ export default function Footer() {
                   <h3 className='mb-3'>Company</h3>
                   <p className='mb-0'>Find a location nearest</p>
                   <p className='mb-4'>you. See <strong>Our Stores</strong></p>
-                  <p className='mb-0'><strong>+391 (0)35 2568 4539</strong></p>
+                  <p className='mb-0'><strong>+391 (0) 35 2568 4539</strong></p>
+                  <p>blushify@mvdevelop.com</p>
+                </div>
+
+                <div className='col-md-4'>
+                  <h3 className='mb-3'>Useful Links</h3>
+                  <ul className='list-unstyled'>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- New Products</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Best Sellers</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Bundle & Save</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Online Gift Card</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className='col-md-4'>
+                  <h3 className='mb-3'>Information</h3>
+                  <ul className='list-unstyled'>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Start A Return</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Contact Us</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Shipping FAQ</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Terms & Conditions</a>
+                    </li>
+                    <li className='mb-2'>
+                      <a href="#" className='text-decoration-none'>- Privacy Policy</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-4'>
+              <h3 className='mb-4'>Good emails.</h3>
+              <p className='mb-5'>Enter your email below to be the first to know about new collections and product launches.</p>
+              <div className='subscribe-box d-flex'>
+                <input type="email" className='form-control' placeholder='Enter your email address' />
+                <button className='btn'>Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='footer-bottom mt-5'>
+            <div className='row align-items-start'>
+              <div className='col-lg-4'>
+                <div className='footer-icon-text d-flex gap-3 justify-content-center justify-content-lg-end'>
+                  <p className=''>© Blushify 2025 | Powered by Shopify</p>
                 </div>
               </div>
             </div>
