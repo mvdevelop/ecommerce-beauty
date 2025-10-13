@@ -70,7 +70,13 @@ export default function Footer() {
             <div className='row align-items-start'>
               <div className='col-lg-4'>
                 <div className='footer-icon-text d-flex gap-3 justify-content-center justify-content-lg-end'>
-                  <p className=''>© Blushify 2025 | Powered by Shopify</p>
+                  <p>© Blushify 2025 | Powered by Shopify</p>
+                  <div className='footer-icons d-flex gap-2'>
+                    <i className='ri-instagram-line'></i>
+                    <i className='ri-twitter-x-line'></i>
+                    <i className='ri-facebook-circle-fill'></i>
+                    <i className='ri-youtube-fill'></i>
+                  </div>
                 </div>
               </div>
             </div>
