@@ -657,4 +657,12 @@ html, body {
     font-size: 16px;
 }
 
+/* About Page */
 
+.about-glowing-section {
+    min-height: 80vh;
+    background-image: url('assets/bg-about.webp');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+}
