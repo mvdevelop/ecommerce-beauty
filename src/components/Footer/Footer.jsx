@@ -95,12 +95,12 @@ export default function Footer() {
               </div>
               <div className='col-lg-4'>
                 <div className='payment-img mt-4 mt-xl-0 d-flex gap-2 justify-content-center justify-content-lg-end'>
-                  <img src={payment01} alt="" />
-                  <img src={payment02} alt="" />
-                  <img src={payment03} alt="" />
-                  <img src={payment04} alt="" />
-                  <img src={payment05} alt="" />
-                  <img src={payment06} alt="" />
+                  <img src={payment01} alt="" className='img-fluid'/>
+                  <img src={payment02} alt="" className='img-fluid' />
+                  <img src={payment03} alt="" className='img-fluid' />
+                  <img src={payment04} alt="" className='img-fluid' />
+                  <img src={payment05} alt="" className='img-fluid' />
+                  <img src={payment06} alt="" className='img-fluid' />
                 </div>
               </div>
             </div>
