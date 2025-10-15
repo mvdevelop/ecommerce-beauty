@@ -1,11 +1,21 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import head from '../../assets/about-head-shape.webp';
 import about01 from '../../assets/banner-female-2.webp';
 import about02 from '../../assets/discover-1.webp';
+import client01 from '../../assets/brand-logo-1.png';
+import client02 from '../../assets/brand-logo-2.png';
+import client03 from '../../assets/brand-logo-3.png';
+import client04 from '../../assets/brand-logo-4.png';
+import client05 from '../../assets/brand-logo-5.png';
+import client06 from '../../assets/brand-logo-6.png';
 
-export default function About() {
+const About = () => {
+  const [ quote, setQuote ] = useState(
+    '" Quality products at great prices, delivering the perfect mix of affordability and excellence. Each item ensures great value for money."'
+  );
+
   return (
     <>
       {/* About Header */}
@@ -51,11 +61,19 @@ export default function About() {
         <div className='container'>
           <div className='row align-items-center flex-md-row-reverse'>
             <div className='col-md-6 mb-4 mb-md-0 about-img1'>
-              
+              <img src={about02} alt="Products" className='img-fluid rounded' />
+            </div>
+            <div className='col-md-6'>
+              <h4 className='fw-bold'>Our Mission</h4>
+              <p className='text-muted'>We believe in healthy, radiant skin for everyone. Our products are thoughtfully crafted with high-quality ingredients to nourish, protect, and enhance your natural glow-because confidence starts with great skin. Experience the perfect fusion of science and nature for skincare tha truly transforms.</p>
             </div>
           </div>
         </div>
       </section>
+
+
     </>
   )
 }
+
+export default About;
