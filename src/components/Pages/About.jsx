@@ -34,7 +34,26 @@ export default function About() {
 
         {/* Face Image and Description */}
         <div className='container mb-5'>
-          <div className='row'></div>
+          <div className='row align-items-center'>
+            <div className='col-md-6 mb-4 mb-md-0 about-img1'>
+              <img src={about01} alt="Face" className='img-fluid rounded' />
+            </div>
+            <div className='col-md-6'>
+              <h4 className='fw-bold'>Give your skin a healthy glow everyone</h4>
+              <p className='text-muted'>
+                At Glowing, we are passionate about creating skincare products that are not only effective but also safe and gentle on your skin. Our team of experts carefully selects each ingredient to ensure that our products deliver the best results without any harmful side effects.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Mission and Product Image */}
+        <div className='container'>
+          <div className='row align-items-center flex-md-row-reverse'>
+            <div className='col-md-6 mb-4 mb-md-0 about-img1'>
+              
+            </div>
+          </div>
         </div>
       </section>
     </>
