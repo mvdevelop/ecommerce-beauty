@@ -71,7 +71,24 @@ const About = () => {
         </div>
       </section>
 
+      {/* Interactive Client Logos Section */}
+      <section className='container-fluid bg-light'>
+        <div className='container py-5 text-center'>
+          <div className='mx-auto' style={{ maxWidth: '800px' }}>
+            <p className='fs-4 mb-4 fw-bold'>{quote}</p>
+          </div>
 
+          <div className='row justify-content-center align-items-center mt-5 gy-4'>
+            <div className='col-6 col-sm-4 col-md-2 d-flex justify-content-center brands-img' onClick={() => setQuote('" Quality products at great prices, delivering the perfect mix of affordability and excellence. Each item ensures great value for money."')} style={{ cursor: 'pointer' }}>
+              <img src={client01} alt="Goodness" className='img-fluid' style={{ maxHeight: '60px', objectFit: 'contain' }}/>
+            </div>
+
+            <div className='col-6 col-sm-4 col-md-2 d-flex justify-content-center brands-img' onClick={() => setQuote('" Great beauty service! The experience was truly amazing. and I feel more confident and radiant with my beauty after every visit."')} style={{ cursor: 'pointer' }}>
+              <img src={client02} alt="Grand Golden Gallery" className='img-fluid' style={{ maxHeight: '60px', objectFit: 'contain' }}/>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
