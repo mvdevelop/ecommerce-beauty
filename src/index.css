@@ -721,3 +721,72 @@ html, body {
         font-size: 0.95rem;
     }
 }
+
+.brands-img img {
+    opacity: 0.5;
+    transition: var(--transition-slow);
+}
+
+.brands-img img:hover {
+    opacity: 1;
+}
+
+/* Team Section */
+
+.team-section {
+    padding: 40px 20px;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.team-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.team-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image-wrapper {
+    position: relative;
+}
+
+.team-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.team-social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .team-social {
+    opacity: 1;
+}
