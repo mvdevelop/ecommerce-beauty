@@ -789,4 +789,41 @@ html, body {
 
 .team-member:hover .team-social {
     opacity: 1;
+    transform: translateY(0%);
 }
+
+.team-social a {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.team-social a:hover {
+    color: var(--black-color);
+}
+
+.team-name {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.team-role {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Shop Page */
+
+.sectopm-banner {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+
