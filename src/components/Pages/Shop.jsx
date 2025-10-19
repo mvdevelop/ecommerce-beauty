@@ -39,6 +39,33 @@ export default function Shop() {
 
   const displayedProducts = handleFilterSort();
 
+  const addToWishlist = (product) => {
+      const existing = JSON.parse(localStorage.getItem('wishlist')) || [];
+      if(!existing.some(p => p.id === product.id)) {
+        const updated = [...existing, product];
+        localStorage.setItem('wishlist', JSON.stringify(updated));
+        window.dispatchEvent(new Event('wishlistUpdated'));
+        toast.success(`${product.ProductName} added to your wishlist.`);
+      } else {
+       toast.info(`${product.ProductName} is already in your wishlist.`); 
+      }
+    }
+  
+    const addToCart = (product) => {
+      const existing = JSON.parse(localStorage.getItem('cart')) || [];
+      const alreadyInCart = existing.find(p => p.id === product.id);
+  
+      if(!alreadyInCart) {
+        const updatedProduct = {...product, quantity: 1};
+        const updatedCart = [...existing, updatedProduct];
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        window.dispatchEvent(new Event('cartUpdated'));
+        toast.success(`${product.ProductName} added to your Cart!`);
+      } else {
+       toast.info(`${product.ProductName} is already in your Cart!`); 
+      }
+    }
+
   return (
     <>
       <ol className="section-banner py-3 position-relative">
@@ -87,60 +114,56 @@ export default function Shop() {
           </div>
 
           <div className="row">
-            {productsData.filter(
-              (product) => product.id >= 10 && product.id <= 15
-            ).map((product) => (
-              <div className="col-md-4 mb-0">
-                <div key={product.id}>
-                  <div className="product-item mb-5 text-center position-relative">
-                    <div className="product-image w-100 position-relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        className="img-fluid"
-                        alt="product"
-                      />
-                      <img
-                        src={product.secondImage}
-                        className="img-fluid"
-                        alt="product"
-                      />
-                      <div className="product-icons gap-3">
-                        <div
-                          className="product-icon"
-                          title="Add to Wishlist"
-                          onClick={() => addToWishlist(product)}
-                        >
-                          <i className="bi bi-heart fs-5"></i>
+            {displayedProducts.map((product) => (
+                <div className="col-md-3 mb-4" key={product.id}>
+                  <div key={product.id}>
+                    <div className="product-item mb-5 text-center position-relative">
+                      <div className="product-image w-100 position-relative overflow-hidden">
+                        <img src={product.image} className="img-fluid" alt="product" />
+                        <img src={product.secondImage} className="img-fluid" alt="product" />
+                        <div className="product-icons gap-3">
+                          <div
+                            className="product-icon"
+                            title="Add to Wishlist"
+                            onClick={() => addToWishlist(product)}
+                          >
+                            <i className="bi bi-heart fs-5"></i>
+                          </div>
+                          <div
+                            className="product-icon"
+                            title="Add to Cart"
+                            onClick={() => addToCart(product)}
+                          >
+                            <i className="bi bi-cart3 fs-5"></i>
+                          </div>
                         </div>
-                        <div
-                          className="product-icon"
-                          title="Add to Cart"
-                          onClick={() => addToCart(product)}
+                        <span
+                          className={`tag badge text-white ${
+                            product.tag === "New" ? "bg-black" : "bg-success"
+                          }`}
                         >
-                          <i className="bi bi-cart3 fs-5"></i>
-                        </div>
+                          {product.tag}
+                        </span>
                       </div>
-                      <span
-                        className={`tag badge text-white ${
-                          product.tag === "New" ? "bg-black" : "bg-success"
-                        }`}
-                      >
-                        {product.tag}
-                      </span>
+                      <Link to={`/product/${product.id}`} className="text-decoration-none text-black">
+                        <div className="product-content pt-3">
+                          {product.oldPrice ? (
+                            <div className="price">
+                              <span className="text-muted text-decoration-line-through me-2">
+                                {product.oldPrice}
+                              </span>
+                              <span className="fw-bold text-muted">{product.price}</span>
+                            </div>
+                          ) : (
+                            <span className="price">{product.price}</span>
+                          )}
+                          <h3 className="title pt-1">{product.ProductName}</h3>
+                        </div>
+                      </Link>
                     </div>
-                    <Link
-                      to={`/product/${product.id}`}
-                      className="text-decoration-none text-black"
-                    >
-                      <div className="product-content pt-3">
-                        <span className="price">{product.price}</span>
-                        <h3 className="title pt-1">{product.ProductName}</h3>
-                      </div>
-                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
