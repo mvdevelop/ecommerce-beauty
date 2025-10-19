@@ -14,6 +14,7 @@ import Checkout from './components/Pages/Checkout';
 import About from './components/Pages/About';
 import Shop from './components/Pages/Shop';
 import Stores from './components/Pages/Stores';
+import Blog from './components/Pages/Blog';
 
 import Footer from './components/Footer/Footer';
 
@@ -30,7 +31,8 @@ function App() {
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/about' element={<About />} />
         <Route path='/shop' element={<Shop />} />
-        <Route path='/stores' element={<Stores />} />
+        <Route path='/store' element={<Stores />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
       <Footer />
     </>
