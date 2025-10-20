@@ -844,3 +844,41 @@ html, body {
 .section-banner li.active span {
     color: var(--black-color) !important;
 }
+
+/* Blog Page */
+
+.blog-image {
+    height: 450px;
+}
+
+.blog-image img {
+    height: 100% !important;
+    object-fit: cover;
+}
+
+.blog-content h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.blog-content ul li {
+    color: var(--text-color);
+}
+
+.blog-content ul li span.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    height: 100%;
+    background-color: var(--black-color);         
+}
+
+.blog-image img {
+    transition: var(--transition-slow);
+}
+
+.blog-image:hover img {
+    transform: scale(1);
+}
