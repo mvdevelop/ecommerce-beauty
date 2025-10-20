@@ -15,6 +15,7 @@ import About from './components/Pages/About';
 import Shop from './components/Pages/Shop';
 import Stores from './components/Pages/Stores';
 import Blog from './components/Pages/Blog';
+import Contact from './components/Pages/Contact';
 
 import Footer from './components/Footer/Footer';
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/store' element={<Stores />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </>

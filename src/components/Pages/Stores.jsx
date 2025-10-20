@@ -29,7 +29,7 @@ export default function Stores() {
 
         <div className='row align-items-center g-5'>
           <div className='col-lg-6 mb-4 mb-lg-0'>
-            <img src={store01} alt="store" className='img-fluid rounded' />
+            <img src={store01} alt="store" className='img-fluid' />
           </div>
 
           <div className='col-lg-6'>
@@ -124,7 +124,7 @@ export default function Stores() {
           </div>
 
           <div className='col-lg-6 mb-4 mb-lg-0'>
-            <img src={store02} alt="store" className='img-fluid rounded' />
+            <img src={store02} alt="store" className='img-fluid' />
           </div>
         </div>
       </div>
