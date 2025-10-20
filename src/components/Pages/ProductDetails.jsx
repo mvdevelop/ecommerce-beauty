@@ -11,6 +11,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function ProductDetails() {
   const { id } = useParams();
   const product = Products.find((p) => p.id == id);
@@ -28,6 +31,21 @@ export default function ProductDetails() {
   }, [product]);
 
   const colors = ['#000000', '#7b3f00', '#9bbec8'];
+
+  const addToCart = (product) => {
+      const existing = JSON.parse(localStorage.getItem('cart')) || [];
+      const alreadyInCart = existing.find(p => p.id === product.id);
+  
+      if(!alreadyInCart) {
+        const updatedProduct = {...product, quantity: 1};
+        const updatedCart = [...existing, updatedProduct];
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        window.dispatchEvent(new Event('cartUpdated'));
+        toast.success(`${product.ProductName} added to your Cart!`);
+      } else {
+       toast.info(`${product.ProductName} is already in your Cart!`); 
+      }
+    }
 
   return (
     <>
@@ -75,7 +93,7 @@ export default function ProductDetails() {
                 <input type="text" className='form-control text-center mx-2' value={quantity} readOnly />
                 <button className='btn-count border-0' onClick={() => setQuantity((q) => Math.max(1, q + 1))}> + </button>
               </div>
-              <button className='btn-custome w-100'>Add to Cart</button>
+              <button className='btn-custome w-100' onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
             <button className='btn-custome2 w-100 border-0'>Buy it now</button>
 
@@ -119,6 +137,18 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
+
+      <ToastContainer 
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        draggable
+      />
     </>
   )
 }

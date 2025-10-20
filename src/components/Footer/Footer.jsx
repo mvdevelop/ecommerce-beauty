@@ -66,7 +66,7 @@ export default function Footer() {
             <div className='col-lg-4'>
               <h3 className='mb-4'>Good emails.</h3>
               <p className='mb-5'>Enter your email below to be the first to know about new collections and product launches.</p>
-              <div className='subscribe-box d-flex'>
+              <div className='subscribe-box d-flex gap-1'>
                 <input type="email" className='form-control' placeholder='Enter your email address' />
                 <button className='btn'>Subscribe</button>
               </div>
