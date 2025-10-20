@@ -29,35 +29,35 @@
     "price": "$29.00"
     }, {
     "id": 5,
-    "image": "public/images/product-5-1.webp",
-    "secondImage": "public/images/product-5-2.jpg",
+    "image": "../public/images/product-5-1.webp",
+    "secondImage": "../public/images/product-5-2.jpg",
     "ProductName": "Hydrating Face Mist",
     "price": "$22.00",
     "tag": "New"
     }, {
     "id": 6,
-    "image": "public/images/product-6-1.webp",
-    "secondImage": "public/images/product-6-2.webp",
+    "image": "../public/images/product-6-1.webp",
+    "secondImage": "../public/images/product-6-2.webp",
     "ProductName": "Smoothing Body Lotion",
     "price": "$18.00"
     }, {
     "id": 7,
-    "image": "public/images/product-7-1.webp",
-    "secondImage": "public/images/product-7-2.webp",
+    "image": "../public/images/product-7-1.webp",
+    "secondImage": "../public/images/product-7-2.webp",
     "ProductName": "Exfoliating Scrub",
     "price": "$25.00",
     "oldPrice": "$30.00",
     "tag": "Sale"
     }, {
     "id": 8,
-    "image": "public/images/product-8-1.webp",
-    "secondImage": "public/images/product-8-2.webp",
+    "image": "../public/images/product-8-1.webp",
+    "secondImage": "../public/images/product-8-2.webp",
     "ProductName": "Calming Face Serum",
     "price": "$40.00"
     }, {
     "id": 9,
-    "image": "public/images/product-9-1.webp",
-    "secondImage": "public/images/product-9-2.webp",
+    "image": "../public/images/product-9-1.webp",
+    "secondImage": "../public/images/product-9-2.webp",
     "ProductName": "Brightening Vitamin C",
     "price": "$32.00",
     "tag": "New"
