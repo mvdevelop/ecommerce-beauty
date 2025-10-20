@@ -51,10 +51,10 @@ export default function ProductDetails() {
                 {images.map((img, idx) => (
                   <img  key={idx} src={img} alt={`Thumb ${idx}`} onClick={() => setImages(img)}
                   className={`img-thumbnail ${mainImage === img ? 'border-dark' : ''}`}
-                  style={{ width:60, height:80, objectFit:'cover', cursor:'pointer' }}/>
+                  style={{ width:60, height:80, objectFit:'cover' }}/>
                 ))}
               </div>
-              <img src={mainImage} className='img-fluid' alt="Main" />
+              <img src={mainImage} className='img-fluid w-75' alt="Main" />
             </div>
           </div>
 

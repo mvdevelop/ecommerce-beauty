@@ -4,7 +4,7 @@
         "id": 1,
         "name": "Tips & Procedure To Apply Luxury Beauty Cosmetic Cream",
         "title": "Natural Cleansers",
-        "image": "public/images/blog-1.webp",
+        "image": "/images/blog-1.webp",
         "author": "Blushify",
         "date": "Jan 10, 2025"
     },
@@ -12,7 +12,7 @@
         "id": 2,
         "name": "The Best Way To Select Good High-End Cosmetic Products",
         "title": "Cosmetics",
-        "image": "public/images/blog-2.webp",
+        "image": "/images/blog-2.webp",
         "author": "Blushify",
         "date": "Feb 12, 2025"
     },
@@ -20,7 +20,7 @@
         "id": 3,
         "name": "Lightweight Makeup to Enhance Your Natural Beauty",
         "title": "Make Up",
-        "image": "public/images/blog-3.webp",
+        "image": "/images/blog-3.webp",
         "author": "Blushify",
         "date": "Mar 15, 2025"
     },
@@ -28,7 +28,7 @@
         "id": 4,
         "name": "Herbal Ingredients And Their Role In Beauty Creams",
         "title": "Natural Cleansers",
-        "image": "public/images/blog-4.webp",
+        "image": "/images/blog-4.webp",
         "author": "Blushify",
         "date": "Apr 20, 2025"
     },
@@ -36,7 +36,7 @@
         "id": 5,
         "name": "All Essential Nutrients Your Skin Requires At Night",
         "title": "Natural Cleansers",
-        "image": "public/images/blog-5.webp",
+        "image": "/images/blog-5.webp",
         "author": "Blushify",
         "date": "May 21, 2025"
     },
@@ -44,7 +44,7 @@
         "id": 6,
         "name": "How to find the Beast Brow Shape For Your Face",
         "title": "Make Up",
-        "image": "public/images/blog-6.webp",
+        "image": "/images/blog-6.webp",
         "author": "Blushify",
         "date": "May 25, 2025"
     },
@@ -52,7 +52,7 @@
         "id": 7,
         "name": "Perfect Way To Find Your Lip Combo For Everyday Lip Makeup",
         "title": "Natural Cleansers",
-        "image": "public/images/blog-7.webp",
+        "image": "/images/blog-7.webp",
         "author": "Blushify",
         "date": "Jun 10, 2025"
     },
@@ -60,7 +60,7 @@
         "id": 8,
         "name": "Morning Beauty Routine: Our Main Rules",
         "title": "Organic",
-        "image": "public/images/blog-8.webp",
+        "image": "/images/blog-8.webp",
         "author": "Blushify",
         "date": "Jun 12, 2025"
     },
@@ -68,7 +68,7 @@
         "id": 9,
         "name": "Some Beauty Secrets From Our Editor In Chief",
         "title": "Make Up",
-        "image": "public/images/blog-9.webp",
+        "image": "/images/blog-9.webp",
         "author": "Blushify",
         "date": "Jul 02, 2025"
     },
@@ -76,7 +76,7 @@
         "id": 10,
         "name": "Easy Affordable Make Up Look",
         "title": "Cosmetics",
-        "image": "public/images/blog-10.webp",
+        "image": "/images/blog-10.webp",
         "author": "Blushify",
         "date": "Jul 08, 2025"
     },
@@ -84,7 +84,7 @@
         "id": 11,
         "name": "When The Eye Makes A Statement, The Lips Should",
         "title": "Natural Cleansers",
-        "image": "public/images/blog-11.webp",
+        "image": "/images/blog-11.webp",
         "author": "Blushify",
         "date": "Aug 21, 2025"
     },
@@ -92,7 +92,7 @@
         "id": 12,
         "name": "I Believe That All Women Are Pretty Without Makeup",
         "title": "Make Up",
-        "image": "public/images/blog-12.webp",
+        "image": "/images/blog-12.webp",
         "author": "Blushify",
         "date": "Sep 02, 2025"
     }

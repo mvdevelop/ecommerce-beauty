@@ -2,110 +2,110 @@
 [
     {
     "id": 1,
-    "image": "../public/images/product-1-1.webp",
-    "secondImage": "../public/images/product-1-2.webp",
+    "image": "/images/product-1-1.webp",
+    "secondImage": "/images/product-1-2.webp",
     "ProductName": "Shield Conditioner",
     "price": "$27.00",
     "tag": "New"
     }, {
     "id": 2,
-    "image": "../public/images/product-2-1.webp",
-    "secondImage": "../public/images/product-2-2.webp",
+    "image": "/images/product-2-1.webp",
+    "secondImage": "/images/product-2-2.webp",
     "ProductName": "Perfecting Facial Oil",
     "price": "$15.00",
     "oldPrice": "$21.00",
     "tag": "Sale"
     }, {
     "id": 3,
-    "image": "../public/images/product-3-1.webp",
-    "secondImage": "../public/images/product-3-2.webp",
+    "image": "/images/product-3-1.webp",
+    "secondImage": "/images/product-3-2.webp",
     "ProductName": "Nourishing Face Cream",
     "price": "$34.00"
     }, {
     "id": 4,
-    "image": "../public/images/product-4-1.webp",
-    "secondImage": "../public/images/product-4-2.webp",
+    "image": "/images/product-4-1.webp",
+    "secondImage": "/images/product-4-2.webp",
     "ProductName": "Revitalizing Eye Cream",
     "price": "$29.00"
     }, {
     "id": 5,
-    "image": "../public/images/product-5-1.webp",
-    "secondImage": "../public/images/product-5-2.jpg",
+    "image": "/images/product-5-1.webp",
+    "secondImage": "/images/product-5-2.jpg",
     "ProductName": "Hydrating Face Mist",
     "price": "$22.00",
     "tag": "New"
     }, {
     "id": 6,
-    "image": "../public/images/product-6-1.webp",
-    "secondImage": "../public/images/product-6-2.webp",
+    "image": "/images/product-6-1.webp",
+    "secondImage": "/images/product-6-2.webp",
     "ProductName": "Smoothing Body Lotion",
     "price": "$18.00"
     }, {
     "id": 7,
-    "image": "../public/images/product-7-1.webp",
-    "secondImage": "../public/images/product-7-2.webp",
+    "image": "/images/product-7-1.webp",
+    "secondImage": "/images/product-7-2.webp",
     "ProductName": "Exfoliating Scrub",
     "price": "$25.00",
     "oldPrice": "$30.00",
     "tag": "Sale"
     }, {
     "id": 8,
-    "image": "../public/images/product-8-1.webp",
-    "secondImage": "../public/images/product-8-2.webp",
+    "image": "/images/product-8-1.webp",
+    "secondImage": "/images/product-8-2.webp",
     "ProductName": "Calming Face Serum",
     "price": "$40.00"
     }, {
     "id": 9,
-    "image": "../public/images/product-9-1.webp",
-    "secondImage": "../public/images/product-9-2.webp",
+    "image": "/images/product-9-1.webp",
+    "secondImage": "/images/product-9-2.webp",
     "ProductName": "Brightening Vitamin C",
     "price": "$32.00",
     "tag": "New"
     }, {
     "id": 10,
-    "image": "../public/images/product-10-1.webp",
-    "secondImage": "../public/images/product-10-2.webp",
+    "image": "/images/product-10-1.webp",
+    "secondImage": "/images/product-10-2.webp",
     "ProductName": "Deep Cleansing Mask",
     "price": "$28.00"
     }, {
     "id": 11,
-    "image": "../public/images/product-11-1.webp",
-    "secondImage": "../public/images/product-11-2.webp",
+    "image": "/images/product-11-1.webp",
+    "secondImage": "/images/product-11-2.webp",
     "ProductName": "Moisturizing Lip Balm",
     "price": "$12.00",
     "oldPrice": "$15.00",
     "tag": "Sale"
     }, {
     "id": 12,
-    "image": "../public/images/product-12-1.webp",
-    "secondImage": "../public/images/product-12-2.webp",
+    "image": "/images/product-12-1.webp",
+    "secondImage": "/images/product-12-2.webp",
     "ProductName": "Refreshing Body Wash",
     "price": "$20.00"
     }, {
     "id": 13,
-    "image": "../public/images/product-13-1.webp",
-    "secondImage": "../public/images/product-13-2.webp",
+    "image": "/images/product-13-1.webp",
+    "secondImage": "/images/product-13-2.webp",
     "ProductName": "Anti-Aging Serum",
     "price": "$45.00",
     "tag": "New"
     }, {
     "id": 14,
-    "image": "../public/images/product-14-1.webp",
-    "secondImage": "../public/images/product-14-2.webp",
+    "image": "/images/product-14-1.webp",
+    "secondImage": "/images/product-14-2.webp",
     "ProductName": "Gentle Cleansing Foam",
     "price": "$19.00"
     }, {
     "id": 15,
-    "image": "../public/images/product-15-1.webp",
-    "secondImage": "../public/images/product-15-2.webp",
+    "image": "/images/product-15-1.webp",
+    "secondImage": "/images/product-15-2.webp",
     "ProductName": "Nourishing Hair Mask",
     "price": "$30.00",
     "oldPrice": "$35.00",
     "tag": "Sale"
     }, {
     "id": 16,
-    "image": "../public/images/product-16-1.webp",
-    "secondImage": "../public/images/product-16-2.webp",
+    "image": "/images/product-16-1.webp",
+    "secondImage": "/images/product-16-2.webp",
     "ProductName": "Hydrating Face Serum",
     "price": "$28.00",
     "oldPrice": "$32.00",
