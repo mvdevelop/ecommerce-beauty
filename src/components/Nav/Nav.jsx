@@ -74,16 +74,16 @@ export default function Nav() {
               </a>
             </li>
             <li className='nav-item position-relative'>
-              <a href="#">
+              <Link to="/wishlist">
                 <i className='bi bi-heart fs-5 text-dark'></i>
                 <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{wishlistCount}</span>
-              </a>
+              </Link>
             </li>
             <li className='nav-item position-relative'>
-              <a href="#">
+              <Link to="/cart">
                 <i className='bi bi-bag fs-5 text-dark'></i>
                 <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{cartCount}</span>
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -129,16 +129,16 @@ export default function Nav() {
                 </a>
               </li>
               <li className='nav-item position-relative'>
-                <a href="/wishlist">
+                <Link to="/wishlist">
                   <i className='bi bi-heart fs-5 text-dark'></i>
                   <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{wishlistCount}</span>
-                </a>
+                </Link>
               </li>
               <li className='nav-item position-relative'>
-                <a href="/cart">
+                <Link to="/cart">
                   <i className='bi bi-bag fs-5 text-dark'></i>
                   <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{cartCount}</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
