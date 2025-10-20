@@ -63,11 +63,11 @@ export default function Nav() {
           </Link>
           {/* Mobile Icon */}
           <ul className="d-lg-none d-flex align-items-center gap-3">
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <a href="#">
                 <i className='bi bi-search fs-5 text-dark'></i>
               </a>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <a href="#" data-bs-toggle='modal' data-bs-target='#signupModal'>
                 <i className='bi bi-person fs-5 text-dark'></i>
@@ -76,13 +76,13 @@ export default function Nav() {
             <li className='nav-item position-relative'>
               <a href="#">
                 <i className='bi bi-heart fs-5 text-dark'></i>
-                <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
+                <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{wishlistCount}</span>
               </a>
             </li>
             <li className='nav-item position-relative'>
               <a href="#">
                 <i className='bi bi-bag fs-5 text-dark'></i>
-                <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
+                <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{cartCount}</span>
               </a>
             </li>
           </ul>
@@ -118,11 +118,11 @@ export default function Nav() {
 
             {/* Right Icons */}
             <ul className='navbar-nav d-none d-lg-flex align-items-center gap-4'>
-              <li className='nav-item'>
+              {/* <li className='nav-item'>
                 <a href="#">
                   <i className='bi bi-search fs-5 text-dark'></i>
                 </a>
-              </li>
+              </li> */}
               <li className='nav-item'>
                 <a href="#" data-bs-toggle='modal' data-bs-target='#signupModal'>
                   <i className='bi bi-person fs-5 text-dark'></i>
@@ -131,13 +131,13 @@ export default function Nav() {
               <li className='nav-item position-relative'>
                 <a href="/wishlist">
                   <i className='bi bi-heart fs-5 text-dark'></i>
-                  <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
+                  <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{wishlistCount}</span>
                 </a>
               </li>
               <li className='nav-item position-relative'>
                 <a href="/cart">
                   <i className='bi bi-bag fs-5 text-dark'></i>
-                  <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>0</span>
+                  <span className='position-absolute top-0 start-100 translate-middle cart-count rounded-pill'>{cartCount}</span>
                 </a>
               </li>
             </ul>
