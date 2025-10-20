@@ -64,8 +64,9 @@ export default function Contact() {
               <input type="email" placeholder='Email' className='input' />
             </div>
             <div className='row'>
-              <textarea name="" id="" className='textarea'></textarea>
+              <textarea placeholder='Message' className='textarea'></textarea>
             </div>
+            <button type='submit' className='btn px-5'>Submit</button>
           </form>
         </section>
       </div>
