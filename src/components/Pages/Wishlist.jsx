@@ -73,7 +73,7 @@ export default function Wishlist() {
               <i className="ri-shopping-bag-line me-2"></i> Browse Products
             </Link>
           </div>
-        ): (
+        ) : (
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
             {wishlist.map(product => (
               <div className="col" key={product.id}>
