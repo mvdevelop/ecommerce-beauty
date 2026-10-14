@@ -10,7 +10,8 @@
     "typecheck": "tsc -b",
     "test": "vitest run --config vitest.config.ts",
     "test:coverage": "vitest run --config vitest.config.ts --coverage",
-    "check": "npm run lint && npm run typecheck && npm test",
+    "check": "npm run no-js && npm run lint && npm run typecheck && npm test",
+    "no-js": "node scripts/check-no-js.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
