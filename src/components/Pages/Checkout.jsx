@@ -23,6 +23,7 @@ export default function Checkout() {
 
   const totalPrice = cartItems.reduce((acc, item) => {
     const price = parseFloat(item.price.replace('$', ''));
+    return acc + price * item.quantity;
   }, 0);
 
   const estimatedTax = (totalPrice * 0.1).toFixed(2); 
