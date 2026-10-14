@@ -1,96 +1,58 @@
+# Blushify
 
-Blushify 🧴
+Frontend de e-commerce de cosméticos construído com React, Vite e TypeScript.
 
-Blushify is a modern cosmetics e-commerce platform built with React and Vite, offering a sleek interface to explore and purchase beauty and personal care products with ease.
+## Stack
 
-💡 Features
+- React 19
+- TypeScript em modo `strict`
+- Vite 7
+- React Router
+- Bootstrap/React-Bootstrap
+- Vitest
 
-Product catalog with images, prices, and descriptions.
+## Desenvolvimento
 
-Filter and search products by category or name.
-
-Interactive shopping cart.
-
-Responsive layout for desktop and mobile.
-
-Smooth navigation with React Router.
-
-🛠️ Technologies Used
-
-React 18
-
-Vite (fast, modern bundler)
-
-React Router (page navigation)
-
-CSS/SCSS or optional styling libraries
-
-Local JSON for product data (with option to integrate an API later)
-
-⚡ Installation
-
-Follow these steps to run the project locally:
-
-Clone the repository:
-
-git clone https://github.com/your-username/blushify.git
-cd blushify
-
-
-Install dependencies:
-
+```bash
 npm install
-
-
-Start the development server:
-
 npm run dev
+```
 
+## Scripts
 
-Open the project in your browser:
+| Script | Objetivo |
+| --- | --- |
+| `npm run dev` | inicia o servidor de desenvolvimento |
+| `npm run build` | executa typecheck e build de produção |
+| `npm run lint` | verifica padrões de código |
+| `npm run typecheck` | valida tipos sem gerar arquivos |
+| `npm test` | executa testes |
+| `npm run test:coverage` | executa testes com cobertura |
+| `npm run check` | lint, typecheck e testes |
 
-The terminal will display something like:
+## Arquitetura
 
-Local:   http://localhost:5173/
+- `src/components`: componentes e páginas React;
+- `src/types`: contratos TypeScript do domínio;
+- `src/lib/pricing.ts`: parsing e cálculo de preços;
+- `src/lib/storage.ts`: fronteira validada para carrinho e wishlist;
+- `src/Product.json` e `src/Blogs.json`: dados locais de demonstração;
+- `src/assets` e `public/images`: recursos estáticos.
 
+O carrinho e a wishlist são persistidos localmente apenas para fins demonstrativos. O conteúdo do `localStorage` é tratado como não confiável e validado antes do uso.
 
-Open this link to see the application running.
+## Segurança e privacidade
 
-📂 Project Structure
-blushify/
-│
-├─ public/           # Static assets (images, icons) e.g., shampoo bottle
-├─ src/
-│   ├─ components/   # Reusable React components
-│   ├─ pages/        # Site pages (Home, Product, Cart)
-│   ├─ data/         # Product data (JSON)
-│   ├─ App.jsx       # Main React component
-│   └─ main.jsx      # Vite entry point
-├─ package.json
-├─ vite.config.js
-└─ README.md
+- Não inclua segredos em variáveis `VITE_*`: elas são incorporadas ao bundle público.
+- Use `.env.example` como referência para configurações públicas.
+- O checkout é somente demonstrativo e não processa pagamentos. Nunca insira dados reais de cartão.
+- O projeto não envia dados pessoais para um backend nesta versão.
+- Para remover dados locais, limpe o storage do domínio no navegador.
 
-🎨 Customization
+## Qualidade
 
-To add new products, edit src/data/products.json.
+A integração contínua deve executar `npm ci`, `npm run check` e `npm run build`. Dependências devem ser revisadas com `npm audit` antes de releases.
 
-To change styling, edit CSS/SCSS files in src/components or src/pages.
+## Limitações conhecidas
 
-Replace product images in public/ (e.g., shampoo bottle icons/images).
-
-⚙️ Production Build
-
-To create an optimized production version:
-
-npm run build
-
-
-The output will be in the dist/ folder, ready for deployment on any static hosting.
-
-📌 Notes
-
-Built with Vite + React for high performance and fast loading.
-
-Fully responsive, designed for desktop, tablet, and mobile.
-
-Product icons can be easily updated in the public/ folder (now using a shampoo bottle instead of lipstick).
+Esta é uma aplicação frontend-only. Autenticação, autorização, pagamentos reais, pedidos persistidos e backoffice exigem um backend dedicado, gestão de segredos e controles adicionais de LGPD/PCI.
