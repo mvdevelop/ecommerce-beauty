@@ -13,8 +13,9 @@ async function findJavaScript(directory) {
 }
 
 const matches = await findJavaScript('src');
-if (matches.length > 0) {
+if (matches.length) {
   console.error(`JavaScript files are not allowed in src:\n${matches.join('\n')}`);
-  process.exit(1);
+  process.exitCode = 1;
+} else {
+  console.log('No JavaScript files found in src.');
 }
-console.log('No JavaScript files found in src.');
