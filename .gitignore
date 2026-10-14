@@ -11,6 +11,8 @@ node_modules
 .claude/worktrees/
 *.tsbuildinfo
 coverage/
+*.tsbuildinfo
+coverage/
 dist
 dist-ssr
 *.local

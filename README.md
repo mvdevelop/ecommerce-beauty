@@ -57,6 +57,10 @@ A integração contínua deve executar `npm ci`, `npm run check` e `npm run buil
 
 Todo o código de aplicação está sendo mantido em `.ts`/`.tsx`, com `allowJs: false` e `strict: true`. O CI deve bloquear novos arquivos `.js`/`.jsx` em `src/` e qualquer erro de typecheck.
 
+## Segurança
+
+Consulte [`SECURITY.md`](./SECURITY.md) para as regras de reporte, secrets, dados locais e limites do checkout demonstrativo.
+
 ## Limitações conhecidas
 
 Esta é uma aplicação frontend-only. Autenticação, autorização, pagamentos reais, pedidos persistidos e backoffice exigem um backend dedicado, gestão de segredos e controles adicionais de LGPD/PCI.

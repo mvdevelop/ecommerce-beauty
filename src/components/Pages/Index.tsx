@@ -3,9 +3,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import productsData from '../../Product.json';
 import { getCart, getWishlist, saveCart, saveWishlist } from '../../lib/storage';
+import { isProduct, parseCollection } from '../../lib/runtime';
 import type { Product } from '../../types/product';
 
-const products = productsData as Product[];
+const products = parseCollection(productsData, isProduct);
 
 export default function Index() {
   const addToWishlist = (product: Product) => {

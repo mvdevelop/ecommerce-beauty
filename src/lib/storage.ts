@@ -1,49 +1,47 @@
+import { isCartItem, isProduct, parseCollection } from './runtime';
 import type { CartItem, Product } from '../types/product';
 
 export const CART_KEY = 'cart';
 export const WISHLIST_KEY = 'wishlist';
 export const CART_UPDATED_EVENT = 'cartUpdated';
 export const WISHLIST_UPDATED_EVENT = 'wishlistUpdated';
+const MAX_ITEMS = 100;
+const MAX_QUANTITY = 99;
 
-function readJson<T>(key: string, fallback: T): T {
+function readJson(key: string): unknown {
+  if (typeof window === 'undefined') return undefined;
   try {
     const raw = window.localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
+    return raw ? JSON.parse(raw) : undefined;
   } catch {
-    return fallback;
+    return undefined;
   }
 }
 
 export function getCart(): CartItem[] {
-  const value = readJson<unknown>(CART_KEY, []);
-  if (!Array.isArray(value)) return [];
-  return value.filter(isCartItem);
+  return parseCollection(readJson(CART_KEY), isCartItem)
+    .map((item) => ({ ...item, quantity: Math.min(item.quantity, MAX_QUANTITY) }))
+    .slice(0, MAX_ITEMS);
 }
 
 export function getWishlist(): Product[] {
-  const value = readJson<unknown>(WISHLIST_KEY, []);
-  if (!Array.isArray(value)) return [];
-  return value.filter(isProduct);
+  return parseCollection(readJson(WISHLIST_KEY), isProduct).slice(0, MAX_ITEMS);
+}
+
+function write(key: string, value: unknown, eventName: string): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    window.dispatchEvent(new Event(eventName));
+  } catch {
+    // Storage can be unavailable or full; the UI remains usable in memory.
+  }
 }
 
 export function saveCart(items: CartItem[]): void {
-  window.localStorage.setItem(CART_KEY, JSON.stringify(items));
-  window.dispatchEvent(new Event(CART_UPDATED_EVENT));
+  write(CART_KEY, items.slice(0, MAX_ITEMS).map((item) => ({ ...item, quantity: Math.min(Math.max(1, Math.floor(item.quantity)), MAX_QUANTITY) })), CART_UPDATED_EVENT);
 }
 
 export function saveWishlist(items: Product[]): void {
-  window.localStorage.setItem(WISHLIST_KEY, JSON.stringify(items));
-  window.dispatchEvent(new Event(WISHLIST_UPDATED_EVENT));
-}
-
-function isProduct(value: unknown): value is Product {
-  if (!value || typeof value !== 'object') return false;
-  const item = value as Partial<Product>;
-  return typeof item.id === 'number' && typeof item.ProductName === 'string' &&
-    typeof item.price === 'string' && typeof item.image === 'string' && typeof item.secondImage === 'string';
-}
-
-function isCartItem(value: unknown): value is CartItem {
-  return isProduct(value) && typeof (value as Partial<CartItem>).quantity === 'number' &&
-    Number.isInteger((value as Partial<CartItem>).quantity) && (value as Partial<CartItem>).quantity > 0;
+  write(WISHLIST_KEY, items.slice(0, MAX_ITEMS), WISHLIST_UPDATED_EVENT);
 }

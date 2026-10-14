@@ -5,10 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import productsData from '../../Product.json';
 import { getCart, getWishlist, saveCart, saveWishlist } from '../../lib/storage';
 import { parsePrice } from '../../lib/pricing';
+import { isProduct, parseCollection } from '../../lib/runtime';
 import type { Product } from '../../types/product';
 
 type FilterOption = 'all' | 'New' | 'Sale' | 'low' | 'high';
-const products = productsData as Product[];
+const products = parseCollection(productsData, isProduct);
 
 export default function Shop() {
   const [filter, setFilter] = useState<FilterOption>('all');
