@@ -10,14 +10,17 @@ permissions:
 
 jobs:
   quality:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Reject JavaScript application files
+        shell: bash
+        run: test -z "$(find src -type f \( -name '*.js' -o -name '*.jsx' \) -print -quit)"
       - run: npm run check
       - run: npm run build
       - run: npm audit --audit-level=high

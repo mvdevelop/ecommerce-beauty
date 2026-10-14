@@ -53,6 +53,10 @@ O carrinho e a wishlist são persistidos localmente apenas para fins demonstrati
 
 A integração contínua deve executar `npm ci`, `npm run check` e `npm run build`. Dependências devem ser revisadas com `npm audit` antes de releases.
 
+## Migração JavaScript → TypeScript
+
+Todo o código de aplicação está sendo mantido em `.ts`/`.tsx`, com `allowJs: false` e `strict: true`. O CI deve bloquear novos arquivos `.js`/`.jsx` em `src/` e qualquer erro de typecheck.
+
 ## Limitações conhecidas
 
 Esta é uma aplicação frontend-only. Autenticação, autorização, pagamentos reais, pedidos persistidos e backoffice exigem um backend dedicado, gestão de segredos e controles adicionais de LGPD/PCI.
