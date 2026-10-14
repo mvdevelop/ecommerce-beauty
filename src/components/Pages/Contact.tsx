@@ -1,0 +1,3 @@
+import { FormEvent } from 'react';
+
+export default function Contact() { const submit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); }; return <main className="container py-5"><h1>Contact us</h1><form onSubmit={submit} className="col-lg-6"><label htmlFor="name" className="form-label">Name</label><input id="name" className="form-control mb-3" required /><label htmlFor="email" className="form-label">Email</label><input id="email" type="email" className="form-control mb-3" required /><label htmlFor="message" className="form-label">Message</label><textarea id="message" className="form-control mb-3" required /><button className="btn btn-primary" type="submit">Send message</button></form></main>; }
