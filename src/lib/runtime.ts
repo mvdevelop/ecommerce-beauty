@@ -11,9 +11,9 @@ export function isProduct(value: unknown): value is Product {
 }
 
 export function isCartItem(value: unknown): value is CartItem {
-  return isProduct(value) && typeof (value as Partial<CartItem>).quantity === 'number' &&
-    Number.isInteger((value as Partial<CartItem>).quantity) &&
-    (value as Partial<CartItem>).quantity !== undefined && (value as Partial<CartItem>).quantity > 0;
+  if (!isProduct(value)) return false;
+  const quantity = (value as Partial<CartItem>).quantity;
+  return typeof quantity === 'number' && Number.isInteger(quantity) && quantity > 0;
 }
 
 export function isBlogPost(value: unknown): value is BlogPost {

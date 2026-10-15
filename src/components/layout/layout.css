@@ -1,0 +1,1 @@
+.announcement-bar { display: flex; align-items: center; justify-content: center; gap: 1rem; min-height: 2rem; padding: .35rem 2.5rem; background: var(--black-color); color: var(--white-color); font-size: .78rem; letter-spacing: .04em; text-align: center; }.announcement-bar button { border: 0; background: transparent; color: inherit; font-size: 1.1rem; cursor: pointer; }

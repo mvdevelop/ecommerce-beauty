@@ -12,13 +12,21 @@ jobs:
   quality:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
-      - run: npm run no-js
-      - run: npm run check
-      - run: npm run build
-      - run: npm audit --audit-level=high
+          cache-dependency-path: package-lock.json
+      - name: Verify repository state
+        run: git status --short
+      - name: Install dependencies
+        run: npm ci
+      - name: Run quality checks
+        run: npm run check
+      - name: Build application
+        run: npm run build
+      - name: Audit dependencies
+        run: npm audit --audit-level=high

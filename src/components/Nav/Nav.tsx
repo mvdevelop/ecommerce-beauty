@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getCart, getWishlist, CART_UPDATED_EVENT, WISHLIST_UPDATED_EVENT } from '../../lib/storage';
+import MiniCart from '../cart/MiniCart';
 
 type Theme = 'light' | 'dark';
 
@@ -53,7 +54,7 @@ export default function Nav() {
         <div className="nav-actions d-flex align-items-center gap-3">
           <Link to="/shop">Shop</Link>
           <Link to="/wishlist" aria-label={`Wishlist with ${wishlistCount} items`}>♡ {wishlistCount}</Link>
-          <Link to="/cart" aria-label={`Cart with ${cartCount} items`}>🛒 {cartCount}</Link>
+          <Link to="/cart" aria-label={`Cart with ${cartCount} items`}>🛒 {cartCount}</Link><MiniCart />
           <Link to="/account" aria-label="Your account">◯</Link>
           <button type="button" className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>
             {theme === 'light' ? '☾' : '☀'}
