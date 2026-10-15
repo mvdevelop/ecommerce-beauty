@@ -11,8 +11,9 @@ import Shop from './components/Pages/Shop.tsx';
 import Stores from './components/Pages/Stores.tsx';
 import Blog from './components/Pages/Blog.tsx';
 import Contact from './components/Pages/Contact.tsx';
+import Search from './components/Pages/Search.tsx';
 import Footer from './components/Footer/Footer.tsx';
 
 export default function App() {
-  return <><Nav /><Routes><Route path="/" element={<Index />} /><Route path="/product/:id" element={<ProductDetails />} /><Route path="/wishlist" element={<Wishlist />} /><Route path="/cart" element={<Cart />} /><Route path="/checkout" element={<Checkout />} /><Route path="/about" element={<About />} /><Route path="/shop" element={<Shop />} /><Route path="/store" element={<Stores />} /><Route path="/blog" element={<Blog />} /><Route path="/contact" element={<Contact />} /></Routes><Footer /></>;
+  return <><Nav /><Routes><Route path="/" element={<Index />} /><Route path="/product/:id" element={<ProductDetails />} /><Route path="/wishlist" element={<Wishlist />} /><Route path="/cart" element={<Cart />} /><Route path="/checkout" element={<Checkout />} /><Route path="/about" element={<About />} /><Route path="/shop" element={<Shop />} /><Route path="/search" element={<Search />} /><Route path="/store" element={<Stores />} /><Route path="/blog" element={<Blog />} /><Route path="/contact" element={<Contact />} /></Routes><Footer /></>;
 }
