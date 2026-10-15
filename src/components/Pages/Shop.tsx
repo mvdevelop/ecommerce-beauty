@@ -1,4 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { listProducts } from '../../api/client';
+import type { ApiProduct } from '../../types/api';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,13 +13,18 @@ import type { Product } from '../../types/product';
 
 type FilterOption = 'all' | 'New' | 'Sale' | 'low' | 'high';
 const products = parseCollection(productsData, isProduct);
+const apiToProduct = (item: ApiProduct): Product => ({ id: Number(item.id), image: item.image, secondImage: item.secondImage ?? item.image, ProductName: item.name, price: `${item.currency} ${item.price.toFixed(2)}` });
 
 export default function Shop() {
   const [filter, setFilter] = useState<FilterOption>('all');
+  const [params] = useSearchParams();
+  const [apiProducts, setApiProducts] = useState<Product[] | null>(null);
+  useEffect(() => { let active = true; listProducts({ q: params.get('q') ?? undefined }).then((items) => { if (active) setApiProducts(items.map(apiToProduct)); }).catch(() => { if (active) setApiProducts(null); }); return () => { active = false; }; }, [params]);
+  const sourceProducts = apiProducts ?? products;
   const displayedProducts = useMemo(() => {
-    const result = products.filter((product) => filter === 'all' || product.tag === filter);
+    const result = sourceProducts.filter((product) => filter === 'all' || product.tag === filter);
     return [...result].sort((a, b) => filter === 'low' ? parsePrice(a.price) - parsePrice(b.price) : filter === 'high' ? parsePrice(b.price) - parsePrice(a.price) : 0);
-  }, [filter]);
+  }, [filter, sourceProducts]);
 
   const addToWishlist = (product: Product) => {
     const wishlist = getWishlist();

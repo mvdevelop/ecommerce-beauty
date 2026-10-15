@@ -17,25 +17,12 @@ export interface ApiProduct {
   featured: boolean;
 }
 
-export interface Category {
-  id: string;
-  name: string;
-  slug: string;
-}
-
+export interface Category { id: string; name: string; slug: string; }
 export interface Brand extends Category {}
-
-export interface DemoUser {
-  id: string;
-  email: string;
-  displayName: string;
-  role: 'customer' | 'admin';
-}
-
-export interface ApiListParams {
-  q?: string;
-  category?: string;
-  brand?: string;
-  page?: number;
-  limit?: number;
-}
+export interface DemoUser { id: string; email: string; displayName: string; role: 'customer' | 'admin'; }
+export interface Review { id: string; productId: string; userId: string; rating: number; title: string; body: string; status: 'published' | 'pending'; demo?: boolean; }
+export interface CartLine { productId: string; quantity: number; }
+export interface ApiCart { id: string; userId: string; items: CartLine[]; updatedAt: string; }
+export type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled';
+export interface ApiOrder { id: string; userId: string; items: CartLine[]; status: OrderStatus; total: number; currency: string; createdAt: string; }
+export interface ApiListParams { q?: string; category?: string; brand?: string; page?: number; limit?: number; }
