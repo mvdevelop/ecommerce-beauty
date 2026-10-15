@@ -1,0 +1,10 @@
+.motion-fade { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.motion-fade.is-visible { opacity: 1; transform: translateY(0); }
+.ui-button { border: 1px solid transparent; border-radius: 999px; cursor: pointer; padding: .7rem 1.2rem; transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+.ui-button:hover { transform: translateY(-2px); }
+.ui-button--primary { background: var(--black-color); color: var(--white-color); }.ui-button--outline { background: transparent; border-color: var(--border-color); color: var(--black-color); }
+.ui-input { width: 100%; border: 1px solid var(--border-color); border-radius: .35rem; padding: .75rem 1rem; background: var(--surface); color: var(--black-color); }
+.ui-skeleton { display: block; min-height: 1rem; border-radius: .3rem; background: linear-gradient(90deg, var(--section-color), var(--surface), var(--section-color)); background-size: 200% 100%; animation: skeleton-shimmer 1.4s infinite; }
+.ui-state { margin: 3rem auto; max-width: 38rem; padding: 3rem 1.5rem; text-align: center; border: 1px solid var(--border-color); background: var(--surface); }
+@keyframes skeleton-shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .motion-fade, .motion-fade.is-visible, .ui-button, .ui-skeleton { animation: none; transform: none; transition: none; } }

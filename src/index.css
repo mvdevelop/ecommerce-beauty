@@ -19,13 +19,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 [data-theme='dark'] {
-  --black-color: #f4f7f5;
-  --white-color: #18211d;
-  --text-color: #b8c6bd;
-  --section-color: #24342c;
-  --page-bg: #121815;
-  --surface: #1b2620;
-  --border-color: #3b5145;
+  --prim-color: #78a889;
+  --black-color: #f2f4f3;
+  --white-color: #080a09;
+  --text-color: #b1b7b4;
+  --section-color: #202321;
+  --page-bg: #0b0c0c;
+  --surface: #151817;
+  --border-color: #383d3a;
 }
 
 .site-nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--surface) 92%, transparent); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(14px); }

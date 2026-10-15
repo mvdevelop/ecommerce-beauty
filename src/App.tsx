@@ -1,4 +1,6 @@
 import './App.css';
+import './components/motion/motion.css';
+import './components/ui/ui.css';
 import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav.tsx';
 import Index from './components/Pages/Index.tsx';

@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs/promises';
+import { access, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
 async function findJavaScript(directory) {
@@ -12,7 +12,11 @@ async function findJavaScript(directory) {
   return matches;
 }
 
-const matches = await findJavaScript('src');
+const rootJavaScript = [];
+for (const path of ['vite.config.js', 'eslint.config.js']) {
+  try { await access(path); rootJavaScript.push(path); } catch { /* file is absent */ }
+}
+const matches = [...(await findJavaScript('src')), ...rootJavaScript];
 if (matches.length) {
   console.error(`JavaScript files are not allowed in src:\n${matches.join('\n')}`);
   process.exitCode = 1;

@@ -1,0 +1,2 @@
+*:focus-visible { outline: 3px solid var(--prim-color); outline-offset: 3px; }
+button:disabled, input:disabled, select:disabled { cursor: not-allowed; opacity: .6; }
