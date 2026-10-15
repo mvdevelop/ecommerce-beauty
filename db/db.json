@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Glow Renewal Serum",
+      "slug": "glow-renewal-serum",
+      "price": 34.9,
+      "compareAtPrice": 42.9,
+      "currency": "USD",
+      "image": "/images/product-1-1.webp",
+      "secondImage": "/images/product-1-2.webp",
+      "category": "skincare",
+      "brand": "Blushify",
+      "rating": 4.8,
+      "reviewCount": 124,
+      "stock": 24,
+      "tags": ["vegan", "best-seller", "glow"],
+      "description": "A lightweight serum for a radiant, hydrated finish.",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "name": "Cloud Cream Cleanser",
+      "slug": "cloud-cream-cleanser",
+      "price": 22.5,
+      "currency": "USD",
+      "image": "/images/product-2-1.webp",
+      "secondImage": "/images/product-2-2.webp",
+      "category": "skincare",
+      "brand": "Blushify",
+      "rating": 4.7,
+      "reviewCount": 89,
+      "stock": 31,
+      "tags": ["sensitive-skin", "gentle"],
+      "description": "A gentle cream cleanser that protects the skin barrier.",
+      "featured": true
+    }
+  ],
+  "categories": [
+    { "id": "skincare", "name": "Skincare", "slug": "skincare" },
+    { "id": "makeup", "name": "Makeup", "slug": "makeup" },
+    { "id": "body", "name": "Body care", "slug": "body" },
+    { "id": "hair", "name": "Hair care", "slug": "hair" }
+  ],
+  "brands": [
+    { "id": "blushify", "name": "Blushify", "slug": "blushify" }
+  ],
+  "reviews": [],
+  "favorites": [],
+  "carts": [],
+  "orders": [],
+  "addresses": [],
+  "coupons": [],
+  "users": [
+    {
+      "id": "demo-user",
+      "email": "demo@blushify.local",
+      "displayName": "Demo customer",
+      "role": "customer"
+    }
+  ]
+}
