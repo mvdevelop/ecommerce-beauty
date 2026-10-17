@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { LOCALE_STORAGE_KEY, readStoredLocale, writeStoredLocale } from './storage';
+import { readStoredLocale, writeStoredLocale } from './storage';
 import { translate } from './index';
 import type { Locale, TranslationKey, TranslationParams } from './index';
 

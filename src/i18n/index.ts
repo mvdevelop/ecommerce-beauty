@@ -2,7 +2,7 @@ import { ptBR } from './locales/pt-BR';
 import { en } from './locales/en';
 import { es } from './locales/es';
 import type { Locale, Message, TranslationParams } from './types';
-import { isLocale, interpolate } from './types';
+import { interpolate } from './types';
 
 export { ptBR, en, es };
 export type { Locale, Message, TranslationParams } from './types';
