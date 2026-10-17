@@ -7,8 +7,8 @@ export interface CategoryOption {
   label: string;
 }
 
-// Static table: the slugs are the values stored in db.json and used in `?category=`,
-// and the labels are the PT-BR copy shown in the UI.
+// Static table: slugs are the values stored in db.json and used in `?category=`.
+// Labels come from the i18n dictionary via `categoryLabel()`, falling back to these.
 export const CATEGORIES: readonly CategoryOption[] = [
   { slug: 'skincare', label: 'Cuidados com a pele' },
   { slug: 'makeup', label: 'Maquiagem' },
@@ -17,6 +17,7 @@ export const CATEGORIES: readonly CategoryOption[] = [
 ];
 
 export function categoryLabel(slug: string): string {
+  // Labels are resolved in components through useLanguage; this keeps the slug stable.
   return CATEGORIES.find((category) => category.slug === slug)?.label ?? slug;
 }
 
@@ -30,8 +31,6 @@ export function localProductsByCategory(slug: string, excludeId?: number): Produ
   return localProducts.filter((product) => product.category === slug && product.id !== excludeId);
 }
 
-// Mirrors the server-side filtering in api/client.ts (name substring + category) so the
-// offline fallback honours the same query the UI is showing.
 export function filterLocalProducts(products: Product[], query: string, category: string): Product[] {
   const term = query.trim().toLowerCase();
   return products.filter((product) => {

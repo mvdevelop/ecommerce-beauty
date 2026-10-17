@@ -1,12 +1,22 @@
-// Shared PT-BR microcopy for the feedback toasts. Kept in one place because the
-// same callbacks are wired on several pages (home, shop, wishlist, PDP).
-export const MESSAGES = {
-  wishlistAdded: 'Produto adicionado aos favoritos.',
-  wishlistExists: 'Este produto já está nos favoritos.',
-  wishlistRemoved: 'Produto removido dos favoritos.',
-  cartAdded: 'Produto adicionado ao carrinho.',
-  cartExists: 'Este produto já está no carrinho.',
-  cartRemoved: 'Produto removido do carrinho.',
-  savedAdded: 'Produto salvo para depois.',
-  savedMovedToCart: 'Produto movido para o carrinho.',
-} as const;
+// Re-exported for backward compatibility; the canonical microcopy now lives in the
+// i18n dictionaries under the `toast.*` keys. Kept as a thin shim so existing
+// call sites that still import `MESSAGES` keep working.
+import { useLanguage } from '../i18n/LanguageProvider';
+
+export const MESSAGES = new Proxy({} as Record<string, string>, {
+  get(_target, prop: string) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { t } = useLanguage();
+    const map: Record<string, string> = {
+      wishlistAdded: t('toast.wishlistAdded'),
+      wishlistExists: t('toast.wishlistExists'),
+      wishlistRemoved: t('toast.wishlistRemoved'),
+      cartAdded: t('toast.cartAdded'),
+      cartExists: t('toast.cartExists'),
+      cartRemoved: t('toast.cartRemoved'),
+      savedAdded: t('toast.savedAdded'),
+      savedMovedToCart: t('toast.savedMovedToCart'),
+    };
+    return map[prop] ?? prop;
+  },
+});

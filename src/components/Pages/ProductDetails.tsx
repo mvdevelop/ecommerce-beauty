@@ -34,7 +34,7 @@ interface ProductView {
 }
 
 function fromApi(product: ApiProduct, locale: ReturnType<typeof useLanguage>['locale']): ProductView {
-  const mapped = apiToProduct(product);
+  const mapped = apiToProduct(product, locale);
   const view: ProductView = {
     id: mapped.id,
     name: resolveLocalized((product as { nameI18n?: LocalizedText }).nameI18n, locale, mapped.ProductName),
