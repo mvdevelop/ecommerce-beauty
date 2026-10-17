@@ -11,8 +11,8 @@ export function apiToProduct(product: ApiProduct): Product {
     ...(product.compareAtPrice !== undefined
       ? { oldPrice: `${product.currency} ${product.compareAtPrice.toFixed(2)}` }
       : {}),
-    ...(product.tags.includes('New') || product.tags.includes('Sale')
-      ? { tag: product.tags.find((tag): tag is 'New' | 'Sale' => tag === 'New' || tag === 'Sale') }
+    ...(product.tags.some((tag) => tag.toLowerCase() === 'new') || product.tags.some((tag) => tag.toLowerCase() === 'sale')
+      ? { tag: product.tags.some((tag) => tag.toLowerCase() === 'new') ? 'New' : 'Sale' }
       : {}),
   };
 }
