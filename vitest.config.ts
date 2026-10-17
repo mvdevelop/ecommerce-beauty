@@ -5,6 +5,8 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
+    globals: true,
+    exclude: ['**/node_modules/**', '**/.claude/worktrees/**'],
     setupFiles: './src/test-setup.ts',
     coverage: { provider: 'v8', reporter: ['text', 'html'] },
   },

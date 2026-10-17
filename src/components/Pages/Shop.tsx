@@ -7,12 +7,11 @@ import { listProducts } from '../../api/client';
 import { getCart, getWishlist, saveCart, saveWishlist } from '../../lib/storage';
 import { parsePrice } from '../../lib/pricing';
 import { isProduct, parseCollection } from '../../lib/runtime';
-import type { ApiProduct } from '../../types/api';
 import type { Product } from '../../types/product';
+import { apiToProduct } from '../../lib/products';
 
 type SortOption = 'featured' | 'low' | 'high';
 const localProducts = parseCollection(productsData, isProduct);
-const apiToProduct = (item: ApiProduct): Product => ({ id: Number(item.id), image: item.image, secondImage: item.secondImage ?? item.image, ProductName: item.name, price: `${item.currency} ${item.price.toFixed(2)}` });
 
 export default function Shop() {
   const [params, setParams] = useSearchParams();
