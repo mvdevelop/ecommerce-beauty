@@ -67,7 +67,7 @@
       "stock": 36,
       "tags": ["eye-care"],
       "description": "Brightening eye cream for a refreshed look.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "5",
@@ -101,7 +101,7 @@
       "stock": 60,
       "tags": ["lotion"],
       "description": "Lightweight lotion for smooth, soft skin.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "7",
@@ -170,7 +170,7 @@
       "stock": 40,
       "tags": ["mask"],
       "description": "Purifying mask that helps draw out impurities.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "11",
@@ -205,7 +205,7 @@
       "stock": 46,
       "tags": ["serum"],
       "description": "Lightweight serum for smooth, silky hair.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "13",
@@ -222,7 +222,7 @@
       "stock": 55,
       "tags": ["cleanser"],
       "description": "Gentle foaming cleanser for everyday use.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "14",
@@ -239,7 +239,7 @@
       "stock": 38,
       "tags": ["butter"],
       "description": "Rich body butter for deeply soft skin.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "15",
@@ -256,7 +256,7 @@
       "stock": 65,
       "tags": ["gloss"],
       "description": "Shiny tinted gloss for a touch of color.",
-      "featured": true
+      "featured": false
     },
     {
       "id": "16",
@@ -273,7 +273,7 @@
       "stock": 32,
       "tags": ["mask"],
       "description": "Deep treatment mask to restore hair vitality.",
-      "featured": true
+      "featured": false
     }
   ],
   "categories": [

@@ -16,8 +16,10 @@ jobs:
         with:
           fetch-depth: 1
           persist-credentials: false
+      - name: Configure git safe.directory
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Show repository diagnostics
-        run: git status --short && git rev-parse --show-toplevel
+        run: git status --short && git rev-parse --show-toplevel && git log --oneline -n 1
       - uses: actions/setup-node@v5
         with:
           node-version: 22
