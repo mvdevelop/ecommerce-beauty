@@ -8,7 +8,7 @@ Frontend de e-commerce de cosméticos construído com React, Vite e TypeScript.
 - TypeScript em modo `strict`
 - Vite 7
 - React Router
-- Bootstrap/React-Bootstrap
+- Bootstrap 5 (somente o CSS, via CDN; sem JavaScript do Bootstrap)
 - Vitest
 
 ## Desenvolvimento
@@ -51,7 +51,7 @@ O carrinho e a wishlist são persistidos localmente apenas para fins demonstrati
 
 ## Qualidade
 
-A integração contínua deve executar `npm ci`, `npm run check` e `npm run build`. Dependências devem ser revisadas com `npm audit` antes de releases.
+A integração contínua deve executar `npm ci`, `npm run check` e `npm run build`. Dependências devem ser revisadas com `npm audit --omit=dev` antes de releases: apenas dependências de produção chegam ao bundle, e os advisories residuais do toolchain de desenvolvimento estão registrados em [`SECURITY.md`](./SECURITY.md).
 
 ## Migração JavaScript → TypeScript
 

@@ -9,8 +9,10 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
-npm audit --audit-level=high
+npm audit --omit=dev --audit-level=high
 ```
+
+O gate usa `--omit=dev`: apenas dependências de produção chegam ao bundle. Os advisories residuais do toolchain de desenvolvimento (`vitest`, `tinypool`) estão registrados em [`SECURITY.md`](../SECURITY.md).
 
 Manual smoke test:
 

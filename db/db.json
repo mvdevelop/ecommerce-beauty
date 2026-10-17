@@ -14,7 +14,7 @@
       "reviewCount": 85,
       "stock": 32,
       "tags": ["new", "conditioner"],
-      "description": "Lightweight conditioner that helps protect and soften hair.",
+      "description": "Condicionador leve que ajuda a proteger e amaciar os fios.",
       "featured": true
     },
     {
@@ -32,7 +32,7 @@
       "reviewCount": 76,
       "stock": 48,
       "tags": ["sale", "oil"],
-      "description": "Nourishing facial oil for a smooth, balanced complexion.",
+      "description": "Óleo facial nutritivo para uma pele uniforme e equilibrada.",
       "featured": true
     },
     {
@@ -49,7 +49,7 @@
       "reviewCount": 96,
       "stock": 40,
       "tags": ["cream", "hydrating"],
-      "description": "Rich face cream for lasting hydration.",
+      "description": "Creme facial rico para hidratação duradoura.",
       "featured": true
     },
     {
@@ -66,7 +66,7 @@
       "reviewCount": 64,
       "stock": 36,
       "tags": ["eye-care"],
-      "description": "Brightening eye cream for a refreshed look.",
+      "description": "Creme para os olhos que ilumina e renova o olhar.",
       "featured": false
     },
     {
@@ -83,7 +83,7 @@
       "reviewCount": 58,
       "stock": 52,
       "tags": ["new", "mist"],
-      "description": "Fine mist for instant hydration throughout the day.",
+      "description": "Bruma fina para hidratação instantânea ao longo do dia.",
       "featured": true
     },
     {
@@ -100,7 +100,7 @@
       "reviewCount": 41,
       "stock": 60,
       "tags": ["lotion"],
-      "description": "Lightweight lotion for smooth, soft skin.",
+      "description": "Loção leve para uma pele macia e uniforme.",
       "featured": false
     },
     {
@@ -118,7 +118,7 @@
       "reviewCount": 37,
       "stock": 44,
       "tags": ["sale", "exfoliating"],
-      "description": "Gentle scrub to renew and refresh skin.",
+      "description": "Esfoliante suave para renovar e refrescar a pele.",
       "featured": true
     },
     {
@@ -135,7 +135,7 @@
       "reviewCount": 72,
       "stock": 28,
       "tags": ["serum", "calming"],
-      "description": "Soothing serum to help calm and balance skin.",
+      "description": "Sérum calmante que ajuda a acalmar e equilibrar a pele.",
       "featured": true
     },
     {
@@ -152,7 +152,7 @@
       "reviewCount": 83,
       "stock": 35,
       "tags": ["new", "vitamin-c"],
-      "description": "Vitamin C serum for a brighter, more even tone.",
+      "description": "Sérum de vitamina C para um tom mais luminoso e uniforme.",
       "featured": true
     },
     {
@@ -169,7 +169,7 @@
       "reviewCount": 49,
       "stock": 40,
       "tags": ["mask"],
-      "description": "Purifying mask that helps draw out impurities.",
+      "description": "Máscara purificante que ajuda a remover impurezas.",
       "featured": false
     },
     {
@@ -187,7 +187,7 @@
       "reviewCount": 120,
       "stock": 80,
       "tags": ["sale", "lip"],
-      "description": "Rich lip balm for lasting moisture.",
+      "description": "Bálsamo labial rico para hidratação duradoura.",
       "featured": true
     },
     {
@@ -204,7 +204,7 @@
       "reviewCount": 52,
       "stock": 46,
       "tags": ["serum"],
-      "description": "Lightweight serum for smooth, silky hair.",
+      "description": "Sérum leve para cabelos macios e sedosos.",
       "featured": false
     },
     {
@@ -221,7 +221,7 @@
       "reviewCount": 68,
       "stock": 55,
       "tags": ["cleanser"],
-      "description": "Gentle foaming cleanser for everyday use.",
+      "description": "Sabonete de espuma suave para o uso diário.",
       "featured": false
     },
     {
@@ -238,7 +238,7 @@
       "reviewCount": 43,
       "stock": 38,
       "tags": ["butter"],
-      "description": "Rich body butter for deeply soft skin.",
+      "description": "Manteiga corporal rica para uma pele profundamente macia.",
       "featured": false
     },
     {
@@ -255,7 +255,7 @@
       "reviewCount": 91,
       "stock": 65,
       "tags": ["gloss"],
-      "description": "Shiny tinted gloss for a touch of color.",
+      "description": "Gloss com cor e brilho para um toque de cor.",
       "featured": false
     },
     {
@@ -272,7 +272,7 @@
       "reviewCount": 57,
       "stock": 32,
       "tags": ["mask"],
-      "description": "Deep treatment mask to restore hair vitality.",
+      "description": "Máscara de tratamento profundo para devolver a vitalidade aos fios.",
       "featured": false
     }
   ],
