@@ -1,21 +1,18 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getCart, getWishlist, saveCart, saveWishlist } from '../../lib/storage';
-import type { Product } from '../../types/product';
+import { addCartItem } from '../../lib/cart';
+import { saveWishlist } from '../../lib/storage';
+import { useWishlist } from '../../hooks/useWishlist';
 
 export default function Wishlist() {
-  const [items, setItems] = useState<Product[]>([]);
-  useEffect(() => setItems(getWishlist()), []);
+  const items = useWishlist();
 
   const remove = (id: number) => {
     const updated = items.filter((item) => item.id !== id);
-    setItems(updated);
     saveWishlist(updated);
   };
 
-  const addToCart = (product: Product) => {
-    const cart = getCart();
-    if (!cart.some((item) => item.id === product.id)) saveCart([...cart, { ...product, quantity: 1 }]);
+  const addToCart = (product: import('../../types/product').Product) => {
+    addCartItem({ ...product, quantity: 1 });
   };
 
   return <main className="container py-5">

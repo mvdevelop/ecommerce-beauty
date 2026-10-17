@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { listFavorites } from '../../api/client';
-import { useAuth } from '../../auth/AuthProvider';
-import type { ApiProduct } from '../../types/api';
+import { addCartItem } from '../../lib/cart';
+import { saveWishlist } from '../../lib/storage';
+import { useWishlist } from '../../hooks/useWishlist';
 
 export default function Favorites() {
-  const { user } = useAuth();
-  const [items, setItems] = useState<ApiProduct[]>([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => { if (!user) return; listFavorites(user.id).then(setItems).catch(() => setItems([])).finally(() => setLoading(false)); }, [user]);
-  return <main className="container py-5"><p className="eyebrow">Your account</p><h1>Favorites</h1>{loading ? <p>Loading favorites…</p> : items.length === 0 ? <p>You have not saved any products yet.</p> : <div className="row g-4">{items.map((item) => <article className="col-6 col-md-3" key={item.id}><Link to={`/product/${item.id}`}><img className="img-fluid" src={item.image} alt={item.name} /><h2 className="h5 mt-2">{item.name}</h2></Link><p>{item.price.toFixed(2)} {item.currency}</p></article>)}</div>}</main>;
+  const items = useWishlist();
+  const remove = (id: number) => saveWishlist(items.filter((item) => item.id !== id));
+  return <main className="container py-5"><p className="eyebrow">Minha conta</p><h1>Favoritos</h1>{items.length === 0 ? <p>Você ainda não salvou produtos. <Link to="/shop">Explorar a loja</Link></p> : <div className="row g-4">{items.map((item) => <article className="col-6 col-md-3" key={item.id}><Link to={`/product/${item.id}`}><img className="img-fluid" src={item.image} alt={item.ProductName} /><h2 className="h5 mt-2">{item.ProductName}</h2></Link><p>{item.price}</p><button className="btn btn-sm btn-primary me-2" type="button" onClick={() => addCartItem({ ...item, quantity: 1 })}>Adicionar ao carrinho</button><button className="btn btn-sm btn-outline-danger" type="button" onClick={() => remove(item.id)}>Remover</button></article>)}</div>}</main>;
 }

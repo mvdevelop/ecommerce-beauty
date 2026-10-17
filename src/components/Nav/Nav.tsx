@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getCart, getWishlist, CART_UPDATED_EVENT, WISHLIST_UPDATED_EVENT } from '../../lib/storage';
 import MiniCart from '../cart/MiniCart';
+import { useAuth } from '../../auth/AuthProvider';
 
 type Theme = 'light' | 'dark';
 
@@ -14,6 +15,7 @@ function getInitialTheme(): Theme {
 export default function Nav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, logout } = useAuth();
   const [cartCount, setCartCount] = useState(() => getCart().length);
   const [wishlistCount, setWishlistCount] = useState(() => getWishlist().length);
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
@@ -55,7 +57,7 @@ export default function Nav() {
           <Link to="/shop">Shop</Link>
           <Link to="/wishlist" aria-label={`Wishlist with ${wishlistCount} items`}>♡ {wishlistCount}</Link>
           <Link to="/cart" aria-label={`Cart with ${cartCount} items`}>🛒 {cartCount}</Link><MiniCart />
-          <Link to="/account" aria-label="Your account">◯</Link>
+          {user ? <><Link to="/account" aria-label="Minha conta">Olá, {user.displayName}</Link><button type="button" className="btn btn-link p-0" onClick={logout}>Sair</button></> : <><Link to="/login">Entrar</Link><Link to="/signup">Criar conta</Link></>}
           <button type="button" className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>
             {theme === 'light' ? '☾' : '☀'}
           </button>

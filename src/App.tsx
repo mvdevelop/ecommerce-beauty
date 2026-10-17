@@ -18,6 +18,7 @@ import Blog from './components/Pages/Blog';
 import Contact from './components/Pages/Contact';
 import Search from './components/Pages/Search';
 import Login from './components/Pages/Login';
+import Signup from './components/Pages/Signup';
 import Account from './components/Pages/Account';
 import Orders from './components/Pages/Orders';
 import Favorites from './components/Pages/Favorites';
@@ -26,5 +27,5 @@ import Footer from './components/Footer/Footer';
 import NotFound from './components/Pages/NotFound';
 
 export default function App() {
-  return <><AnnouncementBar /><Nav /><Routes><Route path="/" element={<Index />} /><Route path="/product/:id" element={<ProductDetails />} /><Route path="/wishlist" element={<Wishlist />} /><Route path="/cart" element={<Cart />} /><Route path="/checkout" element={<Checkout />} /><Route path="/about" element={<About />} /><Route path="/shop" element={<Shop />} /><Route path="/search" element={<Search />} /><Route path="/login" element={<Login />} /><Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} /><Route path="/account/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} /><Route path="/account/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} /><Route path="/store" element={<Stores />} /><Route path="/blog" element={<Blog />} /><Route path="/contact" element={<Contact />} /><Route path="*" element={<NotFound />} /></Routes><Footer /></>;
+  return <><AnnouncementBar /><Nav /><Routes><Route path="/" element={<Index />} /><Route path="/product/:id" element={<ProductDetails />} /><Route path="/wishlist" element={<Wishlist />} /><Route path="/cart" element={<Cart />} /><Route path="/checkout" element={<Checkout />} /><Route path="/about" element={<About />} /><Route path="/shop" element={<Shop />} /><Route path="/search" element={<Search />} /><Route path="/login" element={<Login />} /><Route path="/signup" element={<Signup />} /><Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} /><Route path="/account/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} /><Route path="/account/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} /><Route path="/store" element={<Stores />} /><Route path="/blog" element={<Blog />} /><Route path="/contact" element={<Contact />} /><Route path="*" element={<NotFound />} /></Routes><Footer /></>;
 }
