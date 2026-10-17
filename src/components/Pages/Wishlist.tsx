@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addCartItem } from '../../lib/cart';
 import { saveWishlist } from '../../lib/storage';
 import { useWishlist } from '../../hooks/useWishlist';
@@ -13,6 +15,7 @@ export default function Wishlist() {
 
   const addToCart = (product: import('../../types/product').Product) => {
     addCartItem({ ...product, quantity: 1 });
+    toast.success('Produto adicionado ao carrinho.');
   };
 
   return <main className="container py-5">
@@ -24,5 +27,6 @@ export default function Wishlist() {
       <button type="button" className="btn btn-primary me-2" onClick={() => addToCart(item)}>Add to cart</button>
       <button type="button" className="btn btn-outline-danger" onClick={() => remove(item.id)}>Remove</button>
     </article>)}</div>}
+    <ToastContainer />
   </main>;
 }

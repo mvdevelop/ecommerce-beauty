@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import type { Product } from '../../types/product';
 import type { BlogPost } from '../../types/blog';
@@ -47,5 +48,7 @@ export function EditorialSection({ posts }: { posts: BlogPost[] }) {
 }
 
 export function NewsletterSection() {
-  return <section className="newsletter-section py-5" aria-labelledby="newsletter-heading"><div className="container text-center"><p className="eyebrow">A little beauty in your inbox</p><h2 id="newsletter-heading">Get inspired, not overwhelmed.</h2><p>Join for thoughtful tips, new launches and special offers.</p><form className="newsletter-form" onSubmit={(event) => event.preventDefault()}><label className="visually-hidden" htmlFor="newsletter-email">Email address</label><input id="newsletter-email" type="email" required placeholder="Your email address" /><button className="btn" type="submit">Subscribe</button></form></div></section>;
+  const [subscribed, setSubscribed] = useState(false);
+  const submit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSubscribed(true); event.currentTarget.reset(); };
+  return <section className="newsletter-section py-5" aria-labelledby="newsletter-heading"><div className="container text-center"><p className="eyebrow">Inspire-se com a Blushify</p><h2 id="newsletter-heading">Beleza sem excesso.</h2><p>Receba dicas, novidades e ofertas especiais.</p><form className="newsletter-form" onSubmit={submit}><label className="visually-hidden" htmlFor="newsletter-email">E-mail</label><input id="newsletter-email" type="email" required placeholder="Seu e-mail" /><button className="btn" type="submit">Assinar</button></form>{subscribed && <p className="mt-3" role="status" aria-live="polite">Inscrição registrada para demonstração. Obrigado!</p>}</div></section>;
 }

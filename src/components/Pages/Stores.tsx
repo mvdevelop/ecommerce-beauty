@@ -1,1 +1,3 @@
-export default function Stores() { return <main className="container py-5"><h1>Our stores</h1><p>Store locations will be available soon.</p></main>; }
+import { Link } from 'react-router-dom';
+
+export default function Stores() { return <main className="container py-5"><p className="eyebrow">Onde encontrar</p><h1>Lojas físicas</h1><p>Estamos preparando informações sobre lojas e pontos de atendimento. Por enquanto, toda a experiência está disponível online como demonstração.</p><div className="border p-4 mt-4 col-lg-7"><h2 className="h5">Enquanto isso</h2><p>Explore o catálogo ou envie uma pergunta para nossa equipe de atendimento.</p><Link className="btn btn-primary me-2" to="/shop">Explorar a loja</Link><Link className="btn btn-outline-secondary" to="/contact">Entrar em contato</Link></div></main>; }

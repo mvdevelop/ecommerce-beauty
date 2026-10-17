@@ -12,10 +12,13 @@ jobs:
   quality:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@v4
+          persist-credentials: false
+      - name: Show repository diagnostics
+        run: git status --short && git rev-parse --show-toplevel
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
