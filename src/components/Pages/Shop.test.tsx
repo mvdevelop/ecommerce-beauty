@@ -1,10 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { LanguageProvider } from '../../i18n/LanguageProvider';
 import Shop from './Shop';
 
 function renderShop(route = '/shop') {
-  return render(<MemoryRouter initialEntries={[route]}><Shop /></MemoryRouter>);
+  return render(<MemoryRouter initialEntries={[route]}><LanguageProvider><Shop /></LanguageProvider></MemoryRouter>);
 }
 
 describe('Shop page', () => {

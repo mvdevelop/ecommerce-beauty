@@ -1,13 +1,14 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { LanguageProvider } from '../../i18n/LanguageProvider';
 import { ProductCard } from './ProductCard';
 import type { Product } from '../../types/product';
 
 const product: Product = { id: 7, image: '/images/p.webp', secondImage: '/images/p2.webp', ProductName: 'Exfoliating Scrub', price: '$25.00', oldPrice: '$30.00', tag: 'Sale', category: 'skincare' };
 
 function renderCard(props: Partial<Parameters<typeof ProductCard>[0]> = {}) {
-  return render(<MemoryRouter><ProductCard product={product} {...props} /></MemoryRouter>);
+  return render(<MemoryRouter><LanguageProvider><ProductCard product={product} {...props} /></LanguageProvider></MemoryRouter>);
 }
 
 describe('ProductCard', () => {

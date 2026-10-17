@@ -1,1 +1,16 @@
-export default function Privacy() { return <main className="container py-5"><p className="eyebrow">Transparência</p><h1>Privacidade</h1><p>Esta versão da Blushify é uma demonstração frontend. Não enviamos dados pessoais para um backend nem processamos pagamentos reais.</p><h2 className="h4 mt-4">Dados locais</h2><p>Carrinho, favoritos e sessão demo podem ser armazenados no navegador para que a experiência funcione. Você pode removê-los limpando os dados do site.</p><h2 className="h4 mt-4">Produção</h2><p>Uma versão real precisará de política completa, consentimento, controles de acesso e conformidade com a LGPD.</p></main>; }
+import { useLanguage } from '../../i18n/LanguageProvider';
+
+export default function Privacy() {
+  const { t } = useLanguage();
+  return (
+    <main className="container py-5">
+      <p className="eyebrow">{t('privacy.eyebrow')}</p>
+      <h1>{t('privacy.title')}</h1>
+      <p>{t('privacy.intro')}</p>
+      <h2 className="h4 mt-4">{t('privacy.localTitle')}</h2>
+      <p>{t('privacy.localText')}</p>
+      <h2 className="h4 mt-4">{t('privacy.productionTitle')}</h2>
+      <p>{t('privacy.productionText')}</p>
+    </main>
+  );
+}

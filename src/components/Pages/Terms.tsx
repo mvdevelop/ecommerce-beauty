@@ -1,1 +1,16 @@
-export default function Terms() { return <main className="container py-5"><p className="eyebrow">Informações importantes</p><h1>Termos de uso</h1><p>A Blushify atual é um protótipo para demonstração de uma experiência de e-commerce de cosméticos.</p><h2 className="h4 mt-4">Uso permitido</h2><p>Use o catálogo, carrinho e conta demo apenas para avaliação. Não insira dados reais de cartão, documentos ou informações sensíveis.</p><h2 className="h4 mt-4">Limitações</h2><p>Pedidos, pagamentos, estoque e autenticação não representam operações comerciais reais nesta versão.</p></main>; }
+import { useLanguage } from '../../i18n/LanguageProvider';
+
+export default function Terms() {
+  const { t } = useLanguage();
+  return (
+    <main className="container py-5">
+      <p className="eyebrow">{t('terms.eyebrow')}</p>
+      <h1>{t('terms.title')}</h1>
+      <p>{t('terms.intro')}</p>
+      <h2 className="h4 mt-4">{t('terms.useTitle')}</h2>
+      <p>{t('terms.useText')}</p>
+      <h2 className="h4 mt-4">{t('terms.limitsTitle')}</h2>
+      <p>{t('terms.limitsText')}</p>
+    </main>
+  );
+}

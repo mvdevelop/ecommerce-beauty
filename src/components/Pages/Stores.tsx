@@ -1,3 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../i18n/LanguageProvider';
 
-export default function Stores() { return <main className="container py-5"><p className="eyebrow">Onde encontrar</p><h1>Lojas físicas</h1><p>Estamos preparando informações sobre lojas e pontos de atendimento. Por enquanto, toda a experiência está disponível online como demonstração.</p><div className="border p-4 mt-4 col-lg-7"><h2 className="h5">Enquanto isso</h2><p>Explore o catálogo ou envie uma pergunta para nossa equipe de atendimento.</p><Link className="btn btn-primary me-2" to="/shop">Explorar a loja</Link><Link className="btn btn-outline-secondary" to="/contact">Entrar em contato</Link></div></main>; }
+export default function Stores() {
+  const { t } = useLanguage();
+  return (
+    <main className="container py-5">
+      <p className="eyebrow">{t('stores.eyebrow')}</p>
+      <h1>{t('stores.title')}</h1>
+      <p>{t('stores.text')}</p>
+      <div className="border p-4 mt-4 col-lg-7">
+        <h2 className="h5">{t('stores.meantimeTitle')}</h2>
+        <p>{t('stores.meantimeText')}</p>
+        <Link className="btn btn-primary me-2" to="/shop">{t('common.exploreShop')}</Link>
+        <Link className="btn btn-outline-secondary" to="/contact">{t('stores.contact')}</Link>
+      </div>
+    </main>
+  );
+}

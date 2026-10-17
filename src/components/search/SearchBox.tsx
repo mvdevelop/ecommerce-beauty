@@ -2,12 +2,14 @@ import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { localProducts } from '../../lib/catalog';
 import { useDismissable } from '../../hooks/useDismissable';
+import { useLanguage } from '../../i18n/LanguageProvider';
 
 const MAX_SUGGESTIONS = 6;
 
 export default function SearchBox() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
   const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') ?? '');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -46,9 +48,9 @@ export default function SearchBox() {
 
   const listVisible = open && suggestions.length > 0;
   return <form className="nav-search" role="search" onSubmit={submit} ref={container}>
-    <label className="visually-hidden" htmlFor="site-search">Buscar produtos</label>
-    <input id="site-search" ref={inputRef} value={query} autoComplete="off" role="combobox" aria-expanded={listVisible} aria-controls="search-suggestions" aria-autocomplete="list" aria-activedescendant={listVisible && activeIndex >= 0 ? `search-suggestion-${activeIndex}` : undefined} placeholder="Buscar skincare, maquiagem..." onChange={(event) => { setQuery(event.target.value); setOpen(true); setActiveIndex(-1); }} onFocus={() => setOpen(true)} onKeyDown={onKeyDown} />
-    <button type="submit" aria-label="Buscar">⌕</button>
-    {listVisible && <ul className="search-suggestions" id="search-suggestions" role="listbox" aria-label="Sugestões de produtos">{suggestions.map((product, index) => <li key={product.id} id={`search-suggestion-${index}`} role="option" aria-selected={index === activeIndex} className={index === activeIndex ? 'is-active' : undefined} onMouseEnter={() => setActiveIndex(index)}><button type="button" onClick={() => { setOpen(false); navigate(`/product/${product.id}`); }}><img src={product.image} alt="" width="36" height="36" /><span>{product.ProductName}</span><small>{product.price}</small></button></li>)}</ul>}
+    <label className="visually-hidden" htmlFor="site-search">{t('search.label')}</label>
+    <input id="site-search" ref={inputRef} value={query} autoComplete="off" role="combobox" aria-expanded={listVisible} aria-controls="search-suggestions" aria-autocomplete="list" aria-activedescendant={listVisible && activeIndex >= 0 ? `search-suggestion-${activeIndex}` : undefined} placeholder={t('search.placeholder')} onChange={(event) => { setQuery(event.target.value); setOpen(true); setActiveIndex(-1); }} onFocus={() => setOpen(true)} onKeyDown={onKeyDown} />
+    <button type="submit" aria-label={t('search.submit')}>⌕</button>
+    {listVisible && <ul className="search-suggestions" id="search-suggestions" role="listbox" aria-label={t('search.suggestions')}>{suggestions.map((product, index) => <li key={product.id} id={`search-suggestion-${index}`} role="option" aria-selected={index === activeIndex} className={index === activeIndex ? 'is-active' : undefined} onMouseEnter={() => setActiveIndex(index)}><button type="button" onClick={() => { setOpen(false); navigate(`/product/${product.id}`); }}><img src={product.image} alt="" width="36" height="36" /><span>{product.ProductName}</span><small>{product.price}</small></button></li>)}</ul>}
   </form>;
 }

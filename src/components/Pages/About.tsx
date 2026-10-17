@@ -1,3 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../i18n/LanguageProvider';
 
-export default function About() { return <main className="container py-5"><p className="eyebrow">Sobre a Blushify</p><h1>Beleza simples para a sua rotina</h1><p className="lead">A Blushify organiza uma seleção de produtos de beleza em uma experiência clara, acolhedora e fácil de explorar.</p><div className="row g-4 mt-3"><div className="col-md-4"><h2 className="h5">Curadoria clara</h2><p>Apresentamos produtos com informações objetivas para ajudar você a comparar e escolher.</p></div><div className="col-md-4"><h2 className="h5">Experiência sem excesso</h2><p>Priorizamos uma jornada simples: descobrir, salvar, adicionar ao carrinho e revisar o pedido.</p></div><div className="col-md-4"><h2 className="h5">Transparência</h2><p>Esta versão é um protótipo. Não processamos pagamentos nem prometemos entrega de pedidos reais.</p></div></div><Link className="btn btn-primary mt-4" to="/shop">Explorar a loja</Link></main>; }
+export default function About() {
+  const { t } = useLanguage();
+  return (
+    <main className="container py-5">
+      <p className="eyebrow">{t('about.eyebrow')}</p>
+      <h1>{t('about.title')}</h1>
+      <p className="lead">{t('about.lead')}</p>
+      <div className="row g-4 mt-3">
+        <div className="col-md-4"><h2 className="h5">{t('about.card1Title')}</h2><p>{t('about.card1Text')}</p></div>
+        <div className="col-md-4"><h2 className="h5">{t('about.card2Title')}</h2><p>{t('about.card2Text')}</p></div>
+        <div className="col-md-4"><h2 className="h5">{t('about.card3Title')}</h2><p>{t('about.card3Text')}</p></div>
+      </div>
+      <Link className="btn btn-primary mt-4" to="/shop">{t('common.exploreShop')}</Link>
+    </main>
+  );
+}

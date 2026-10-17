@@ -12,6 +12,7 @@ import { BrandShowcase, DiscoverSection, EditorialSection, FeaturedProductsSecti
 const posts = parseCollection(blogsData, isBlogPost);
 
 export default function Index() {
+  // Home sections consume useLanguage internally; this page only orchestrates data.
   const addToWishlist = (product: Product) => {
     const wishlist = getWishlist();
     if (wishlist.some((item) => item.id === product.id)) { toast.info(MESSAGES.wishlistExists); return; }

@@ -82,6 +82,7 @@ export const es: Messages = {
   'cart.eyebrow': 'Tu selección',
   'cart.title': 'Carrito de compras',
   'cart.emptyTitle': 'Tu carrito está vacío',
+  'cart.summary': 'Resumen',
   'cart.emptyDescription': 'Agrega productos para continuar. Mientras tanto, aquí tienes unas sugerencias.',
   'cart.quantityFor': ({ name }) => `Cantidad de ${name}`,
   'cart.removeAria': ({ name }) => `Quitar ${name} del carrito`,
@@ -238,7 +239,7 @@ export const es: Messages = {
   'product.relatedTitle': 'También te puede gustar',
   'product.reviewSummary': ({ rating, title }) => `${rating} / 5 · ${title}`,
   'product.addToCartAria': ({ name }) => `Agregar ${name} al carrito`,
-  'product.wishlistAria': ({ name, saved }) => `${saved ? 'Quitar' : 'Agregar'} ${name} ${saved ? 'de' : 'a'} favoritos`,
+  'product.wishlistAria': ({ name, saved }) => `${Number(saved) ? 'Quitar' : 'Agregar'} ${name} ${Number(saved) ? 'de' : 'a'} favoritos`,
   'product.suggestionsTitle': 'Te pueden gustar estos',
   'product.suggestionsDescription': 'Una selección de nuestro catálogo para que explores.',
 

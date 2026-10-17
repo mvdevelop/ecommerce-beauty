@@ -88,6 +88,7 @@ export const ptBR = defineMessages({
   'cart.eyebrow': 'Sua seleção',
   'cart.title': 'Carrinho de compras',
   'cart.emptyTitle': 'Seu carrinho está vazio',
+  'cart.summary': 'Resumo',
   'cart.emptyDescription': 'Adicione produtos para continuar. Enquanto isso, veja algumas sugestões.',
   'cart.quantityFor': ({ name }) => `Quantidade de ${name}`,
   'cart.removeAria': ({ name }) => `Remover ${name} do carrinho`,
@@ -244,7 +245,7 @@ export const ptBR = defineMessages({
   'product.relatedTitle': 'Você também pode gostar',
   'product.reviewSummary': ({ rating, title }) => `${rating} / 5 · ${title}`,
   'product.addToCartAria': ({ name }) => `Adicionar ${name} ao carrinho`,
-  'product.wishlistAria': ({ name, saved }) => `${saved ? 'Remover' : 'Adicionar'} ${name} ${saved ? 'dos' : 'aos'} favoritos`,
+  'product.wishlistAria': ({ name, saved }) => `${Number(saved) ? 'Remover' : 'Adicionar'} ${name} ${Number(saved) ? 'dos' : 'aos'} favoritos`,
   'product.suggestionsTitle': 'Você pode gostar destes',
   'product.suggestionsDescription': 'Uma seleção do nosso catálogo para você explorar.',
 

@@ -3,8 +3,10 @@ import type { CartItem, Product } from '../types/product';
 
 export const CART_KEY = 'cart';
 export const WISHLIST_KEY = 'wishlist';
+export const SAVED_KEY = 'saved';
 export const CART_UPDATED_EVENT = 'cartUpdated';
 export const WISHLIST_UPDATED_EVENT = 'wishlistUpdated';
+export const SAVED_UPDATED_EVENT = 'savedUpdated';
 const MAX_ITEMS = 100;
 const MAX_QUANTITY = 99;
 
@@ -26,6 +28,14 @@ export function getCart(): CartItem[] {
 
 export function getWishlist(): Product[] {
   return parseCollection(readJson(WISHLIST_KEY), isProduct).slice(0, MAX_ITEMS);
+}
+
+export function getSaved(): CartItem[] {
+  return parseCollection(readJson(SAVED_KEY), isCartItem).slice(0, MAX_ITEMS);
+}
+
+export function saveSaved(items: CartItem[]): void {
+  write(SAVED_KEY, items.slice(0, MAX_ITEMS).map((item) => ({ ...item, quantity: Math.min(Math.max(1, Math.floor(item.quantity)), MAX_QUANTITY) })), SAVED_UPDATED_EVENT);
 }
 
 function write(key: string, value: unknown, eventName: string): void {

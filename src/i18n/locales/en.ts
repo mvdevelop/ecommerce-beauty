@@ -83,6 +83,7 @@ export const en: Messages = {
   'cart.eyebrow': 'Your selection',
   'cart.title': 'Shopping cart',
   'cart.emptyTitle': 'Your cart is empty',
+  'cart.summary': 'Summary',
   'cart.emptyDescription': 'Add products to continue. In the meantime, here are a few suggestions.',
   'cart.quantityFor': ({ name }) => `Quantity for ${name}`,
   'cart.removeAria': ({ name }) => `Remove ${name} from the cart`,
@@ -239,7 +240,7 @@ export const en: Messages = {
   'product.relatedTitle': 'You may also like',
   'product.reviewSummary': ({ rating, title }) => `${rating} / 5 · ${title}`,
   'product.addToCartAria': ({ name }) => `Add ${name} to the cart`,
-  'product.wishlistAria': ({ name, saved }) => `${saved ? 'Remove' : 'Add'} ${name} ${saved ? 'from' : 'to'} the wishlist`,
+  'product.wishlistAria': ({ name, saved }) => `${Number(saved) ? 'Remove' : 'Add'} ${name} ${Number(saved) ? 'from' : 'to'} the wishlist`,
   'product.suggestionsTitle': 'You may like these',
   'product.suggestionsDescription': 'A selection from our catalogue for you to explore.',
 

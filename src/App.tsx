@@ -31,5 +31,37 @@ import Shipping from './components/Pages/Shipping';
 import Returns from './components/Pages/Returns';
 
 export default function App() {
-  return <><AnnouncementBar /><Nav /><Routes><Route path="/" element={<Index />} /><Route path="/product/:id" element={<ProductDetails />} /><Route path="/wishlist" element={<Wishlist />} /><Route path="/cart" element={<Cart />} /><Route path="/checkout" element={<Checkout />} /><Route path="/about" element={<About />} /><Route path="/shop" element={<Shop />} /><Route path="/search" element={<Navigate to="/shop" replace />} /><Route path="/login" element={<Login />} /><Route path="/signup" element={<Signup />} /><Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} /><Route path="/account/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} /><Route path="/account/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} /><Route path="/store" element={<Stores />} /><Route path="/blog" element={<Blog />} /><Route path="/contact" element={<Contact />} /><Route path="/privacy" element={<Privacy />} /><Route path="/terms" element={<Terms />} /><Route path="/shipping" element={<Shipping />} /><Route path="/returns" element={<Returns />} /><Route path="*" element={<NotFound />} /></Routes><Footer /></>;
+  return (
+    <>
+      <a className="skip-link" href="#main-content">Pular para o conteúdo</a>
+      <AnnouncementBar />
+      <Nav />
+      <div id="main-content" tabIndex={-1}>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/search" element={<Navigate to="/shop" replace />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+          <Route path="/account/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+          <Route path="/account/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
+          <Route path="/store" element={<Stores />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/returns" element={<Returns />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </>
+  );
 }
