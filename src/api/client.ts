@@ -1,6 +1,6 @@
 import type { ApiCart, ApiListParams, ApiOrder, ApiProduct, Brand, Category, DemoUser, Review } from '../types/api';
 
-const API_URL = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3001';
+const API_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') || (import.meta.env.DEV ? '/api' : '');
 
 export class ApiError extends Error {
   constructor(public readonly status: number, message: string) {

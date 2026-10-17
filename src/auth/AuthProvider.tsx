@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { DemoUser } from '../types/api';
+import { isDemoUser } from '../lib/runtime';
 
 const SESSION_KEY = 'blushify-demo-session';
 interface AuthContextValue { user: DemoUser | null; loading: boolean; login: (email: string) => Promise<boolean>; logout: () => void; }
@@ -11,7 +12,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(SESSION_KEY);
-      if (raw) setUser(JSON.parse(raw) as DemoUser);
+      if (raw) {
+        const parsed: unknown = JSON.parse(raw);
+        if (isDemoUser(parsed)) setUser(parsed);
+        else localStorage.removeItem(SESSION_KEY);
+      }
     } catch { localStorage.removeItem(SESSION_KEY); }
     setLoading(false);
   }, []);

@@ -1,10 +1,10 @@
 import type { CartItem } from '../types/product';
+import { parsePrice } from './pricing';
 import { getCart, saveCart } from './storage';
 
 export function cartSubtotal(items: CartItem[]): number {
   return items.reduce((total, item) => {
-    const value = Number(item.price.replace(/[^0-9.,-]/g, '').replace(',', '.')) || 0;
-    return total + value * item.quantity;
+    return total + parsePrice(item.price) * item.quantity;
   }, 0);
 }
 

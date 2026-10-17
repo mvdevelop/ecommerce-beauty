@@ -1,28 +1,28 @@
 import type { BlogPost } from '../types/blog';
+import type { DemoUser } from '../types/api';
 import type { CartItem, Product } from '../types/product';
 
 export function isProduct(value: unknown): value is Product {
   if (!value || typeof value !== 'object') return false;
   const item = value as Partial<Product>;
-  return typeof item.id === 'number' && Number.isInteger(item.id) && item.id > 0 &&
-    typeof item.image === 'string' && typeof item.secondImage === 'string' &&
-    typeof item.ProductName === 'string' && item.ProductName.length > 0 &&
-    typeof item.price === 'string';
+  return typeof item.id === 'number' && typeof item.ProductName === 'string' && typeof item.price === 'string';
 }
 
 export function isCartItem(value: unknown): value is CartItem {
-  if (!isProduct(value)) return false;
-  const quantity = (value as Partial<CartItem>).quantity;
-  return typeof quantity === 'number' && Number.isInteger(quantity) && quantity > 0;
+  return isProduct(value) && typeof (value as CartItem).quantity === 'number' && (value as CartItem).quantity > 0;
 }
 
 export function isBlogPost(value: unknown): value is BlogPost {
+  return Boolean(value && typeof value === 'object');
+}
+
+export function isDemoUser(value: unknown): value is DemoUser {
   if (!value || typeof value !== 'object') return false;
-  const post = value as Partial<BlogPost>;
-  return typeof post.id === 'number' && Number.isInteger(post.id) &&
-    typeof post.title === 'string' && post.title.length > 0 &&
-    (post.image === undefined || typeof post.image === 'string') &&
-    (post.description === undefined || typeof post.description === 'string');
+  const user = value as Partial<DemoUser>;
+  return typeof user.id === 'string'
+    && typeof user.email === 'string'
+    && typeof user.displayName === 'string'
+    && (user.role === 'customer' || user.role === 'admin');
 }
 
 export function parseCollection<T>(value: unknown, guard: (item: unknown) => item is T): T[] {
