@@ -1,0 +1,54 @@
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { localProducts } from '../../lib/catalog';
+import { useDismissable } from '../../hooks/useDismissable';
+
+const MAX_SUGGESTIONS = 6;
+
+export default function SearchBox() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') ?? '');
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const container = useDismissable<HTMLFormElement>(open, () => setOpen(false));
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Keep the field in sync when navigation changes the query (e.g. back/forward).
+  useEffect(() => { setQuery(new URLSearchParams(location.search).get('q') ?? ''); }, [location.search]);
+
+  const suggestions = useMemo(() => {
+    const term = query.trim().toLowerCase();
+    if (!term) return [];
+    return localProducts.filter((product) => product.ProductName.toLowerCase().includes(term)).slice(0, MAX_SUGGESTIONS);
+  }, [query]);
+
+  const goToShop = (value: string) => {
+    const trimmed = value.trim();
+    setOpen(false);
+    setActiveIndex(-1);
+    navigate(trimmed ? `/shop?q=${encodeURIComponent(trimmed)}` : '/shop');
+  };
+
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const selected = suggestions[activeIndex];
+    goToShop(selected ? selected.ProductName : query);
+  };
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') { setOpen(false); setActiveIndex(-1); return; }
+    if (!suggestions.length) return;
+    if (event.key === 'ArrowDown') { event.preventDefault(); setOpen(true); setActiveIndex((index) => (index + 1) % suggestions.length); }
+    else if (event.key === 'ArrowUp') { event.preventDefault(); setOpen(true); setActiveIndex((index) => (index <= 0 ? suggestions.length - 1 : index - 1)); }
+    else if (event.key === 'Enter' && activeIndex >= 0) { event.preventDefault(); const selected = suggestions[activeIndex]; if (selected) { setOpen(false); navigate(`/product/${selected.id}`); } }
+  };
+
+  const listVisible = open && suggestions.length > 0;
+  return <form className="nav-search" role="search" onSubmit={submit} ref={container}>
+    <label className="visually-hidden" htmlFor="site-search">Buscar produtos</label>
+    <input id="site-search" ref={inputRef} value={query} autoComplete="off" role="combobox" aria-expanded={listVisible} aria-controls="search-suggestions" aria-autocomplete="list" aria-activedescendant={listVisible && activeIndex >= 0 ? `search-suggestion-${activeIndex}` : undefined} placeholder="Buscar skincare, maquiagem..." onChange={(event) => { setQuery(event.target.value); setOpen(true); setActiveIndex(-1); }} onFocus={() => setOpen(true)} onKeyDown={onKeyDown} />
+    <button type="submit" aria-label="Buscar">⌕</button>
+    {listVisible && <ul className="search-suggestions" id="search-suggestions" role="listbox" aria-label="Sugestões de produtos">{suggestions.map((product, index) => <li key={product.id} id={`search-suggestion-${index}`} role="option" aria-selected={index === activeIndex} className={index === activeIndex ? 'is-active' : undefined} onMouseEnter={() => setActiveIndex(index)}><button type="button" onClick={() => { setOpen(false); navigate(`/product/${product.id}`); }}><img src={product.image} alt="" width="36" height="36" /><span>{product.ProductName}</span><small>{product.price}</small></button></li>)}</ul>}
+  </form>;
+}

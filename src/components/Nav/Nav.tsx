@@ -1,15 +1,18 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getCart, getWishlist, CART_UPDATED_EVENT, WISHLIST_UPDATED_EVENT } from '../../lib/storage';
 import MiniCart from '../cart/MiniCart';
+import SearchBox from '../search/SearchBox';
 import { useAuth } from '../../auth/AuthProvider';
+import { CATEGORIES } from '../../lib/catalog';
+import { useDismissable } from '../../hooks/useDismissable';
 
 type Theme = 'light' | 'dark';
 
 function getInitialTheme(): Theme {
   const stored = localStorage.getItem('blushify-theme');
   if (stored === 'dark' || stored === 'light') return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 export default function Nav() {
@@ -19,7 +22,8 @@ export default function Nav() {
   const [cartCount, setCartCount] = useState(() => getCart().length);
   const [wishlistCount, setWishlistCount] = useState(() => getWishlist().length);
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
-  const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') ?? '');
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const categoriesRef = useDismissable<HTMLDivElement>(categoriesOpen, () => setCategoriesOpen(false));
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -38,28 +42,33 @@ export default function Nav() {
     };
   }, []);
 
-  const submitSearch = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const value = query.trim();
-    navigate(value ? `/shop?q=${encodeURIComponent(value)}` : '/shop');
+  // Any navigation closes the dropdown so it does not linger over the new page.
+  useEffect(() => setCategoriesOpen(false), [location.pathname, location.search]);
+
+  const activeCategory = new URLSearchParams(location.search).get('category');
+  const selectCategory = (event: FormEvent<HTMLSelectElement>) => {
+    const slug = event.currentTarget.value;
+    navigate(slug ? `/shop?category=${encodeURIComponent(slug)}` : '/shop');
   };
 
   return (
-    <nav className="navbar navbar-expand-lg site-nav" aria-label="Main navigation">
+    <nav className="navbar navbar-expand-lg site-nav" aria-label="Navegação principal">
       <div className="container gap-3">
         <Link className="navbar-brand" to="/">Blushify</Link>
-        <form className="nav-search flex-grow-1" role="search" onSubmit={submitSearch}>
-          <label className="visually-hidden" htmlFor="site-search">Search products</label>
-          <input id="site-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search skincare, makeup..." />
-          <button type="submit" aria-label="Submit search">⌕</button>
-        </form>
+        <SearchBox />
         <div className="nav-actions d-flex align-items-center gap-3">
-          <Link to="/shop">Shop</Link>
-          <Link to="/wishlist" aria-label={`Wishlist with ${wishlistCount} items`}>♡ {wishlistCount}</Link>
+          <div className="nav-categories" ref={categoriesRef}>
+            <button type="button" className="nav-categories__trigger" aria-haspopup="true" aria-expanded={categoriesOpen} aria-controls="nav-categories-menu" onClick={() => setCategoriesOpen((open) => !open)}>Categorias <span aria-hidden="true">▾</span></button>
+            {categoriesOpen && <ul className="nav-categories__menu" id="nav-categories-menu">{CATEGORIES.map((category) => <li key={category.slug}><Link to={`/shop?category=${category.slug}`} aria-current={activeCategory === category.slug ? 'page' : undefined}>{category.label}</Link></li>)}</ul>}
+          </div>
+          <label className="visually-hidden" htmlFor="nav-category-select">Categoria</label>
+          <select id="nav-category-select" className="nav-category-select form-select form-select-sm" value={activeCategory ?? ''} onChange={selectCategory}><option value="">Todas</option>{CATEGORIES.map((category) => <option key={category.slug} value={category.slug}>{category.label}</option>)}</select>
+          <Link to="/shop">Loja</Link>
+          <Link to="/wishlist" aria-label={`Favoritos com ${wishlistCount} itens`}>♡ {wishlistCount}</Link>
           <MiniCart />
-          <Link to="/cart" aria-label={`Cart with ${cartCount} items`}>Carrinho ({cartCount})</Link>
+          <Link to="/cart" aria-label={`Carrinho com ${cartCount} itens`}>Carrinho ({cartCount})</Link>
           {user ? <><Link to="/account" aria-label="Minha conta">Olá, {user.displayName}</Link><button type="button" className="btn btn-link p-0" onClick={logout}>Sair</button></> : <><Link to="/login">Entrar</Link><Link to="/signup">Criar conta</Link></>}
-          <button type="button" className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>
+          <button type="button" className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Alternar para o modo ${theme === 'light' ? 'escuro' : 'claro'}`}>
             {theme === 'light' ? '☾' : '☀'}
           </button>
         </div>

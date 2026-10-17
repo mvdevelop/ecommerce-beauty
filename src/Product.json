@@ -6,7 +6,13 @@
     "secondImage": "/images/product-1-2.webp",
     "ProductName": "Shield Conditioner",
     "price": "$27.00",
-    "tag": "New"
+    "tag": "New",
+    "category": "hair",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 85,
+    "stock": 32,
+    "description": "Condicionador leve que ajuda a proteger e amaciar os fios."
     }, {
     "id": 2,
     "image": "/images/product-2-1.webp",
@@ -14,32 +20,62 @@
     "ProductName": "Perfecting Facial Oil",
     "price": "$15.00",
     "oldPrice": "$21.00",
-    "tag": "Sale"
+    "tag": "Sale",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 76,
+    "stock": 48,
+    "description": "Óleo facial nutritivo para uma pele uniforme e equilibrada."
     }, {
     "id": 3,
     "image": "/images/product-3-1.webp",
     "secondImage": "/images/product-3-2.webp",
     "ProductName": "Nourishing Face Cream",
-    "price": "$34.00"
+    "price": "$34.00",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.9,
+    "reviewCount": 96,
+    "stock": 40,
+    "description": "Creme facial rico para hidratação duradoura."
     }, {
     "id": 4,
     "image": "/images/product-4-1.webp",
     "secondImage": "/images/product-4-2.webp",
     "ProductName": "Revitalizing Eye Cream",
-    "price": "$29.00"
+    "price": "$29.00",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 64,
+    "stock": 36,
+    "description": "Creme para os olhos que ilumina e renova o olhar."
     }, {
     "id": 5,
     "image": "/images/product-5-1.webp",
     "secondImage": "/images/product-5-2.jpg",
     "ProductName": "Hydrating Face Mist",
     "price": "$22.00",
-    "tag": "New"
+    "tag": "New",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 58,
+    "stock": 52,
+    "description": "Bruma fina para hidratação instantânea ao longo do dia."
     }, {
     "id": 6,
     "image": "/images/product-6-1.webp",
     "secondImage": "/images/product-6-2.webp",
     "ProductName": "Smoothing Body Lotion",
-    "price": "$18.00"
+    "price": "$18.00",
+    "category": "body",
+    "brand": "Blushify",
+    "rating": 4.6,
+    "reviewCount": 41,
+    "stock": 60,
+    "description": "Loção leve para uma pele macia e uniforme."
     }, {
     "id": 7,
     "image": "/images/product-7-1.webp",
@@ -47,26 +83,50 @@
     "ProductName": "Exfoliating Scrub",
     "price": "$25.00",
     "oldPrice": "$30.00",
-    "tag": "Sale"
+    "tag": "Sale",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 37,
+    "stock": 44,
+    "description": "Esfoliante suave para renovar e refrescar a pele."
     }, {
     "id": 8,
     "image": "/images/product-8-1.webp",
     "secondImage": "/images/product-8-2.webp",
     "ProductName": "Calming Face Serum",
-    "price": "$40.00"
+    "price": "$40.00",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.9,
+    "reviewCount": 72,
+    "stock": 28,
+    "description": "Sérum calmante que ajuda a acalmar e equilibrar a pele."
     }, {
     "id": 9,
     "image": "/images/product-9-1.webp",
     "secondImage": "/images/product-9-2.webp",
     "ProductName": "Brightening Vitamin C",
     "price": "$32.00",
-    "tag": "New"
+    "tag": "New",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 83,
+    "stock": 35,
+    "description": "Sérum de vitamina C para um tom mais luminoso e uniforme."
     }, {
     "id": 10,
     "image": "/images/product-10-1.webp",
     "secondImage": "/images/product-10-2.webp",
     "ProductName": "Deep Cleansing Mask",
-    "price": "$28.00"
+    "price": "$28.00",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 49,
+    "stock": 40,
+    "description": "Máscara purificante que ajuda a remover impurezas."
     }, {
     "id": 11,
     "image": "/images/product-11-1.webp",
@@ -74,41 +134,72 @@
     "ProductName": "Moisturizing Lip Balm",
     "price": "$12.00",
     "oldPrice": "$15.00",
-    "tag": "Sale"
+    "tag": "Sale",
+    "category": "makeup",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 120,
+    "stock": 80,
+    "description": "Bálsamo labial rico para hidratação duradoura."
     }, {
     "id": 12,
     "image": "/images/product-12-1.webp",
     "secondImage": "/images/product-12-2.webp",
-    "ProductName": "Refreshing Body Wash",
-    "price": "$20.00"
+    "ProductName": "Silky Hair Serum",
+    "price": "$24.00",
+    "category": "hair",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 52,
+    "stock": 46,
+    "description": "Sérum leve para cabelos macios e sedosos."
     }, {
     "id": 13,
     "image": "/images/product-13-1.webp",
     "secondImage": "/images/product-13-2.webp",
-    "ProductName": "Anti-Aging Serum",
-    "price": "$45.00",
-    "tag": "New"
+    "ProductName": "Gentle Foaming Cleanser",
+    "price": "$20.00",
+    "category": "skincare",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 68,
+    "stock": 55,
+    "description": "Sabonete de espuma suave para o uso diário."
     }, {
     "id": 14,
     "image": "/images/product-14-1.webp",
     "secondImage": "/images/product-14-2.webp",
-    "ProductName": "Gentle Cleansing Foam",
-    "price": "$19.00"
+    "ProductName": "Softening Body Butter",
+    "price": "$26.00",
+    "category": "body",
+    "brand": "Blushify",
+    "rating": 4.8,
+    "reviewCount": 43,
+    "stock": 38,
+    "description": "Manteiga corporal rica para uma pele profundamente macia."
     }, {
     "id": 15,
     "image": "/images/product-15-1.webp",
     "secondImage": "/images/product-15-2.webp",
-    "ProductName": "Nourishing Hair Mask",
-    "price": "$30.00",
-    "oldPrice": "$35.00",
-    "tag": "Sale"
+    "ProductName": "Tinted Lip Gloss",
+    "price": "$16.00",
+    "category": "makeup",
+    "brand": "Blushify",
+    "rating": 4.7,
+    "reviewCount": 91,
+    "stock": 65,
+    "description": "Gloss com cor e brilho para um toque de cor."
     }, {
     "id": 16,
     "image": "/images/product-16-1.webp",
     "secondImage": "/images/product-16-2.webp",
-    "ProductName": "Hydrating Face Serum",
-    "price": "$28.00",
-    "oldPrice": "$32.00",
-    "tag": "Sale"
+    "ProductName": "Restoring Hair Mask",
+    "price": "$30.00",
+    "category": "hair",
+    "brand": "Blushify",
+    "rating": 4.9,
+    "reviewCount": 57,
+    "stock": 32,
+    "description": "Máscara de tratamento profundo para devolver a vitalidade aos fios."
     }
 ]

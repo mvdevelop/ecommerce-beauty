@@ -8,6 +8,15 @@ export interface Product {
   price: string;
   oldPrice?: string;
   tag?: ProductTag;
+  // Optional so that products persisted in localStorage by earlier versions keep
+  // validating through isProduct/isCartItem. The local Product.json mirrors the
+  // API for these fields so the offline fallback can render a full page.
+  category?: string;
+  brand?: string;
+  rating?: number;
+  reviewCount?: number;
+  stock?: number;
+  description?: string;
 }
 
 export interface CartItem extends Product {

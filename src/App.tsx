@@ -4,6 +4,7 @@ import './components/ui/ui.css';
 import AnnouncementBar from './components/layout/AnnouncementBar';
 import './components/layout/layout.css';
 import './components/cart/cart.css';
+import './components/product/product.css';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Index from './components/Pages/Index';
