@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { getCart, getSaved, saveCart } from './storage';
-// addCartItem not needed here
+import { getCart, getSaved } from './storage';
+// (addCartItem not needed here)
 import { moveSavedToCart, removeSaved, saveForLater } from './saved';
 import type { CartItem } from '../types/product';
 
