@@ -12,10 +12,10 @@ export function Skeleton({ className = '' }: { className?: string }) {
   return <span aria-hidden="true" className={`ui-skeleton ${className}`} />;
 }
 
-export function EmptyState({ title, description }: { title: string; description: string }) {
-  return <section className="ui-state" aria-live="polite"><h2>{title}</h2><p>{description}</p></section>;
+export function EmptyState({ title, description, children }: { title: string; description: string; children?: ReactNode }) {
+  return <section className="ui-state" aria-live="polite"><h2>{title}</h2><p>{description}</p>{children}</section>;
 }
 
-export function ErrorState({ onRetry }: { onRetry?: () => void }) {
-  return <section className="ui-state" role="alert"><h2>Something went wrong</h2><p>We could not load this content. Please try again.</p>{onRetry && <Button onClick={onRetry}>Try again</Button>}</section>;
+export function ErrorState({ onRetry, title = 'Algo deu errado', description = 'Não foi possível carregar este conteúdo. Tente novamente.' }: { onRetry?: () => void; title?: string; description?: string }) {
+  return <section className="ui-state" role="alert"><h2>{title}</h2><p>{description}</p>{onRetry && <Button onClick={onRetry}>Tentar novamente</Button>}</section>;
 }

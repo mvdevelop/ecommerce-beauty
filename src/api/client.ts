@@ -18,15 +18,21 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-export function listProducts(params: ApiListParams = {}) {
+// json-server v1 uses `field:contains` for substring matches and `_per_page` for the
+// page size; the v0 aliases (`name_like`, `_limit`) now match nothing. Paginated
+// responses are wrapped in a `{ data: [...] }` envelope.
+type Paginated<T> = { data: T[] };
+
+export async function listProducts(params: ApiListParams = {}): Promise<ApiProduct[]> {
   const search = new URLSearchParams();
-  if (params.q) search.set('name_like', params.q);
+  if (params.q) search.set('name:contains', params.q);
   if (params.category) search.set('category', params.category);
   if (params.brand) search.set('brand', params.brand);
   if (params.page) search.set('_page', String(params.page));
-  if (params.limit) search.set('_limit', String(params.limit));
+  if (params.limit) search.set('_per_page', String(params.limit));
   const query = search.toString();
-  return request<ApiProduct[]>(`/products${query ? `?${query}` : ''}`);
+  const result = await request<ApiProduct[] | Paginated<ApiProduct>>(`/products${query ? `?${query}` : ''}`);
+  return Array.isArray(result) ? result : result.data;
 }
 
 export const getProduct = (id: string) => request<ApiProduct>(`/products/${encodeURIComponent(id)}`);
