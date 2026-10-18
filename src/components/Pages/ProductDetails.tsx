@@ -13,6 +13,27 @@ import { MESSAGES } from '../../lib/messages';
 import { Breadcrumbs } from '../ui/Breadcrumbs';
 import RelatedProducts from '../product/RelatedProducts';
 import { useLanguage } from '../../i18n/LanguageProvider';
+import { useDocumentMeta } from '../../hooks/useDocumentMeta';
+import { useMemo } from 'react';
+
+function ProductJsonLd({ product }: { product: ProductView }) {
+  const json = useMemo(() => JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.image,
+    brand: product.brand ? { '@type': 'Brand', name: product.brand } : undefined,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: product.currency,
+      price: product.price.replace(/[^0-9.]/g, ''),
+      availability: product.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+    },
+    ...(product.rating !== undefined && product.reviewCount !== undefined ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: product.rating, reviewCount: product.reviewCount } } : {}),
+  }), [product]);
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
+}
 import { resolveLocalized } from '../../i18n/content';
 import type { LocalizedText } from '../../i18n/content';
 
@@ -104,10 +125,13 @@ export default function ProductDetails() {
     saveWishlist([...wishlist, target]); setWishlisted(true); toast.success(MESSAGES.wishlistAdded);
   };
 
+  useDocumentMeta({ title: product ? `${product.name} · Blushify` : 'Blushify', description: product?.description, image: product?.image });
+
   if (loading) return <main className="container py-5"><p aria-live="polite">{t('product.loading')}</p></main>;
   if (!product) return <main className="container py-5"><h1>{t('product.notFoundTitle')}</h1><p>{t('product.notFoundDescription')}</p><Link to="/shop">{t('product.backToProducts')}</Link></main>;
 
-  const gallery = [product.image, product.secondImage].filter((value): value is string => Boolean(value));
+  const gallery
+ = [product.image, product.secondImage].filter((value): value is string => Boolean(value));
   const relatedSeed: Product = { id: product.id, image: product.image, secondImage: product.secondImage ?? product.image, ProductName: product.name, price: product.price, ...(product.category ? { category: product.category } : {}) };
   const inStock = product.stock > 0;
 
