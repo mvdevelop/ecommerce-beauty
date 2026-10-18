@@ -130,8 +130,7 @@ export default function ProductDetails() {
   if (loading) return <main className="container py-5"><p aria-live="polite">{t('product.loading')}</p></main>;
   if (!product) return <main className="container py-5"><h1>{t('product.notFoundTitle')}</h1><p>{t('product.notFoundDescription')}</p><Link to="/shop">{t('product.backToProducts')}</Link></main>;
 
-  const gallery
- = [product.image, product.secondImage].filter((value): value is string => Boolean(value));
+  const gallery = [product.image, product.secondImage].filter((value): value is string => Boolean(value));
   const relatedSeed: Product = { id: product.id, image: product.image, secondImage: product.secondImage ?? product.image, ProductName: product.name, price: product.price, ...(product.category ? { category: product.category } : {}) };
   const inStock = product.stock > 0;
 
@@ -148,6 +147,7 @@ export default function ProductDetails() {
 
   return (
     <>
+      <ProductJsonLd product={product} />
       <main className="container py-5">
         <Breadcrumbs items={[{ label: t('common.home'), to: '/' }, { label: t('common.shop'), to: '/shop' }, ...(product.category ? [{ label: categoryLabel(product.category), to: `/shop?category=${product.category}` }] : []), { label: product.name }]} />
         <div className="row g-5 mt-2">
