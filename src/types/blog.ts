@@ -6,4 +6,6 @@ export interface BlogPost {
   description?: string;
   author?: string;
   date?: string;
+  nameI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>;
+  titleI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>;
 }

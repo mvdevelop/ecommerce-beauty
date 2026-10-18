@@ -71,7 +71,7 @@ export default function Nav() {
                   {CATEGORIES.map((category) => (
                     <li key={category.slug}>
                       <button type="button" aria-current={activeCategory === category.slug ? 'page' : undefined} onClick={() => selectCategory(category.slug)}>
-                        {category.label}
+                        {t(`category.${category.slug}` as 'category.skincare')}
                       </button>
                     </li>
                   ))}

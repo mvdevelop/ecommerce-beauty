@@ -35,11 +35,17 @@ npm run dev
 - `src/components`: componentes e páginas React;
 - `src/types`: contratos TypeScript do domínio;
 - `src/lib/pricing.ts`: parsing e cálculo de preços;
-- `src/lib/storage.ts`: fronteira validada para carrinho e wishlist;
-- `src/Product.json` e `src/Blogs.json`: dados locais de demonstração;
+- `src/lib/storage.ts`: fronteira validada para carrinho, wishlist e itens salvos;
+- `src/lib/saved.ts`: operações de salvar produtos para depois;
+- `src/lib/catalog.ts` e `src/hooks/useCatalog.ts`: catálogo local e busca localizada;
+- `src/i18n/`: provider, dicionários PT-BR/EN/ES e persistência do idioma;
+- `src/components/product/`: cards, relacionados e sugestões de produtos;
+- `src/components/search/`: autocomplete da busca;
+- `src/components/Nav/NavDrawer.tsx`: navegação mobile;
+- `src/Product.json` e `src/Blogs.json`: dados locais de demonstração com conteúdo localizado;
 - `src/assets` e `public/images`: recursos estáticos.
 
-O carrinho e a wishlist são persistidos localmente apenas para fins demonstrativos. O conteúdo do `localStorage` é tratado como não confiável e validado antes do uso.
+O carrinho, a wishlist e os itens salvos são persistidos localmente apenas para fins demonstrativos. O conteúdo do `localStorage` é tratado como não confiável e validado antes do uso. Os preços permanecem em USD com símbolo `$`; a troca de idioma localiza o conteúdo, mas não converte moeda.
 
 ## Segurança e privacidade
 

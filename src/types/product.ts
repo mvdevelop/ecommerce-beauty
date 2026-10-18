@@ -17,6 +17,8 @@ export interface Product {
   reviewCount?: number;
   stock?: number;
   description?: string;
+  nameI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>;
+  descriptionI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>;
 }
 
 export interface CartItem extends Product {

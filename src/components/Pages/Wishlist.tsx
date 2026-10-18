@@ -8,6 +8,8 @@ import { MESSAGES } from '../../lib/messages';
 import { ProductCard } from '../product/ProductCard';
 import { EmptyState } from '../ui/Primitives';
 import { useLanguage } from '../../i18n/LanguageProvider';
+import { ProductSuggestions } from '../product/ProductSuggestions';
+import { localProducts } from '../../lib/catalog';
 
 export default function Wishlist() {
   const items = useWishlist();
@@ -24,9 +26,12 @@ export default function Wishlist() {
     <main className="container py-5">
       <h1>{t('wishlist.title')}</h1>
       {items.length === 0 ? (
-        <EmptyState title={t('wishlist.emptyTitle')} description={t('wishlist.emptyDescription')}>
-          <Link className="btn" to="/shop">{t('common.exploreShop')}</Link>
-        </EmptyState>
+        <>
+          <EmptyState title={t('wishlist.emptyTitle')} description={t('wishlist.emptyDescription')}>
+            <Link className="btn" to="/shop">{t('common.exploreShop')}</Link>
+          </EmptyState>
+          <ProductSuggestions products={localProducts} />
+        </>
       ) : (
         <section aria-labelledby="wishlist-items" className="mt-4">
           <h2 id="wishlist-items" className="visually-hidden">{t('wishlist.items')}</h2>

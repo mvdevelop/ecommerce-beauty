@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cartSubtotal, removeCartItem } from '../../lib/cart';
-import { CART_UPDATED_EVENT, getCart } from '../../lib/storage';
+import { CART_UPDATED_EVENT, SAVED_UPDATED_EVENT, getCart } from '../../lib/storage';
 import { useLanguage } from '../../i18n/LanguageProvider';
 import type { CartItem } from '../../types/product';
 
@@ -10,7 +10,7 @@ export default function MiniCart() {
   const [items, setItems] = useState<CartItem[]>(() => getCart());
   const titleId = useId();
   const { t } = useLanguage();
-  useEffect(() => { const refresh = () => setItems(getCart()); window.addEventListener(CART_UPDATED_EVENT, refresh); return () => window.removeEventListener(CART_UPDATED_EVENT, refresh); }, []);
+  useEffect(() => { const refresh = () => setItems(getCart()); window.addEventListener(CART_UPDATED_EVENT, refresh); window.addEventListener(SAVED_UPDATED_EVENT, refresh); return () => { window.removeEventListener(CART_UPDATED_EVENT, refresh); window.removeEventListener(SAVED_UPDATED_EVENT, refresh); }; }, []);
   return (
     <>
       <button type="button" className="mini-cart-trigger" onClick={() => setOpen(true)} aria-label={t('miniCart.triggerAria', { count: items.length })}>

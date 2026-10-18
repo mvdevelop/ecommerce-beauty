@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { localProducts } from '../../lib/catalog';
+import { useCatalog } from '../../hooks/useCatalog';
 import { useDismissable } from '../../hooks/useDismissable';
 import { useLanguage } from '../../i18n/LanguageProvider';
 
@@ -10,6 +10,7 @@ export default function SearchBox() {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
+  const { products: catalogProducts } = useCatalog();
   const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') ?? '');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -22,8 +23,8 @@ export default function SearchBox() {
   const suggestions = useMemo(() => {
     const term = query.trim().toLowerCase();
     if (!term) return [];
-    return localProducts.filter((product) => product.ProductName.toLowerCase().includes(term)).slice(0, MAX_SUGGESTIONS);
-  }, [query]);
+    return catalogProducts.filter((product) => `${product.ProductName} ${product.description ?? ''}`.toLowerCase().includes(term)).slice(0, MAX_SUGGESTIONS);
+  }, [catalogProducts, query]);
 
   const goToShop = (value: string) => {
     const trimmed = value.trim();

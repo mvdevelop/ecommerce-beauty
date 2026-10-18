@@ -8,6 +8,8 @@ import { MESSAGES } from '../../lib/messages';
 import { ProductCard } from '../product/ProductCard';
 import { EmptyState } from '../ui/Primitives';
 import { useLanguage } from '../../i18n/LanguageProvider';
+import { ProductSuggestions } from '../product/ProductSuggestions';
+import { localProducts } from '../../lib/catalog';
 
 export default function Favorites() {
   const items = useWishlist();
@@ -20,9 +22,12 @@ export default function Favorites() {
         <p className="eyebrow">{t('favorites.eyebrow')}</p>
         <h1>{t('favorites.title')}</h1>
         {items.length === 0 ? (
-          <EmptyState title={t('favorites.emptyTitle')} description={t('favorites.emptyDescription')}>
-            <Link className="btn" to="/shop">{t('common.exploreShop')}</Link>
-          </EmptyState>
+          <>
+            <EmptyState title={t('favorites.emptyTitle')} description={t('favorites.emptyDescription')}>
+              <Link className="btn" to="/shop">{t('common.exploreShop')}</Link>
+            </EmptyState>
+            <ProductSuggestions products={localProducts} />
+          </>
         ) : (
           <section aria-labelledby="favorites-items" className="mt-4">
             <h2 id="favorites-items" className="visually-hidden">{t('favorites.items')}</h2>

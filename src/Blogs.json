@@ -1,99 +1,218 @@
-
 [
-    {
-        "id": 1,
-        "name": "Tips & Procedure To Apply Luxury Beauty Cosmetic Cream",
-        "title": "Natural Cleansers",
-        "image": "/images/blog-1.webp",
-        "author": "Blushify",
-        "date": "Jan 10, 2025"
+  {
+    "id": 1,
+    "name": "Dicas e procedimento para aplicar creme cosmético de luxo",
+    "title": "Produtos de limpeza naturais",
+    "image": "/images/blog-1.webp",
+    "author": "Blushify",
+    "date": "2025-01-10",
+    "nameI18n": {
+      "pt-BR": "Dicas e procedimento para aplicar creme cosmético de luxo",
+      "en": "Tips and steps for applying luxury beauty cream",
+      "es": "Consejos y pasos para aplicar crema cosmética de lujo"
     },
-    {
-        "id": 2,
-        "name": "The Best Way To Select Good High-End Cosmetic Products",
-        "title": "Cosmetics",
-        "image": "/images/blog-2.webp",
-        "author": "Blushify",
-        "date": "Feb 12, 2025"
-    },
-    {
-        "id": 3,
-        "name": "Lightweight Makeup to Enhance Your Natural Beauty",
-        "title": "Make Up",
-        "image": "/images/blog-3.webp",
-        "author": "Blushify",
-        "date": "Mar 15, 2025"
-    },
-    {
-        "id": 4,
-        "name": "Herbal Ingredients And Their Role In Beauty Creams",
-        "title": "Natural Cleansers",
-        "image": "/images/blog-4.webp",
-        "author": "Blushify",
-        "date": "Apr 20, 2025"
-    },
-    {
-        "id": 5,
-        "name": "All Essential Nutrients Your Skin Requires At Night",
-        "title": "Natural Cleansers",
-        "image": "/images/blog-5.webp",
-        "author": "Blushify",
-        "date": "May 21, 2025"
-    },
-    {
-        "id": 6,
-        "name": "How to find the Beast Brow Shape For Your Face",
-        "title": "Make Up",
-        "image": "/images/blog-6.webp",
-        "author": "Blushify",
-        "date": "May 25, 2025"
-    },
-    {
-        "id": 7,
-        "name": "Perfect Way To Find Your Lip Combo For Everyday Lip Makeup",
-        "title": "Natural Cleansers",
-        "image": "/images/blog-7.webp",
-        "author": "Blushify",
-        "date": "Jun 10, 2025"
-    },
-    {
-        "id": 8,
-        "name": "Morning Beauty Routine: Our Main Rules",
-        "title": "Organic",
-        "image": "/images/blog-8.webp",
-        "author": "Blushify",
-        "date": "Jun 12, 2025"
-    },
-    {
-        "id": 9,
-        "name": "Some Beauty Secrets From Our Editor In Chief",
-        "title": "Make Up",
-        "image": "/images/blog-9.webp",
-        "author": "Blushify",
-        "date": "Jul 02, 2025"
-    },
-    {
-        "id": 10,
-        "name": "Easy Affordable Make Up Look",
-        "title": "Cosmetics",
-        "image": "/images/blog-10.webp",
-        "author": "Blushify",
-        "date": "Jul 08, 2025"
-    },
-    {
-        "id": 11,
-        "name": "When The Eye Makes A Statement, The Lips Should",
-        "title": "Natural Cleansers",
-        "image": "/images/blog-11.webp",
-        "author": "Blushify",
-        "date": "Aug 21, 2025"
-    },
-    {
-        "id": 12,
-        "name": "I Believe That All Women Are Pretty Without Makeup",
-        "title": "Make Up",
-        "image": "/images/blog-12.webp",
-        "author": "Blushify",
-        "date": "Sep 02, 2025"
+    "titleI18n": {
+      "pt-BR": "Produtos de limpeza naturais",
+      "en": "Natural cleansers",
+      "es": "Limpiadores naturales"
     }
+  },
+  {
+    "id": 2,
+    "name": "A melhor forma de escolher bons produtos cosméticos de alta qualidade",
+    "title": "Cosméticos",
+    "image": "/images/blog-2.webp",
+    "author": "Blushify",
+    "date": "2025-02-12",
+    "nameI18n": {
+      "pt-BR": "A melhor forma de escolher bons produtos cosméticos de alta qualidade",
+      "en": "The best way to choose high-end cosmetic products",
+      "es": "La mejor forma de elegir productos cosméticos de alta gama"
+    },
+    "titleI18n": {
+      "pt-BR": "Cosméticos",
+      "en": "Cosmetics",
+      "es": "Cosméticos"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Maquiagem leve para realçar sua beleza natural",
+    "title": "Maquiagem",
+    "image": "/images/blog-3.webp",
+    "author": "Blushify",
+    "date": "2025-03-15",
+    "nameI18n": {
+      "pt-BR": "Maquiagem leve para realçar sua beleza natural",
+      "en": "Lightweight makeup to enhance your natural beauty",
+      "es": "Maquillaje ligero para realzar tu belleza natural"
+    },
+    "titleI18n": {
+      "pt-BR": "Maquiagem",
+      "en": "Makeup",
+      "es": "Maquillaje"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Ingredientes naturais e seu papel nos cremes de beleza",
+    "title": "Produtos de limpeza naturais",
+    "image": "/images/blog-4.webp",
+    "author": "Blushify",
+    "date": "2025-04-20",
+    "nameI18n": {
+      "pt-BR": "Ingredientes naturais e seu papel nos cremes de beleza",
+      "en": "Herbal ingredients and their role in beauty creams",
+      "es": "Los ingredientes herbales y su papel en las cremas de belleza"
+    },
+    "titleI18n": {
+      "pt-BR": "Produtos de limpeza naturais",
+      "en": "Natural cleansers",
+      "es": "Limpiadores naturales"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Todos os nutrientes essenciais que sua pele precisa à noite",
+    "title": "Produtos de limpeza naturais",
+    "image": "/images/blog-5.webp",
+    "author": "Blushify",
+    "date": "2025-05-21",
+    "nameI18n": {
+      "pt-BR": "Todos os nutrientes essenciais que sua pele precisa à noite",
+      "en": "Essential nutrients your skin needs at night",
+      "es": "Nutrientes esenciales que tu piel necesita por la noche"
+    },
+    "titleI18n": {
+      "pt-BR": "Produtos de limpeza naturais",
+      "en": "Natural cleansers",
+      "es": "Limpiadores naturales"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Como encontrar o melhor formato de sobrancelha para seu rosto",
+    "title": "Maquiagem",
+    "image": "/images/blog-6.webp",
+    "author": "Blushify",
+    "date": "2025-05-25",
+    "nameI18n": {
+      "pt-BR": "Como encontrar o melhor formato de sobrancelha para seu rosto",
+      "en": "How to find the best brow shape for your face",
+      "es": "Cómo encontrar la mejor forma de cejas para tu rostro"
+    },
+    "titleI18n": {
+      "pt-BR": "Maquiagem",
+      "en": "Makeup",
+      "es": "Maquillaje"
+    }
+  },
+  {
+    "id": 7,
+    "name": "A forma perfeita de encontrar sua combinação de batons",
+    "title": "Produtos de limpeza naturais",
+    "image": "/images/blog-7.webp",
+    "author": "Blushify",
+    "date": "2025-06-10",
+    "nameI18n": {
+      "pt-BR": "A forma perfeita de encontrar sua combinação de batons",
+      "en": "The perfect way to find your everyday lip combo",
+      "es": "La forma perfecta de encontrar tu combinación de labios"
+    },
+    "titleI18n": {
+      "pt-BR": "Produtos de limpeza naturais",
+      "en": "Natural cleansers",
+      "es": "Limpiadores naturales"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Rotina de beleza matinal: nossas principais regras",
+    "title": "Orgânico",
+    "image": "/images/blog-8.webp",
+    "author": "Blushify",
+    "date": "2025-06-12",
+    "nameI18n": {
+      "pt-BR": "Rotina de beleza matinal: nossas principais regras",
+      "en": "Morning beauty routine: our main rules",
+      "es": "Rutina de belleza matutina: nuestras reglas principales"
+    },
+    "titleI18n": {
+      "pt-BR": "Orgânico",
+      "en": "Organic",
+      "es": "Orgánico"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Alguns segredos de beleza da nossa editora-chefe",
+    "title": "Maquiagem",
+    "image": "/images/blog-9.webp",
+    "author": "Blushify",
+    "date": "2025-07-02",
+    "nameI18n": {
+      "pt-BR": "Alguns segredos de beleza da nossa editora-chefe",
+      "en": "Beauty secrets from our editor in chief",
+      "es": "Algunos secretos de belleza de nuestra editora en jefe"
+    },
+    "titleI18n": {
+      "pt-BR": "Maquiagem",
+      "en": "Makeup",
+      "es": "Maquillaje"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Maquiagem fácil e acessível",
+    "title": "Cosméticos",
+    "image": "/images/blog-10.webp",
+    "author": "Blushify",
+    "date": "2025-07-08",
+    "nameI18n": {
+      "pt-BR": "Maquiagem fácil e acessível",
+      "en": "An easy, affordable makeup look",
+      "es": "Un look de maquillaje fácil y asequible"
+    },
+    "titleI18n": {
+      "pt-BR": "Cosméticos",
+      "en": "Cosmetics",
+      "es": "Cosméticos"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Quando os olhos fazem uma declaração, os lábios devem acompanhar",
+    "title": "Produtos de limpeza naturais",
+    "image": "/images/blog-11.webp",
+    "author": "Blushify",
+    "date": "2025-08-21",
+    "nameI18n": {
+      "pt-BR": "Quando os olhos fazem uma declaração, os lábios devem acompanhar",
+      "en": "When the eyes make a statement, the lips should follow",
+      "es": "Cuando los ojos hacen una declaración, los labios deben acompañar"
+    },
+    "titleI18n": {
+      "pt-BR": "Produtos de limpeza naturais",
+      "en": "Natural cleansers",
+      "es": "Limpiadores naturales"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Acredito que toda mulher é bonita sem maquiagem",
+    "title": "Maquiagem",
+    "image": "/images/blog-12.webp",
+    "author": "Blushify",
+    "date": "2025-09-02",
+    "nameI18n": {
+      "pt-BR": "Acredito que toda mulher é bonita sem maquiagem",
+      "en": "I believe every woman is beautiful without makeup",
+      "es": "Creo que toda mujer es hermosa sin maquillaje"
+    },
+    "titleI18n": {
+      "pt-BR": "Maquiagem",
+      "en": "Makeup",
+      "es": "Maquillaje"
+    }
+  }
 ]

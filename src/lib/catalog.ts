@@ -35,7 +35,8 @@ export function filterLocalProducts(products: Product[], query: string, category
   const term = query.trim().toLowerCase();
   return products.filter((product) => {
     const matchesCategory = !category || product.category === category;
-    const matchesQuery = !term || product.ProductName.toLowerCase().includes(term);
+    const searchable = `${product.ProductName} ${product.description ?? ''}`.toLowerCase();
+    const matchesQuery = !term || searchable.includes(term);
     return matchesCategory && matchesQuery;
   });
 }

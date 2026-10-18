@@ -1,4 +1,4 @@
-export interface ApiProduct { id: string; name: string; slug: string; price: number; compareAtPrice?: number; currency: string; image: string; secondImage?: string; category: string; brand: string; rating: number; reviewCount: number; stock: number; tags: string[]; description: string; featured: boolean; }
+export interface ApiProduct { id: string; name: string; slug: string; price: number; compareAtPrice?: number; currency: string; image: string; secondImage?: string; category: string; brand: string; rating: number; reviewCount: number; stock: number; tags: string[]; description: string; nameI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>; descriptionI18n?: Partial<Record<'pt-BR' | 'en' | 'es', string>>; featured: boolean; }
 export interface Category { id: string; name: string; slug: string; }
 export type Brand = Category
 export interface DemoUser { id: string; email: string; displayName: string; role: 'customer' | 'admin'; }

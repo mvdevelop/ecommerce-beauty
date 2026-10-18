@@ -1,6 +1,5 @@
-
 [
-    {
+  {
     "id": 1,
     "image": "/images/product-1-1.webp",
     "secondImage": "/images/product-1-2.webp",
@@ -12,8 +11,19 @@
     "rating": 4.8,
     "reviewCount": 85,
     "stock": 32,
-    "description": "Condicionador leve que ajuda a proteger e amaciar os fios."
-    }, {
+    "description": "Condicionador leve que ajuda a proteger e amaciar os fios.",
+    "nameI18n": {
+      "pt-BR": "Shield Conditioner",
+      "en": "Revitalizing Conditioner",
+      "es": "Acondicionador revitalizante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Condicionador leve que ajuda a proteger e amaciar os fios.",
+      "en": "Light conditioner that helps protect and soften hair.",
+      "es": "Acondicionador ligero que ayuda a proteger y suavizar el cabello."
+    }
+  },
+  {
     "id": 2,
     "image": "/images/product-2-1.webp",
     "secondImage": "/images/product-2-2.webp",
@@ -26,8 +36,19 @@
     "rating": 4.7,
     "reviewCount": 76,
     "stock": 48,
-    "description": "Óleo facial nutritivo para uma pele uniforme e equilibrada."
-    }, {
+    "description": "Óleo facial nutritivo para uma pele uniforme e equilibrada.",
+    "nameI18n": {
+      "pt-BR": "Perfecting Facial Oil",
+      "en": "Perfecting Facial Oil",
+      "es": "Aceite facial perfeccionador"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Óleo facial nutritivo para uma pele uniforme e equilibrada.",
+      "en": "Nourishing facial oil for an even, balanced complexion.",
+      "es": "Aceite facial nutritivo para una piel uniforme y equilibrada."
+    }
+  },
+  {
     "id": 3,
     "image": "/images/product-3-1.webp",
     "secondImage": "/images/product-3-2.webp",
@@ -38,8 +59,19 @@
     "rating": 4.9,
     "reviewCount": 96,
     "stock": 40,
-    "description": "Creme facial rico para hidratação duradoura."
-    }, {
+    "description": "Creme facial rico para hidratação duradoura.",
+    "nameI18n": {
+      "pt-BR": "Nourishing Face Cream",
+      "en": "Nourishing Face Cream",
+      "es": "Crema facial nutritiva"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Creme facial rico para hidratação duradoura.",
+      "en": "Rich face cream for lasting hydration.",
+      "es": "Crema facial rica para una hidrataci�n duradera."
+    }
+  },
+  {
     "id": 4,
     "image": "/images/product-4-1.webp",
     "secondImage": "/images/product-4-2.webp",
@@ -50,8 +82,19 @@
     "rating": 4.7,
     "reviewCount": 64,
     "stock": 36,
-    "description": "Creme para os olhos que ilumina e renova o olhar."
-    }, {
+    "description": "Creme para os olhos que ilumina e renova o olhar.",
+    "nameI18n": {
+      "pt-BR": "Revitalizing Eye Cream",
+      "en": "Revitalizing Eye Cream",
+      "es": "Crema revitalizante para ojos"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Creme para os olhos que ilumina e renova o olhar.",
+      "en": "Eye cream that brightens and refreshes the eye area.",
+      "es": "Crema para ojos que ilumina y renueva la mirada."
+    }
+  },
+  {
     "id": 5,
     "image": "/images/product-5-1.webp",
     "secondImage": "/images/product-5-2.jpg",
@@ -63,8 +106,19 @@
     "rating": 4.8,
     "reviewCount": 58,
     "stock": 52,
-    "description": "Bruma fina para hidratação instantânea ao longo do dia."
-    }, {
+    "description": "Bruma fina para hidratação instantânea ao longo do dia.",
+    "nameI18n": {
+      "pt-BR": "Hydrating Face Mist",
+      "en": "Hydrating Face Mist",
+      "es": "Bruma facial hidratante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Bruma fina para hidratação instantânea ao longo do dia.",
+      "en": "Fine mist for instant hydration throughout the day.",
+      "es": "Bruma ligera para hidratar al instante durante todo el d�a."
+    }
+  },
+  {
     "id": 6,
     "image": "/images/product-6-1.webp",
     "secondImage": "/images/product-6-2.webp",
@@ -75,8 +129,19 @@
     "rating": 4.6,
     "reviewCount": 41,
     "stock": 60,
-    "description": "Loção leve para uma pele macia e uniforme."
-    }, {
+    "description": "Loção leve para uma pele macia e uniforme.",
+    "nameI18n": {
+      "pt-BR": "Smoothing Body Lotion",
+      "en": "Smoothing Body Lotion",
+      "es": "Loci�n corporal suavizante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Loção leve para uma pele macia e uniforme.",
+      "en": "Light lotion for smooth, even-looking skin.",
+      "es": "Loci�n ligera para una piel suave y uniforme."
+    }
+  },
+  {
     "id": 7,
     "image": "/images/product-7-1.webp",
     "secondImage": "/images/product-7-2.webp",
@@ -89,8 +154,19 @@
     "rating": 4.7,
     "reviewCount": 37,
     "stock": 44,
-    "description": "Esfoliante suave para renovar e refrescar a pele."
-    }, {
+    "description": "Esfoliante suave para renovar e refrescar a pele.",
+    "nameI18n": {
+      "pt-BR": "Exfoliating Scrub",
+      "en": "Exfoliating Scrub",
+      "es": "Exfoliante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Esfoliante suave para renovar e refrescar a pele.",
+      "en": "Gentle scrub to renew and refresh the skin.",
+      "es": "Exfoliante suave para renovar y refrescar la piel."
+    }
+  },
+  {
     "id": 8,
     "image": "/images/product-8-1.webp",
     "secondImage": "/images/product-8-2.webp",
@@ -101,8 +177,19 @@
     "rating": 4.9,
     "reviewCount": 72,
     "stock": 28,
-    "description": "Sérum calmante que ajuda a acalmar e equilibrar a pele."
-    }, {
+    "description": "Sérum calmante que ajuda a acalmar e equilibrar a pele.",
+    "nameI18n": {
+      "pt-BR": "Calming Face Serum",
+      "en": "Calming Face Serum",
+      "es": "S�rum facial calmante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Sérum calmante que ajuda a acalmar e equilibrar a pele.",
+      "en": "Calming serum that helps soothe and balance the skin.",
+      "es": "S�rum calmante que ayuda a calmar y equilibrar la piel."
+    }
+  },
+  {
     "id": 9,
     "image": "/images/product-9-1.webp",
     "secondImage": "/images/product-9-2.webp",
@@ -114,8 +201,19 @@
     "rating": 4.8,
     "reviewCount": 83,
     "stock": 35,
-    "description": "Sérum de vitamina C para um tom mais luminoso e uniforme."
-    }, {
+    "description": "Sérum de vitamina C para um tom mais luminoso e uniforme.",
+    "nameI18n": {
+      "pt-BR": "Brightening Vitamin C",
+      "en": "Brightening Vitamin C",
+      "es": "Vitamina C iluminadora"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Sérum de vitamina C para um tom mais luminoso e uniforme.",
+      "en": "Vitamin C serum for a brighter, more even tone.",
+      "es": "S�rum de vitamina C para un tono m�s luminoso y uniforme."
+    }
+  },
+  {
     "id": 10,
     "image": "/images/product-10-1.webp",
     "secondImage": "/images/product-10-2.webp",
@@ -126,8 +224,19 @@
     "rating": 4.7,
     "reviewCount": 49,
     "stock": 40,
-    "description": "Máscara purificante que ajuda a remover impurezas."
-    }, {
+    "description": "Máscara purificante que ajuda a remover impurezas.",
+    "nameI18n": {
+      "pt-BR": "Deep Cleansing Mask",
+      "en": "Deep Cleansing Mask",
+      "es": "Mascarilla de limpieza profunda"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Máscara purificante que ajuda a remover impurezas.",
+      "en": "Purifying mask that helps remove impurities.",
+      "es": "Mascarilla purificante que ayuda a eliminar impurezas."
+    }
+  },
+  {
     "id": 11,
     "image": "/images/product-11-1.webp",
     "secondImage": "/images/product-11-2.webp",
@@ -140,8 +249,19 @@
     "rating": 4.8,
     "reviewCount": 120,
     "stock": 80,
-    "description": "Bálsamo labial rico para hidratação duradoura."
-    }, {
+    "description": "Bálsamo labial rico para hidratação duradoura.",
+    "nameI18n": {
+      "pt-BR": "Moisturizing Lip Balm",
+      "en": "Moisturizing Lip Balm",
+      "es": "B�lsamo labial hidratante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Bálsamo labial rico para hidratação duradoura.",
+      "en": "Rich lip balm for lasting moisture.",
+      "es": "B�lsamo labial rico para una hidrataci�n duradera."
+    }
+  },
+  {
     "id": 12,
     "image": "/images/product-12-1.webp",
     "secondImage": "/images/product-12-2.webp",
@@ -152,8 +272,19 @@
     "rating": 4.7,
     "reviewCount": 52,
     "stock": 46,
-    "description": "Sérum leve para cabelos macios e sedosos."
-    }, {
+    "description": "Sérum leve para cabelos macios e sedosos.",
+    "nameI18n": {
+      "pt-BR": "Silky Hair Serum",
+      "en": "Silky Hair Serum",
+      "es": "S�rum capilar sedoso"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Sérum leve para cabelos macios e sedosos.",
+      "en": "Light serum for soft, silky hair.",
+      "es": "S�rum ligero para un cabello suave y sedoso."
+    }
+  },
+  {
     "id": 13,
     "image": "/images/product-13-1.webp",
     "secondImage": "/images/product-13-2.webp",
@@ -164,8 +295,19 @@
     "rating": 4.8,
     "reviewCount": 68,
     "stock": 55,
-    "description": "Sabonete de espuma suave para o uso diário."
-    }, {
+    "description": "Sabonete de espuma suave para o uso diário.",
+    "nameI18n": {
+      "pt-BR": "Gentle Foaming Cleanser",
+      "en": "Gentle Foaming Cleanser",
+      "es": "Limpiador espumoso suave"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Sabonete de espuma suave para o uso diário.",
+      "en": "Gentle foaming cleanser for daily use.",
+      "es": "Limpiador espumoso suave para uso diario."
+    }
+  },
+  {
     "id": 14,
     "image": "/images/product-14-1.webp",
     "secondImage": "/images/product-14-2.webp",
@@ -176,8 +318,19 @@
     "rating": 4.8,
     "reviewCount": 43,
     "stock": 38,
-    "description": "Manteiga corporal rica para uma pele profundamente macia."
-    }, {
+    "description": "Manteiga corporal rica para uma pele profundamente macia.",
+    "nameI18n": {
+      "pt-BR": "Softening Body Butter",
+      "en": "Softening Body Butter",
+      "es": "Manteca corporal suavizante"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Manteiga corporal rica para uma pele profundamente macia.",
+      "en": "Rich body butter for deeply soft skin.",
+      "es": "Manteca corporal rica para una piel profundamente suave."
+    }
+  },
+  {
     "id": 15,
     "image": "/images/product-15-1.webp",
     "secondImage": "/images/product-15-2.webp",
@@ -188,8 +341,19 @@
     "rating": 4.7,
     "reviewCount": 91,
     "stock": 65,
-    "description": "Gloss com cor e brilho para um toque de cor."
-    }, {
+    "description": "Gloss com cor e brilho para um toque de cor.",
+    "nameI18n": {
+      "pt-BR": "Tinted Lip Gloss",
+      "en": "Tinted Lip Gloss",
+      "es": "Brillo labial con color"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Gloss com cor e brilho para um toque de cor.",
+      "en": "Tinted gloss with shine for a touch of color.",
+      "es": "Brillo con color y luminosidad para un toque de color."
+    }
+  },
+  {
     "id": 16,
     "image": "/images/product-16-1.webp",
     "secondImage": "/images/product-16-2.webp",
@@ -200,6 +364,16 @@
     "rating": 4.9,
     "reviewCount": 57,
     "stock": 32,
-    "description": "Máscara de tratamento profundo para devolver a vitalidade aos fios."
+    "description": "Máscara de tratamento profundo para devolver a vitalidade aos fios.",
+    "nameI18n": {
+      "pt-BR": "Restoring Hair Mask",
+      "en": "Restoring Hair Mask",
+      "es": "Mascarilla capilar restauradora"
+    },
+    "descriptionI18n": {
+      "pt-BR": "Máscara de tratamento profundo para devolver a vitalidade aos fios.",
+      "en": "Deep treatment mask to restore hair vitality.",
+      "es": "Mascarilla de tratamiento profundo para devolver vitalidad al cabello."
     }
+  }
 ]

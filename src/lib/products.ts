@@ -15,8 +15,8 @@ function deriveTag(tags: string[]): ProductTag | undefined {
 
 export function apiToProduct(product: ApiProduct, locale?: Locale): Product {
   const tag = deriveTag(product.tags);
-  const nameI18n = (product as { nameI18n?: Record<string, string> }).nameI18n;
-  const descriptionI18n = (product as { descriptionI18n?: Record<string, string> }).descriptionI18n;
+  const nameI18n = product.nameI18n;
+  const descriptionI18n = product.descriptionI18n;
   return {
     id: Number(product.id),
     image: product.image,

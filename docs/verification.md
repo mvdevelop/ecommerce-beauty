@@ -24,3 +24,8 @@ Manual smoke test:
 6. Open checkout with an empty and populated cart.
 7. Confirm no payment data is persisted in browser storage.
 8. Test keyboard navigation and a mobile viewport.
+9. Switch between PT-BR, English and Español; verify localized product names, descriptions, blog titles and dates.
+10. Test navbar category labels, keyboard autocomplete and localized offline search/filtering.
+11. Empty Wishlist and Favorites and confirm product suggestions are displayed.
+12. Save an item for later, move it back to the cart, and confirm MiniCart refreshes after the saved-state event.
+13. Activate the skip link and verify focus moves to the main content.

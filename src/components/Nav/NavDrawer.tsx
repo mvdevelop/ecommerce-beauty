@@ -67,7 +67,7 @@ export default function NavDrawer({ open, onClose }: NavDrawerProps) {
             {CATEGORIES.map((category) => (
               <li key={category.slug}>
                 <Link to={`/shop?category=${category.slug}`} onClick={onClose}>
-                  {category.label}
+                  {t(`category.${category.slug}` as 'category.skincare')}
                 </Link>
               </li>
             ))}

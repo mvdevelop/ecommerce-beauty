@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { listProducts } from '../../api/client';
 import { getCart, getWishlist, saveCart, saveWishlist } from '../../lib/storage';
 import { parsePrice } from '../../lib/pricing';
-import { CATEGORIES, filterLocalProducts, localProducts } from '../../lib/catalog';
+import { CATEGORIES, filterLocalProducts } from '../../lib/catalog';
+import { useCatalog } from '../../hooks/useCatalog';
 import { apiToProduct } from '../../lib/products';
 import { MESSAGES } from '../../lib/messages';
 import { Breadcrumbs } from '../ui/Breadcrumbs';
@@ -18,9 +19,10 @@ import type { Product } from '../../types/product';
 type SortOption = 'featured' | 'low' | 'high';
 
 export default function Shop() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const { products: catalogProducts } = useCatalog();
   const [params, setParams] = useSearchParams();
-  const [products, setProducts] = useState<Product[]>(localProducts);
+  const [products, setProducts] = useState<Product[]>(catalogProducts);
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
   const [wishlistIds, setWishlistIds] = useState(() => getWishlist().map((item) => item.id));
@@ -35,16 +37,16 @@ export default function Shop() {
     setLoading(true);
     setFailed(false);
     listProducts({ q: query || undefined, category: category || undefined, page, limit: pageSize })
-      .then((items) => { if (active) setProducts(items.map((item) => apiToProduct(item))); })
+      .then((items) => { if (active) setProducts(items.map((item) => apiToProduct(item, locale))); })
       .catch(() => {
         if (active) {
-          setProducts(filterLocalProducts(localProducts, query, category));
+          setProducts(filterLocalProducts(catalogProducts, query, category));
           setFailed(true);
         }
       })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
-  }, [query, category, page]);
+  }, [query, category, page, catalogProducts]);
 
   useEffect(() => { setWishlistIds(getWishlist().map((item) => item.id)); }, [products]);
 
