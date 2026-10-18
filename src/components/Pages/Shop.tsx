@@ -46,7 +46,7 @@ export default function Shop() {
       })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
-  }, [query, category, page, catalogProducts]);
+  }, [query, category, page, catalogProducts, locale]);
 
   useEffect(() => { setWishlistIds(getWishlist().map((item) => item.id)); }, [products]);
 
